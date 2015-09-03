@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="IStorable.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
