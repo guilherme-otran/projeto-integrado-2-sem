@@ -8,7 +8,7 @@ namespace projeto_integrado_2_sem
 {
     interface IStorable<K>
     {
-        public string[] AsStringArray();
-        public static K FromStringArray(string[] data);
+        string[] AsStringArray();
+        void FromStringArray(string[] data);
     }
 }
