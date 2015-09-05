@@ -47,6 +47,7 @@
             this.txt_pass.PasswordChar = '*';
             this.txt_pass.Size = new System.Drawing.Size(168, 20);
             this.txt_pass.TabIndex = 1;
+            this.txt_pass.TextChanged += new System.EventHandler(this.Credentials_TextChanged);
             // 
             // txt_user
             // 
@@ -54,24 +55,25 @@
             this.txt_user.Name = "txt_user";
             this.txt_user.Size = new System.Drawing.Size(168, 20);
             this.txt_user.TabIndex = 0;
+            this.txt_user.TextChanged += new System.EventHandler(this.Credentials_TextChanged);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(249, 86);
+            this.label1.Location = new System.Drawing.Point(192, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(168, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Usuário:";
+            this.label1.Text = "Email:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(254, 148);
+            this.label2.Location = new System.Drawing.Point(192, 148);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.Size = new System.Drawing.Size(168, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Senha:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_login
             // 
@@ -134,6 +136,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormLogin";
             this.Text = "Projeto Integrado";
+            this.TextChanged += new System.EventHandler(this.Credentials_TextChanged);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

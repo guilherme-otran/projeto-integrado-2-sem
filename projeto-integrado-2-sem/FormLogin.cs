@@ -43,5 +43,10 @@ namespace projeto_integrado_2_sem
         {
             this.Close();
         }
+
+        private void Credentials_TextChanged(object sender, EventArgs e)
+        {
+            labelInvalidCredentials.Hide();
+        }
     }
 }
