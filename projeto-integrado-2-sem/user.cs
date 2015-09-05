@@ -31,9 +31,11 @@ namespace projeto_integrado_2_sem
             return new string[] { id, email, password };
         }
 
-        public static User FromStringArray(string[] data)
+        public void FromStringArray(string[] data)
         {
-            return new User(data[0], data[1], data[2]);
+            this.id = data[0];
+            this.email = data[1];
+            this.password = data[2];
         }
 
     }
