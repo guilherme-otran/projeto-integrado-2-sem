@@ -16,7 +16,16 @@ namespace projeto_integrado_2_sem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+
+            FormLogin loginForm = new FormLogin();
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new FormMain());
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }
