@@ -9,26 +9,26 @@ namespace projeto_integrado_2_sem
     class User : IStorable<User>
     {
         public string id;
-        public string username;
+        public string email;
         public string password;
 
         public User()
         {
             this.id = null;
-            this.username = null;
+            this.email = null;
             this.password = null;
         }
 
-        public User(string id, string username, string password)
+        public User(string id, string email, string password)
         {
             this.id = id;
-            this.username = username;
+            this.email = email;
             this.password = password;
         }
 
         public string[] AsStringArray()
         {
-            return new string[] { id, username, password };
+            return new string[] { id, email, password };
         }
 
         public static User FromStringArray(string[] data)
