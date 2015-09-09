@@ -28,19 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            this.btnDate = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnDate
+            // 
+            this.btnDate.FlatAppearance.BorderSize = 0;
+            this.btnDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDate.Image = ((System.Drawing.Image)(resources.GetObject("btnDate.Image")));
+            this.btnDate.Location = new System.Drawing.Point(1191, 614);
+            this.btnDate.Name = "btnDate";
+            this.btnDate.Size = new System.Drawing.Size(61, 55);
+            this.btnDate.TabIndex = 3;
+            this.btnDate.UseVisualStyleBackColor = true;
+            this.btnDate.Click += new System.EventHandler(this.btnDate_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 273);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.btnDate);
+            this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "FormMain";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnDate;
     }
 }

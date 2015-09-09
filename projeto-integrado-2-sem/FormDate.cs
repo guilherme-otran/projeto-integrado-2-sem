@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace projeto_integrado_2_sem
 {
-    public partial class FormMain : Form
+    public partial class FormDate : Form
     {
-        FormDate FormDate = new FormDate();
-
-        public FormMain()
+        public FormDate()
         {
             InitializeComponent();
-        }
-
-        private void btnDate_Click(object sender, EventArgs e)
-        {
-            FormDate.ShowDialog();
         }
     }
 }
