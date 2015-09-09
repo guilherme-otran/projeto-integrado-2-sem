@@ -48,5 +48,11 @@ namespace projeto_integrado_2_sem
         {
             labelInvalidCredentials.Hide();
         }
+
+        private void txt_pass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+                btn_login.PerformClick();
+        }
     }
 }
