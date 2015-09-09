@@ -6,24 +6,27 @@ using System.Threading.Tasks;
 
 namespace projeto_integrado_2_sem
 {
-    class User : IStorable<User>
+    public class User : IStorable<User>
     {
         public string id;
         public string email;
         public string password;
+        public Profile Profile;
 
         public User()
         {
             this.id = null;
             this.email = null;
             this.password = null;
+            this.Profile = null;
         }
 
-        public User(string id, string email, string password)
+        public User(string id, string email, string password, Profile profile)
         {
             this.id = id;
             this.email = email;
             this.password = password;
+            this.Profile = profile;
         }
 
         public string[] AsStringArray()

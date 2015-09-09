@@ -12,6 +12,8 @@ namespace projeto_integrado_2_sem
 {
     public partial class FormLogin : Form
     {
+        public User LoggedUser;
+
         public FormLogin()
         {
             InitializeComponent();
@@ -27,7 +29,7 @@ namespace projeto_integrado_2_sem
 
             try
             {
-                login.performCheck();
+                this.LoggedUser = login.performCheck();
                 labelInvalidCredentials.Hide();
                 this.DialogResult = DialogResult.OK;
                 this.Close();

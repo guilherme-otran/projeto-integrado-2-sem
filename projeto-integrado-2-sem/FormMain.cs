@@ -12,9 +12,22 @@ namespace projeto_integrado_2_sem
 {
     public partial class FormMain : Form
     {
+        public User CurrentUser;
+
         public FormMain()
         {
             InitializeComponent();
+        }
+
+        public FormMain(User CurrentUser)
+        {
+            InitializeComponent();
+            this.CurrentUser = CurrentUser;
+        }
+
+        private Profile CurrentProfile()
+        {
+            return CurrentUser.Profile;
         }
     }
 }

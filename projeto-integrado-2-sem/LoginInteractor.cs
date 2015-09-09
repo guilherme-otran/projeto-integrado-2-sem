@@ -19,10 +19,12 @@ namespace projeto_integrado_2_sem
             this.password = password;
         }
 
-        public void performCheck()
+        public User performCheck()
         {
             if (email != "admin" || password != "hu3hu3")
                 throw new InavlidUsernameOrPassword();
+
+            return new User("123456", "admin", "hu3hu3", Profile.AdminProfile());
         }
     }
 }

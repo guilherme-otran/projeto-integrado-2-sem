@@ -20,7 +20,7 @@ namespace projeto_integrado_2_sem
             FormLogin loginForm = new FormLogin();
             if (loginForm.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new FormMain());
+                Application.Run(new FormMain(loginForm.LoggedUser));
             }
             else
             {
