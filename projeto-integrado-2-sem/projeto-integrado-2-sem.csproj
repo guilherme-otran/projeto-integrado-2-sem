@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="IStorable.cs" />
     <Compile Include="LoginInteractor.cs" />
+    <Compile Include="Profile.cs" />
     <Compile Include="User.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>

@@ -48,6 +48,7 @@
             this.txt_pass.Size = new System.Drawing.Size(168, 20);
             this.txt_pass.TabIndex = 1;
             this.txt_pass.TextChanged += new System.EventHandler(this.Credentials_TextChanged);
+            this.txt_pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_pass_KeyPress);
             // 
             // txt_user
             // 
