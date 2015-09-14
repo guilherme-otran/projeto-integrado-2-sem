@@ -34,6 +34,7 @@
             // 
             // btnDate
             // 
+            this.btnDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDate.FlatAppearance.BorderSize = 0;
             this.btnDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDate.Image = ((System.Drawing.Image)(resources.GetObject("btnDate.Image")));
