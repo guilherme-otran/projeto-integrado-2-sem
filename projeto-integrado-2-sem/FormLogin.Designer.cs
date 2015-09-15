@@ -47,6 +47,7 @@
             this.txt_pass.PasswordChar = '*';
             this.txt_pass.Size = new System.Drawing.Size(168, 20);
             this.txt_pass.TabIndex = 1;
+            this.txt_pass.Text = "hu3hu3";
             this.txt_pass.TextChanged += new System.EventHandler(this.Credentials_TextChanged);
             this.txt_pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_pass_KeyPress);
             // 
@@ -56,6 +57,7 @@
             this.txt_user.Name = "txt_user";
             this.txt_user.Size = new System.Drawing.Size(168, 20);
             this.txt_user.TabIndex = 0;
+            this.txt_user.Text = "admin@projeto.com";
             this.txt_user.TextChanged += new System.EventHandler(this.Credentials_TextChanged);
             // 
             // label1
