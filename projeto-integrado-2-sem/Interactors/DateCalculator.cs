@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace projeto_integrado_2_sem
+namespace projeto_integrado_2_sem.Interactors
 {
     public class DateCalculator
     {

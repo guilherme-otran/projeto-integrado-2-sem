@@ -16,16 +16,26 @@ namespace projeto_integrado_2_sem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            RepositoryManager.InitManager();
 
-            FormLogin loginForm = new FormLogin();
-            if (loginForm.ShowDialog() == DialogResult.OK)
+            Application.ApplicationExit += delegate { RepositoryManager.CloseManager(); };
+
+            FormMain formMain;
+
+            do
             {
-                Application.Run(new FormMain(/*loginForm.LoggedUser*/));
-            }
-            else
-            {
-                Application.Exit();
-            }
+                FormLogin loginForm = new FormLogin();
+                if (loginForm.ShowDialog() == DialogResult.OK)
+                {
+                    formMain = new FormMain(loginForm.LoggedUser);
+                    Application.Run(formMain);
+                }
+                else
+                {
+                    Application.Exit();
+                    break;
+                }
+            } while (formMain.LogoutRequested);
         }
     }
 }

@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace projeto_integrado_2_sem
+namespace projeto_integrado_2_sem.Models
 {
-    interface IStorable<K>
+    public interface IStorable
     {
-        string[] AsStringArray();
-        void FromStringArray(string[] data);
+        string id { get; set; }
     }
 }

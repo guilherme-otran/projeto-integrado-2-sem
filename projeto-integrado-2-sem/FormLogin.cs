@@ -1,4 +1,6 @@
-﻿using System;
+﻿using projeto_integrado_2_sem.Interactors;
+using projeto_integrado_2_sem.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
