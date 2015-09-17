@@ -17,9 +17,8 @@ namespace projeto_integrado_2_sem.Interactors
                 throw new InvalidBornDate();
             else
             {
-               
-            }
-                return DateTime.Today - born; 
+                return DateTime.Today - born;
+             }          
         }
 
         public static TimeSpan timeInterval(DateTime inic, DateTime fin)

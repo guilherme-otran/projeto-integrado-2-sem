@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using projeto_integrado_2_sem;
+using projeto_integrado_2_sem.Interactors;
 
 namespace UnitTestProject1
 {
