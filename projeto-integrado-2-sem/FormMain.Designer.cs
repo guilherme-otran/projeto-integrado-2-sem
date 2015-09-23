@@ -38,7 +38,7 @@
             this.btnDate.FlatAppearance.BorderSize = 0;
             this.btnDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDate.Image = ((System.Drawing.Image)(resources.GetObject("btnDate.Image")));
-            this.btnDate.Location = new System.Drawing.Point(1191, 614);
+            this.btnDate.Location = new System.Drawing.Point(1122, 612);
             this.btnDate.Name = "btnDate";
             this.btnDate.Size = new System.Drawing.Size(61, 55);
             this.btnDate.TabIndex = 3;
@@ -47,9 +47,10 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(1059, 628);
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(1213, 631);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(126, 36);
+            this.btnLogout.Size = new System.Drawing.Size(108, 36);
             this.btnLogout.TabIndex = 4;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -59,7 +60,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1350, 701);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnDate);
             this.MaximizeBox = false;

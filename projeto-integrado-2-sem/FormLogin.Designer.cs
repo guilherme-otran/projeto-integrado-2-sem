@@ -42,10 +42,11 @@
             // 
             // txt_pass
             // 
-            this.txt_pass.Location = new System.Drawing.Point(192, 164);
+            this.txt_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pass.Location = new System.Drawing.Point(164, 185);
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.PasswordChar = '*';
-            this.txt_pass.Size = new System.Drawing.Size(168, 20);
+            this.txt_pass.Size = new System.Drawing.Size(217, 24);
             this.txt_pass.TabIndex = 1;
             this.txt_pass.Text = "hu3hu3";
             this.txt_pass.TextChanged += new System.EventHandler(this.Credentials_TextChanged);
@@ -53,36 +54,40 @@
             // 
             // txt_user
             // 
-            this.txt_user.Location = new System.Drawing.Point(192, 102);
+            this.txt_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_user.Location = new System.Drawing.Point(164, 123);
             this.txt_user.Name = "txt_user";
-            this.txt_user.Size = new System.Drawing.Size(168, 20);
+            this.txt_user.Size = new System.Drawing.Size(217, 24);
             this.txt_user.TabIndex = 0;
             this.txt_user.Text = "admin@projeto.com";
             this.txt_user.TextChanged += new System.EventHandler(this.Credentials_TextChanged);
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(192, 86);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(188, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 13);
+            this.label1.Size = new System.Drawing.Size(168, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Email:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(192, 148);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(188, 163);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 13);
+            this.label2.Size = new System.Drawing.Size(168, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "Senha:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(234, 199);
+            this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_login.Location = new System.Drawing.Point(227, 220);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(75, 23);
+            this.btn_login.Size = new System.Drawing.Size(90, 32);
             this.btn_login.TabIndex = 2;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
@@ -102,21 +107,22 @@
             // tsi_about
             // 
             this.tsi_about.Name = "tsi_about";
-            this.tsi_about.Size = new System.Drawing.Size(47, 20);
+            this.tsi_about.Size = new System.Drawing.Size(49, 20);
             this.tsi_about.Text = "Sobre";
             // 
             // tsi_close
             // 
             this.tsi_close.Name = "tsi_close";
-            this.tsi_close.Size = new System.Drawing.Size(37, 20);
+            this.tsi_close.Size = new System.Drawing.Size(38, 20);
             this.tsi_close.Text = "Sair";
             this.tsi_close.Click += new System.EventHandler(this.tsi_close_Click);
             // 
             // labelInvalidCredentials
             // 
             this.labelInvalidCredentials.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelInvalidCredentials.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInvalidCredentials.ForeColor = System.Drawing.Color.Red;
-            this.labelInvalidCredentials.Location = new System.Drawing.Point(12, 37);
+            this.labelInvalidCredentials.Location = new System.Drawing.Point(12, 44);
             this.labelInvalidCredentials.Name = "labelInvalidCredentials";
             this.labelInvalidCredentials.Size = new System.Drawing.Size(520, 32);
             this.labelInvalidCredentials.TabIndex = 4;
@@ -129,10 +135,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 333);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelInvalidCredentials);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_user);
             this.Controls.Add(this.txt_pass);
             this.Controls.Add(this.menuStrip1);

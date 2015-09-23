@@ -35,6 +35,8 @@
             this.rdbAnalyze = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.gboInput = new System.Windows.Forms.GroupBox();
+            this.cmbDates = new System.Windows.Forms.ComboBox();
+            this.ltbDatesEq = new System.Windows.Forms.ListBox();
             this.lblDay = new System.Windows.Forms.Label();
             this.txtAmtD = new System.Windows.Forms.TextBox();
             this.lblWeek = new System.Windows.Forms.Label();
@@ -42,7 +44,6 @@
             this.lblMonth = new System.Windows.Forms.Label();
             this.txtAmtM = new System.Windows.Forms.TextBox();
             this.rdbDec = new System.Windows.Forms.RadioButton();
-            this.rdbAdd = new System.Windows.Forms.RadioButton();
             this.lblInput2 = new System.Windows.Forms.Label();
             this.btnProcess = new System.Windows.Forms.Button();
             this.txtDay = new System.Windows.Forms.TextBox();
@@ -50,12 +51,11 @@
             this.cmbMonth2 = new System.Windows.Forms.ComboBox();
             this.cmbMonth = new System.Windows.Forms.ComboBox();
             this.lblInput1 = new System.Windows.Forms.Label();
+            this.rdbAdd = new System.Windows.Forms.RadioButton();
             this.lblOutput = new System.Windows.Forms.Label();
             this.txtDay2 = new System.Windows.Forms.TextBox();
             this.cmbYear2 = new System.Windows.Forms.ComboBox();
             this.rdbDateCulture = new System.Windows.Forms.RadioButton();
-            this.cmbDates = new System.Windows.Forms.ComboBox();
-            this.ltbDatesEq = new System.Windows.Forms.ListBox();
             this.gboInput.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,11 +134,42 @@
             this.gboInput.Controls.Add(this.cmbMonth);
             this.gboInput.Controls.Add(this.lblInput1);
             this.gboInput.Controls.Add(this.rdbAdd);
-            this.gboInput.Location = new System.Drawing.Point(76, 113);
+            this.gboInput.Location = new System.Drawing.Point(74, 113);
             this.gboInput.Name = "gboInput";
-            this.gboInput.Size = new System.Drawing.Size(480, 197);
+            this.gboInput.Size = new System.Drawing.Size(480, 110);
             this.gboInput.TabIndex = 8;
             this.gboInput.TabStop = false;
+            // 
+            // cmbDates
+            // 
+            this.cmbDates.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDates.FormattingEnabled = true;
+            this.cmbDates.Items.AddRange(new object[] {
+            "01 de Janeiro de 1991",
+            "17 de Setembro de 1997",
+            "04 de Setembro de 1998",
+            "23 de Outubro de 2001",
+            "09 de Janeiro de 2007",
+            "09 de Maio de 2011",
+            "07 de Janeiro de 2019",
+            ""});
+            this.cmbDates.Location = new System.Drawing.Point(135, 50);
+            this.cmbDates.Name = "cmbDates";
+            this.cmbDates.Size = new System.Drawing.Size(211, 21);
+            this.cmbDates.TabIndex = 14;
+            this.cmbDates.Visible = false;
+            this.cmbDates.SelectedIndexChanged += new System.EventHandler(this.cmbDates_SelectedIndexChanged);
+            // 
+            // ltbDatesEq
+            // 
+            this.ltbDatesEq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ltbDatesEq.FormattingEnabled = true;
+            this.ltbDatesEq.ItemHeight = 16;
+            this.ltbDatesEq.Location = new System.Drawing.Point(31, 88);
+            this.ltbDatesEq.Name = "ltbDatesEq";
+            this.ltbDatesEq.Size = new System.Drawing.Size(430, 68);
+            this.ltbDatesEq.TabIndex = 15;
+            this.ltbDatesEq.Visible = false;
             // 
             // lblDay
             // 
@@ -207,20 +238,6 @@
             this.rdbDec.Text = "Diminuir";
             this.rdbDec.UseVisualStyleBackColor = true;
             this.rdbDec.Visible = false;
-            // 
-            // rdbAdd
-            // 
-            this.rdbAdd.AutoSize = true;
-            this.rdbAdd.Checked = true;
-            this.rdbAdd.Location = new System.Drawing.Point(349, 72);
-            this.rdbAdd.Name = "rdbAdd";
-            this.rdbAdd.Size = new System.Drawing.Size(82, 17);
-            this.rdbAdd.TabIndex = 6;
-            this.rdbAdd.TabStop = true;
-            this.rdbAdd.Text = "Acrescentar";
-            this.rdbAdd.UseVisualStyleBackColor = true;
-            this.rdbAdd.Visible = false;
-            this.rdbAdd.CheckedChanged += new System.EventHandler(this.rdbAdd_CheckedChanged);
             // 
             // lblInput2
             // 
@@ -314,6 +331,20 @@
             this.lblInput1.Size = new System.Drawing.Size(0, 13);
             this.lblInput1.TabIndex = 0;
             // 
+            // rdbAdd
+            // 
+            this.rdbAdd.AutoSize = true;
+            this.rdbAdd.Checked = true;
+            this.rdbAdd.Location = new System.Drawing.Point(349, 72);
+            this.rdbAdd.Name = "rdbAdd";
+            this.rdbAdd.Size = new System.Drawing.Size(82, 17);
+            this.rdbAdd.TabIndex = 6;
+            this.rdbAdd.TabStop = true;
+            this.rdbAdd.Text = "Acrescentar";
+            this.rdbAdd.UseVisualStyleBackColor = true;
+            this.rdbAdd.Visible = false;
+            this.rdbAdd.CheckedChanged += new System.EventHandler(this.rdbAdd_CheckedChanged);
+            // 
             // lblOutput
             // 
             this.lblOutput.AutoSize = true;
@@ -356,35 +387,6 @@
             this.rdbDateCulture.Text = "Datas equivalentes";
             this.rdbDateCulture.UseVisualStyleBackColor = true;
             this.rdbDateCulture.CheckedChanged += new System.EventHandler(this.rdbDateCulture_CheckedChanged);
-            // 
-            // cmbDates
-            // 
-            this.cmbDates.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDates.FormattingEnabled = true;
-            this.cmbDates.Items.AddRange(new object[] {
-            "01 de Janeiro de 1991",
-            "17 de Setembro de 1997",
-            "04 de Setembro de 1998",
-            "23 de Outubro de 2001",
-            "09 de Janeiro de 2007",
-            "09 de Maio de 2011",
-            "07 de Janeiro de 2019",
-            ""});
-            this.cmbDates.Location = new System.Drawing.Point(135, 50);
-            this.cmbDates.Name = "cmbDates";
-            this.cmbDates.Size = new System.Drawing.Size(211, 21);
-            this.cmbDates.TabIndex = 14;
-            this.cmbDates.Visible = false;
-            this.cmbDates.SelectedIndexChanged += new System.EventHandler(this.cmbDates_SelectedIndexChanged);
-            // 
-            // ltbDatesEq
-            // 
-            this.ltbDatesEq.FormattingEnabled = true;
-            this.ltbDatesEq.Location = new System.Drawing.Point(31, 88);
-            this.ltbDatesEq.Name = "ltbDatesEq";
-            this.ltbDatesEq.Size = new System.Drawing.Size(430, 56);
-            this.ltbDatesEq.TabIndex = 15;
-            this.ltbDatesEq.Visible = false;
             // 
             // FormDate
             // 
