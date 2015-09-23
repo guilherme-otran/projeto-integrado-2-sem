@@ -36,9 +36,9 @@ namespace projeto_integrado_2_sem.Interactors
             return dateCurrent - period;
         }
 
-        public static bool bissextile(DateTime date)
+        public static bool bissextile(int year)
         {
-            if (date.Year % 4 == 0 && date.Year % 100 != 0)
+            if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
                 return true;
             else
                 return false;
@@ -63,7 +63,7 @@ namespace projeto_integrado_2_sem.Interactors
             else
                 if (day <= 04 && month <= 10 && year <= 1582)
                     c = 0;
-                else
+               else
                     throw new NoJulianDay();
 
             d = (int)(365.25 * (year + 4716));

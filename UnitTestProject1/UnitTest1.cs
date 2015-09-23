@@ -11,14 +11,14 @@ namespace UnitTestProject1
         [TestMethod]
         public void Testbissextile()
         {
-            bool test = DateCalculator.bissextile(DateTime.Parse("2004-07-01 07:19:58.000"));
+            bool test = DateCalculator.bissextile(2000);
             Assert.AreEqual(true, test);
         }
         [TestMethod]
         public void TestjulianDay()
         {
-            int test = DateCalculator.julianDay(04, 10, 1582);
-            Assert.AreEqual(2299160, test);
+            int test = DateCalculator.julianDay(23, 09, 2015);
+            Assert.AreEqual(2457289, test);
         }
     }
 }

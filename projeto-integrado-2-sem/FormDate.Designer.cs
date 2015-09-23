@@ -31,21 +31,27 @@
             this.rdbAge = new System.Windows.Forms.RadioButton();
             this.rdbInterval = new System.Windows.Forms.RadioButton();
             this.rdbAD = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdbAnalyze = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.gboInput = new System.Windows.Forms.GroupBox();
+            this.lblDay = new System.Windows.Forms.Label();
+            this.txtAmtD = new System.Windows.Forms.TextBox();
+            this.lblWeek = new System.Windows.Forms.Label();
+            this.txtAmtW = new System.Windows.Forms.TextBox();
+            this.lblMonth = new System.Windows.Forms.Label();
+            this.txtAmtM = new System.Windows.Forms.TextBox();
+            this.rdbDec = new System.Windows.Forms.RadioButton();
+            this.rdbAdd = new System.Windows.Forms.RadioButton();
+            this.lblInput2 = new System.Windows.Forms.Label();
             this.btnProcess = new System.Windows.Forms.Button();
             this.txtDay = new System.Windows.Forms.TextBox();
             this.cmbYear = new System.Windows.Forms.ComboBox();
+            this.cmbMonth2 = new System.Windows.Forms.ComboBox();
             this.cmbMonth = new System.Windows.Forms.ComboBox();
             this.lblInput1 = new System.Windows.Forms.Label();
             this.lblOutput = new System.Windows.Forms.Label();
             this.txtDay2 = new System.Windows.Forms.TextBox();
             this.cmbYear2 = new System.Windows.Forms.ComboBox();
-            this.cmbMonth2 = new System.Windows.Forms.ComboBox();
-            this.lblInput2 = new System.Windows.Forms.Label();
-            this.rdbAdd = new System.Windows.Forms.RadioButton();
-            this.rdbDec = new System.Windows.Forms.RadioButton();
             this.gboInput.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,15 +90,16 @@
             this.rdbAD.UseVisualStyleBackColor = true;
             this.rdbAD.CheckedChanged += new System.EventHandler(this.rdbAD_CheckedChanged);
             // 
-            // radioButton2
+            // rdbAnalyze
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(457, 66);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(100, 17);
-            this.radioButton2.TabIndex = 7;
-            this.radioButton2.Text = "Análise de Data";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbAnalyze.AutoSize = true;
+            this.rdbAnalyze.Location = new System.Drawing.Point(457, 66);
+            this.rdbAnalyze.Name = "rdbAnalyze";
+            this.rdbAnalyze.Size = new System.Drawing.Size(100, 17);
+            this.rdbAnalyze.TabIndex = 7;
+            this.rdbAnalyze.Text = "Análise de Data";
+            this.rdbAnalyze.UseVisualStyleBackColor = true;
+            this.rdbAnalyze.CheckedChanged += new System.EventHandler(this.rdbAnalyze_CheckedChanged);
             // 
             // label1
             // 
@@ -106,6 +113,12 @@
             // 
             // gboInput
             // 
+            this.gboInput.Controls.Add(this.lblDay);
+            this.gboInput.Controls.Add(this.txtAmtD);
+            this.gboInput.Controls.Add(this.lblWeek);
+            this.gboInput.Controls.Add(this.txtAmtW);
+            this.gboInput.Controls.Add(this.lblMonth);
+            this.gboInput.Controls.Add(this.txtAmtM);
             this.gboInput.Controls.Add(this.rdbDec);
             this.gboInput.Controls.Add(this.rdbAdd);
             this.gboInput.Controls.Add(this.lblInput2);
@@ -117,9 +130,99 @@
             this.gboInput.Controls.Add(this.lblInput1);
             this.gboInput.Location = new System.Drawing.Point(76, 113);
             this.gboInput.Name = "gboInput";
-            this.gboInput.Size = new System.Drawing.Size(480, 110);
+            this.gboInput.Size = new System.Drawing.Size(480, 197);
             this.gboInput.TabIndex = 8;
             this.gboInput.TabStop = false;
+            // 
+            // lblDay
+            // 
+            this.lblDay.AutoSize = true;
+            this.lblDay.Location = new System.Drawing.Point(304, 116);
+            this.lblDay.Name = "lblDay";
+            this.lblDay.Size = new System.Drawing.Size(26, 13);
+            this.lblDay.TabIndex = 13;
+            this.lblDay.Text = "dias";
+            this.lblDay.Visible = false;
+            // 
+            // txtAmtD
+            // 
+            this.txtAmtD.Location = new System.Drawing.Point(246, 111);
+            this.txtAmtD.Name = "txtAmtD";
+            this.txtAmtD.Size = new System.Drawing.Size(55, 20);
+            this.txtAmtD.TabIndex = 12;
+            this.txtAmtD.Visible = false;
+            this.txtAmtD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dates_KeyPress);
+            // 
+            // lblWeek
+            // 
+            this.lblWeek.AutoSize = true;
+            this.lblWeek.Location = new System.Drawing.Point(193, 116);
+            this.lblWeek.Name = "lblWeek";
+            this.lblWeek.Size = new System.Drawing.Size(49, 13);
+            this.lblWeek.TabIndex = 11;
+            this.lblWeek.Text = "semanas";
+            this.lblWeek.Visible = false;
+            // 
+            // txtAmtW
+            // 
+            this.txtAmtW.Location = new System.Drawing.Point(135, 111);
+            this.txtAmtW.Name = "txtAmtW";
+            this.txtAmtW.Size = new System.Drawing.Size(55, 20);
+            this.txtAmtW.TabIndex = 10;
+            this.txtAmtW.Visible = false;
+            this.txtAmtW.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dates_KeyPress);
+            // 
+            // lblMonth
+            // 
+            this.lblMonth.AutoSize = true;
+            this.lblMonth.Location = new System.Drawing.Point(89, 114);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(37, 13);
+            this.lblMonth.TabIndex = 9;
+            this.lblMonth.Text = "meses";
+            this.lblMonth.Visible = false;
+            // 
+            // txtAmtM
+            // 
+            this.txtAmtM.Location = new System.Drawing.Point(31, 109);
+            this.txtAmtM.Name = "txtAmtM";
+            this.txtAmtM.Size = new System.Drawing.Size(55, 20);
+            this.txtAmtM.TabIndex = 8;
+            this.txtAmtM.Visible = false;
+            this.txtAmtM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dates_KeyPress);
+            // 
+            // rdbDec
+            // 
+            this.rdbDec.AutoSize = true;
+            this.rdbDec.Location = new System.Drawing.Point(349, 95);
+            this.rdbDec.Name = "rdbDec";
+            this.rdbDec.Size = new System.Drawing.Size(62, 17);
+            this.rdbDec.TabIndex = 7;
+            this.rdbDec.Text = "Diminuir";
+            this.rdbDec.UseVisualStyleBackColor = true;
+            this.rdbDec.Visible = false;
+            // 
+            // rdbAdd
+            // 
+            this.rdbAdd.AutoSize = true;
+            this.rdbAdd.Checked = true;
+            this.rdbAdd.Location = new System.Drawing.Point(349, 72);
+            this.rdbAdd.Name = "rdbAdd";
+            this.rdbAdd.Size = new System.Drawing.Size(82, 17);
+            this.rdbAdd.TabIndex = 6;
+            this.rdbAdd.TabStop = true;
+            this.rdbAdd.Text = "Acrescentar";
+            this.rdbAdd.UseVisualStyleBackColor = true;
+            this.rdbAdd.Visible = false;
+            this.rdbAdd.CheckedChanged += new System.EventHandler(this.rdbAdd_CheckedChanged);
+            // 
+            // lblInput2
+            // 
+            this.lblInput2.AutoSize = true;
+            this.lblInput2.Location = new System.Drawing.Point(15, 91);
+            this.lblInput2.Name = "lblInput2";
+            this.lblInput2.Size = new System.Drawing.Size(0, 13);
+            this.lblInput2.TabIndex = 4;
             // 
             // btnProcess
             // 
@@ -151,6 +254,29 @@
             this.cmbYear.Size = new System.Drawing.Size(66, 21);
             this.cmbYear.TabIndex = 2;
             this.cmbYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dates_KeyPress);
+            // 
+            // cmbMonth2
+            // 
+            this.cmbMonth2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMonth2.FormattingEnabled = true;
+            this.cmbMonth2.Items.AddRange(new object[] {
+            "Janeiro",
+            "Fevereiro",
+            "Março",
+            "Abril",
+            "Maio",
+            "Junho",
+            "Julho",
+            "Agosto",
+            "Setembro",
+            "Outubro",
+            "Novembro",
+            "Dezembro"});
+            this.cmbMonth2.Location = new System.Drawing.Point(103, 109);
+            this.cmbMonth2.Name = "cmbMonth2";
+            this.cmbMonth2.Size = new System.Drawing.Size(121, 21);
+            this.cmbMonth2.TabIndex = 5;
+            this.cmbMonth2.Visible = false;
             // 
             // cmbMonth
             // 
@@ -214,61 +340,6 @@
             this.cmbYear2.Visible = false;
             this.cmbYear2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dates_KeyPress);
             // 
-            // cmbMonth2
-            // 
-            this.cmbMonth2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMonth2.FormattingEnabled = true;
-            this.cmbMonth2.Items.AddRange(new object[] {
-            "Janeiro",
-            "Fevereiro",
-            "Março",
-            "Abril",
-            "Maio",
-            "Junho",
-            "Julho",
-            "Agosto",
-            "Setembro",
-            "Outubro",
-            "Novembro",
-            "Dezembro"});
-            this.cmbMonth2.Location = new System.Drawing.Point(103, 109);
-            this.cmbMonth2.Name = "cmbMonth2";
-            this.cmbMonth2.Size = new System.Drawing.Size(121, 21);
-            this.cmbMonth2.TabIndex = 5;
-            this.cmbMonth2.Visible = false;
-            // 
-            // lblInput2
-            // 
-            this.lblInput2.AutoSize = true;
-            this.lblInput2.Location = new System.Drawing.Point(15, 91);
-            this.lblInput2.Name = "lblInput2";
-            this.lblInput2.Size = new System.Drawing.Size(0, 13);
-            this.lblInput2.TabIndex = 4;
-            // 
-            // rdbAdd
-            // 
-            this.rdbAdd.AutoSize = true;
-            this.rdbAdd.Checked = true;
-            this.rdbAdd.Location = new System.Drawing.Point(349, 72);
-            this.rdbAdd.Name = "rdbAdd";
-            this.rdbAdd.Size = new System.Drawing.Size(82, 17);
-            this.rdbAdd.TabIndex = 6;
-            this.rdbAdd.TabStop = true;
-            this.rdbAdd.Text = "Acrescentar";
-            this.rdbAdd.UseVisualStyleBackColor = true;
-            this.rdbAdd.Visible = false;
-            // 
-            // rdbDec
-            // 
-            this.rdbDec.AutoSize = true;
-            this.rdbDec.Location = new System.Drawing.Point(349, 95);
-            this.rdbDec.Name = "rdbDec";
-            this.rdbDec.Size = new System.Drawing.Size(62, 17);
-            this.rdbDec.TabIndex = 7;
-            this.rdbDec.Text = "Diminuir";
-            this.rdbDec.UseVisualStyleBackColor = true;
-            this.rdbDec.Visible = false;
-            // 
             // FormDate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,7 +350,7 @@
             this.Controls.Add(this.cmbYear2);
             this.Controls.Add(this.gboInput);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.rdbAnalyze);
             this.Controls.Add(this.rdbAD);
             this.Controls.Add(this.rdbInterval);
             this.Controls.Add(this.rdbAge);
@@ -298,7 +369,7 @@
         private System.Windows.Forms.RadioButton rdbAge;
         private System.Windows.Forms.RadioButton rdbInterval;
         private System.Windows.Forms.RadioButton rdbAD;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rdbAnalyze;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gboInput;
         private System.Windows.Forms.Label lblInput1;
@@ -313,5 +384,11 @@
         private System.Windows.Forms.Label lblInput2;
         private System.Windows.Forms.RadioButton rdbDec;
         private System.Windows.Forms.RadioButton rdbAdd;
+        private System.Windows.Forms.Label lblDay;
+        private System.Windows.Forms.TextBox txtAmtD;
+        private System.Windows.Forms.Label lblWeek;
+        private System.Windows.Forms.TextBox txtAmtW;
+        private System.Windows.Forms.Label lblMonth;
+        private System.Windows.Forms.TextBox txtAmtM;
     }
 }
