@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDate));
             this.rdbAge = new System.Windows.Forms.RadioButton();
             this.rdbInterval = new System.Windows.Forms.RadioButton();
             this.rdbAD = new System.Windows.Forms.RadioButton();
@@ -52,6 +53,9 @@
             this.lblOutput = new System.Windows.Forms.Label();
             this.txtDay2 = new System.Windows.Forms.TextBox();
             this.cmbYear2 = new System.Windows.Forms.ComboBox();
+            this.rdbDateCulture = new System.Windows.Forms.RadioButton();
+            this.cmbDates = new System.Windows.Forms.ComboBox();
+            this.ltbDatesEq = new System.Windows.Forms.ListBox();
             this.gboInput.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +63,7 @@
             // 
             this.rdbAge.AutoSize = true;
             this.rdbAge.Checked = true;
-            this.rdbAge.Location = new System.Drawing.Point(74, 66);
+            this.rdbAge.Location = new System.Drawing.Point(17, 66);
             this.rdbAge.Name = "rdbAge";
             this.rdbAge.Size = new System.Drawing.Size(52, 17);
             this.rdbAge.TabIndex = 4;
@@ -71,7 +75,7 @@
             // rdbInterval
             // 
             this.rdbInterval.AutoSize = true;
-            this.rdbInterval.Location = new System.Drawing.Point(142, 66);
+            this.rdbInterval.Location = new System.Drawing.Point(79, 66);
             this.rdbInterval.Name = "rdbInterval";
             this.rdbInterval.Size = new System.Drawing.Size(110, 17);
             this.rdbInterval.TabIndex = 5;
@@ -82,18 +86,18 @@
             // rdbAD
             // 
             this.rdbAD.AutoSize = true;
-            this.rdbAD.Location = new System.Drawing.Point(263, 66);
+            this.rdbAD.Location = new System.Drawing.Point(200, 66);
             this.rdbAD.Name = "rdbAD";
-            this.rdbAD.Size = new System.Drawing.Size(188, 17);
+            this.rdbAD.Size = new System.Drawing.Size(174, 17);
             this.rdbAD.TabIndex = 6;
-            this.rdbAD.Text = "Acrescimo/Decréscimo de periodo";
+            this.rdbAD.Text = "Acrescimo/Decréscimo de data";
             this.rdbAD.UseVisualStyleBackColor = true;
             this.rdbAD.CheckedChanged += new System.EventHandler(this.rdbAD_CheckedChanged);
             // 
             // rdbAnalyze
             // 
             this.rdbAnalyze.AutoSize = true;
-            this.rdbAnalyze.Location = new System.Drawing.Point(457, 66);
+            this.rdbAnalyze.Location = new System.Drawing.Point(384, 66);
             this.rdbAnalyze.Name = "rdbAnalyze";
             this.rdbAnalyze.Size = new System.Drawing.Size(100, 17);
             this.rdbAnalyze.TabIndex = 7;
@@ -105,14 +109,16 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 27);
+            this.label1.Location = new System.Drawing.Point(148, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(332, 20);
+            this.label1.Size = new System.Drawing.Size(327, 20);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Escolha uma opção de cálculo de datas:";
+            this.label1.Text = "Escolha uma opção de cálculo de datas";
             // 
             // gboInput
             // 
+            this.gboInput.Controls.Add(this.cmbDates);
+            this.gboInput.Controls.Add(this.ltbDatesEq);
             this.gboInput.Controls.Add(this.lblDay);
             this.gboInput.Controls.Add(this.txtAmtD);
             this.gboInput.Controls.Add(this.lblWeek);
@@ -120,7 +126,6 @@
             this.gboInput.Controls.Add(this.lblMonth);
             this.gboInput.Controls.Add(this.txtAmtM);
             this.gboInput.Controls.Add(this.rdbDec);
-            this.gboInput.Controls.Add(this.rdbAdd);
             this.gboInput.Controls.Add(this.lblInput2);
             this.gboInput.Controls.Add(this.btnProcess);
             this.gboInput.Controls.Add(this.txtDay);
@@ -128,6 +133,7 @@
             this.gboInput.Controls.Add(this.cmbMonth2);
             this.gboInput.Controls.Add(this.cmbMonth);
             this.gboInput.Controls.Add(this.lblInput1);
+            this.gboInput.Controls.Add(this.rdbAdd);
             this.gboInput.Location = new System.Drawing.Point(76, 113);
             this.gboInput.Name = "gboInput";
             this.gboInput.Size = new System.Drawing.Size(480, 197);
@@ -340,11 +346,52 @@
             this.cmbYear2.Visible = false;
             this.cmbYear2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dates_KeyPress);
             // 
+            // rdbDateCulture
+            // 
+            this.rdbDateCulture.AutoSize = true;
+            this.rdbDateCulture.Location = new System.Drawing.Point(496, 66);
+            this.rdbDateCulture.Name = "rdbDateCulture";
+            this.rdbDateCulture.Size = new System.Drawing.Size(116, 17);
+            this.rdbDateCulture.TabIndex = 9;
+            this.rdbDateCulture.Text = "Datas equivalentes";
+            this.rdbDateCulture.UseVisualStyleBackColor = true;
+            this.rdbDateCulture.CheckedChanged += new System.EventHandler(this.rdbDateCulture_CheckedChanged);
+            // 
+            // cmbDates
+            // 
+            this.cmbDates.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDates.FormattingEnabled = true;
+            this.cmbDates.Items.AddRange(new object[] {
+            "01 de Janeiro de 1991",
+            "17 de Setembro de 1997",
+            "04 de Setembro de 1998",
+            "23 de Outubro de 2001",
+            "09 de Janeiro de 2007",
+            "09 de Maio de 2011",
+            "07 de Janeiro de 2019",
+            ""});
+            this.cmbDates.Location = new System.Drawing.Point(135, 50);
+            this.cmbDates.Name = "cmbDates";
+            this.cmbDates.Size = new System.Drawing.Size(211, 21);
+            this.cmbDates.TabIndex = 14;
+            this.cmbDates.Visible = false;
+            this.cmbDates.SelectedIndexChanged += new System.EventHandler(this.cmbDates_SelectedIndexChanged);
+            // 
+            // ltbDatesEq
+            // 
+            this.ltbDatesEq.FormattingEnabled = true;
+            this.ltbDatesEq.Location = new System.Drawing.Point(31, 88);
+            this.ltbDatesEq.Name = "ltbDatesEq";
+            this.ltbDatesEq.Size = new System.Drawing.Size(430, 56);
+            this.ltbDatesEq.TabIndex = 15;
+            this.ltbDatesEq.Visible = false;
+            // 
             // FormDate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 446);
+            this.Controls.Add(this.rdbDateCulture);
             this.Controls.Add(this.txtDay2);
             this.Controls.Add(this.lblOutput);
             this.Controls.Add(this.cmbYear2);
@@ -354,8 +401,10 @@
             this.Controls.Add(this.rdbAD);
             this.Controls.Add(this.rdbInterval);
             this.Controls.Add(this.rdbAge);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDate";
-            this.Text = "FormDate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Calculadora de Datas";
             this.Load += new System.EventHandler(this.FormDate_Load);
             this.gboInput.ResumeLayout(false);
             this.gboInput.PerformLayout();
@@ -390,5 +439,8 @@
         private System.Windows.Forms.TextBox txtAmtW;
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.TextBox txtAmtM;
+        private System.Windows.Forms.RadioButton rdbDateCulture;
+        private System.Windows.Forms.ComboBox cmbDates;
+        private System.Windows.Forms.ListBox ltbDatesEq;
     }
 }

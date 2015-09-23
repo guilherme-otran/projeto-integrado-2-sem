@@ -58,10 +58,10 @@ namespace projeto_integrado_2_sem.Interactors
             a = year / 100;
             b = a / 4;
 
-            if (year > 1582 || (day >= 15 && month >= 10 && year == 1582))
+            if ( (year > 1582) || (month > 10 && year == 1582) ||(day >= 15 && month == 10 && year == 1582))
                 c = 2 - a + b;
             else
-                if (year < 1582 || (day <= 04 && month <= 10 && year == 1582))
+                if (year < 1582 || (month < 10 && year == 1582) ||(day <= 04 && month == 10 && year == 1582))
                     c = 0;
                 else
                     throw new NoJulianDay();

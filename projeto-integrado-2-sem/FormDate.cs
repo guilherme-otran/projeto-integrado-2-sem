@@ -51,6 +51,8 @@ namespace projeto_integrado_2_sem
             lblMonth.Visible = false;
             lblWeek.Visible = false;
             lblDay.Visible = false;
+            cmbDates.Visible = false;
+            ltbDatesEq.Visible = false;
             lblInput1.Text = "";
             lblInput2.Text = "";
             lblOutput.Text = "";
@@ -79,8 +81,10 @@ namespace projeto_integrado_2_sem
         {
             if (rdbAge.Checked)
             {
+                clearAndInvisible();
+
                 gboInput.Size = new Size(480, 110);
-                lblOutput.Location = new Point(224, 245);
+                lblOutput.Location = new Point(210, 245);
                 btnProcess.Location = new Point(335, 57);
                 gboInput.Text = "Calcular idade";
                 lblInput1.Text = "Digite sua data de nascimento:";
@@ -88,19 +92,17 @@ namespace projeto_integrado_2_sem
                 cmbMonth.Visible = true;
                 cmbYear.Visible = true;
             }
-            else
-            {
-                clearAndInvisible();
-            }
         }
 
         private void rdbInterval_CheckedChanged(object sender, EventArgs e)
         {
             if(rdbInterval.Checked)
             {
+                clearAndInvisible();
+
                 gboInput.Size = new Size(480, 180);
                 btnProcess.Location = new Point(336, 80);
-                lblOutput.Location = new Point(224, 295);
+                lblOutput.Location = new Point(210, 295);
                 gboInput.Text = "Calcular o intervalo entre duas datas";
                 lblInput1.Text = "Digite a primeira data: ";
                 txtDay.Visible = true;
@@ -110,10 +112,6 @@ namespace projeto_integrado_2_sem
                 txtDay2.Visible = true;
                 cmbMonth2.Visible = true;
                 cmbYear2.Visible = true;
-            }
-            else
-            {
-                clearAndInvisible();
             }
         }
 
@@ -126,9 +124,11 @@ namespace projeto_integrado_2_sem
         {
             if(rdbAD.Checked)
             {
+                clearAndInvisible();
+
                 gboInput.Size = new Size(480, 180);
                 btnProcess.Location = new Point(203, 150);
-                lblOutput.Location = new Point(224, 295);
+                lblOutput.Location = new Point(210, 295);
                 rdbAdd.Visible = true;
                 rdbDec.Visible = true;
                 lblInput1.Text = "Digite a data inicial";
@@ -143,18 +143,16 @@ namespace projeto_integrado_2_sem
                 lblWeek.Visible = true;
                 lblDay.Visible = true;
             }
-            else
-            {
-                clearAndInvisible();
-            }
         }
 
         private void rdbAnalyze_CheckedChanged(object sender, EventArgs e)
         {
             if (rdbAnalyze.Checked)
             {
+                clearAndInvisible();
+
                 gboInput.Size = new Size(480, 110);
-                lblOutput.Location = new Point(224, 245);
+                lblOutput.Location = new Point(210, 295);
                 btnProcess.Location = new Point(335, 57);
                 gboInput.Text = "Análisar uma data";
                 lblInput1.Text = "Digite a data a ser análisada";
@@ -162,17 +160,87 @@ namespace projeto_integrado_2_sem
                 cmbMonth.Visible = true;
                 cmbYear.Visible = true;
             }
-            else
+        }
+
+        private void rdbDateCulture_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbDateCulture.Checked)
+            {
                 clearAndInvisible();
+                btnProcess.Visible = false;
+
+                gboInput.Size = new Size(480, 180);
+                gboInput.Text = "Datas equivalentes em outras culturas/ calendários";
+                lblInput1.Text = "Escolha uma data";
+                cmbDates.Visible = true;
+                ltbDatesEq.Visible = true;
+            }
+            else
+                btnProcess.Visible = true;
+        }
+
+        private void cmbDates_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cmbDates.SelectedIndex)
+            {
+                case 0:
+                    ltbDatesEq.Items.Clear();
+                    ltbDatesEq.Items.Add("Calendario Judaico: 15, Tevet, 5751");
+                    ltbDatesEq.Items.Add("Calendario Muçulmano: 14, Jumada t-Tania, 1411");
+                    ltbDatesEq.Items.Add("Calendario Chinês: 16, Ding-Chou, 4688 - Animal: Cavalo");
+                    break;
+
+                case 1:
+                    ltbDatesEq.Items.Clear();
+                    ltbDatesEq.Items.Add("Calendario Judaico: 15, Elul, 5757");
+                    ltbDatesEq.Items.Add("Calendario Muçulmano: 14, Jumada l-Ula, 1418");
+                    ltbDatesEq.Items.Add("Calendario Chinês: 16, Ji-You, 4695 - Animal: Boi");
+                    break;
+
+                case 2:
+                    ltbDatesEq.Items.Clear();
+                    ltbDatesEq.Items.Add("Calendario Judaico: 13, Elul, 5758 ");
+                    ltbDatesEq.Items.Add("Calendario Muçulmano: 12, Jumada l-Ula, 1419");
+                    ltbDatesEq.Items.Add("Calendario Chinês: 14, Xin-You, 4696 - Animal: Tigre");
+                    break;
+
+                case 3:
+                    ltbDatesEq.Items.Clear();
+                    ltbDatesEq.Items.Add("Calendario Judaico: 6, Cheshvan, 5762");
+                    ltbDatesEq.Items.Add("Calendario Muçulmano: 5, Sha'ban, 1422");
+                    ltbDatesEq.Items.Add("Calendario Chinês: 7, Wu-Xu, 4699 - Animal: Cobra");
+                    break;
+
+                case 4:
+                    ltbDatesEq.Items.Clear();
+                    ltbDatesEq.Items.Add("Calendario Judaico: 19, Tevet, 5767");
+                    ltbDatesEq.Items.Add("Calendario Muçulmano: 19, Dhu I-Hijja, 1427");
+                    ltbDatesEq.Items.Add("Calendario Chinês: 21, Ji-Chou, 4704 - Animal: Cachorro");
+                    break;
+
+                case 5:
+                    ltbDatesEq.Items.Clear();
+                    ltbDatesEq.Items.Add("Calendario Judaico: 5, Iyar, 5771");
+                    ltbDatesEq.Items.Add("Calendario Muçulmano: 5, Jumada t-Tania, 1432");
+                    ltbDatesEq.Items.Add("Calendario Chinês: 7, Gui-Si, 4709 - Animal: Lebre");
+                    break;
+
+                case 6:
+                    ltbDatesEq.Items.Clear();
+                    ltbDatesEq.Items.Add("Calendario Judaico: 1, Shevat, 5779");
+                    ltbDatesEq.Items.Add("Calendario Muçulmano: 29, Rabi'ath-Thani, 1440");
+                    ltbDatesEq.Items.Add("Calendario Chinês: 2, Gui-Chou, 4716 - Animal: Cachorro");
+                    break;
+            }
         }
 
         private void dates_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)||char.IsControl(e.KeyChar)))
+            if (!(char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar)))
                 e.KeyChar = char.MinValue;
         }
 
-        private void btnProcess_Click(object sender, EventArgs e)
+        private void btnProcess_Click(object sender, EventArgs e) //CLIQUE DO BOTÃO PROCESSAR
         {
             if (rdbAge.Checked)
             {
@@ -206,7 +274,7 @@ namespace projeto_integrado_2_sem
 
             }
 
-            if(rdbInterval.Checked)
+            if (rdbInterval.Checked)
             {
                 try
                 {
@@ -237,14 +305,14 @@ namespace projeto_integrado_2_sem
                 }
             }
 
-            if(rdbAD.Checked)
+            if (rdbAD.Checked)
             {
                 try
                 {
                     if (validateDate(int.Parse(txtDay.Text), cmbMonth.SelectedIndex + 1, int.Parse(cmbYear.Text)))
                     {
                         DateTime initialTime = new DateTime(int.Parse(cmbYear.Text), cmbMonth.SelectedIndex + 1, int.Parse(txtDay.Text));
-                        TimeSpan interval = new TimeSpan((int.Parse(txtAmtM.Text)) * 30 + (int.Parse(txtAmtW.Text)) * 7 + (int.Parse(txtAmtD.Text)), 0, 0,0,0);
+                        TimeSpan interval = new TimeSpan((int.Parse(txtAmtM.Text)) * 30 + (int.Parse(txtAmtW.Text)) * 7 + (int.Parse(txtAmtD.Text)), 0, 0, 0, 0);
 
                         DateTime dateResult;
                         if (rdbAdd.Checked)
@@ -252,7 +320,7 @@ namespace projeto_integrado_2_sem
                         else
                             dateResult = DateCalculator.dateDecrease(initialTime, interval);
 
-                        lblOutput.Text = "Data: " + dateResult.ToString("dd/MM/yyyy"); 
+                        lblOutput.Text = "Data: " + dateResult.ToString("dd/MM/yyyy");
                     }
                     else
                         MessageBox.Show("Data inválida");
@@ -263,11 +331,11 @@ namespace projeto_integrado_2_sem
                 }
             }
 
-            if(rdbAnalyze.Checked)
+            if (rdbAnalyze.Checked)
             {
-                try 
+                try
                 {
-                   if (validateDate(int.Parse(txtDay.Text), cmbMonth.SelectedIndex + 1, int.Parse(cmbYear.Text)))
+                    if (validateDate(int.Parse(txtDay.Text), cmbMonth.SelectedIndex + 1, int.Parse(cmbYear.Text)))
                     {
                         var brazilian = new System.Globalization.CultureInfo("pt-br");
                         DateTime date = new DateTime(int.Parse(cmbYear.Text), cmbMonth.SelectedIndex + 1, int.Parse(txtDay.Text));
@@ -275,8 +343,8 @@ namespace projeto_integrado_2_sem
                         lblOutput.Text += ", " + date.Day + " de " + brazilian.DateTimeFormat.GetMonthName(date.Month);
                         lblOutput.Text += " de " + date.Year;
 
-                        lblOutput.Text += "\nDia Juliano: " + DateCalculator.julianDay(date.Day, date.Month, date.Year);
-                        //lblOutput.Text += "\nData informada não possuí um dia juliano equivalente"; 
+                        try { lblOutput.Text += "\nDia Juliano: " + DateCalculator.julianDay(date.Day, date.Month, date.Year); }
+                        catch { lblOutput.Text += "\nData informada não possuí um dia juliano equivalente"; }
 
                         //lblOutput.Text += "\nDia sequêncial do ano: " + 
                         if (DateCalculator.bissextile(date.Year))
