@@ -46,8 +46,8 @@ namespace projeto_integrado_2_sem.Interactors
 
         public static int julianDay(int day, int month, int year)
         {
-            int jd;
-            int a, b, c, d, e;
+            int jd; //JULIAN DATE
+            int a, b, c, d, e; // variaveis da formula do dia juliano
 
             if (month < 3)
             {
@@ -58,18 +58,18 @@ namespace projeto_integrado_2_sem.Interactors
             a = year / 100;
             b = a / 4;
 
-            if (day >= 15 && month >= 10 && year >= 1582)
+            if (year > 1582 || (day >= 15 && month >= 10 && year == 1582))
                 c = 2 - a + b;
             else
-                if (day <= 04 && month <= 10 && year <= 1582)
+                if (year < 1582 || (day <= 04 && month <= 10 && year == 1582))
                     c = 0;
-               else
+                else
                     throw new NoJulianDay();
 
             d = (int)(365.25 * (year + 4716));
             e = (int)(30.6001 * (month + 1));
 
-            jd = (int)(c + day + d + e + 0.5 - 1524.5);
+            jd = (int)(c + day + d + e - 1524);
 
             return jd;
         }
