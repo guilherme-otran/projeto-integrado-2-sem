@@ -264,6 +264,7 @@
             this.txtDay.Name = "txtDay";
             this.txtDay.Size = new System.Drawing.Size(57, 20);
             this.txtDay.TabIndex = 0;
+            this.txtDay.TextChanged += new System.EventHandler(this.txtDay_TextChanged);
             this.txtDay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dates_KeyPress);
             // 
             // cmbYear

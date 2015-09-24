@@ -96,6 +96,7 @@ namespace projeto_integrado_2_sem
 
         private void rdbInterval_CheckedChanged(object sender, EventArgs e)
         {
+            
             if(rdbInterval.Checked)
             {
                 clearAndInvisible();
@@ -249,9 +250,7 @@ namespace projeto_integrado_2_sem
                     if (validateDate(int.Parse(txtDay.Text), cmbMonth.SelectedIndex + 1, int.Parse(cmbYear.Text)))
                     {
                         DateTime birthDate = new DateTime(int.Parse(cmbYear.Text), cmbMonth.SelectedIndex + 1, int.Parse(txtDay.Text));
-
-                        MessageBox.Show("data " + birthDate);
-
+                                                
                         TimeSpan age = DateCalculator.ageCalc(birthDate);
 
                         lblOutput.Text = "Sua Idade é:\n";
@@ -360,6 +359,13 @@ namespace projeto_integrado_2_sem
                     MessageBox.Show("Preencha todos os campos com valores corretos!");
                 }
             }
+        }
+
+        private void txtDay_TextChanged(object sender, EventArgs e)
+        {
+            
+                lblOutput.Text = " ";
+
         }
     }
 }
