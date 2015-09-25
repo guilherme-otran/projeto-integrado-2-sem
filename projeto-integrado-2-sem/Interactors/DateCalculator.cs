@@ -73,7 +73,6 @@ namespace projeto_integrado_2_sem.Interactors
 
             return jd;
         }
-
     }
 }
 

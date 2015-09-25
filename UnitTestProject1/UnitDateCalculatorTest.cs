@@ -17,17 +17,16 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestageCalc_When_birthdate_is_greater_than_current_date()
         {
-            bool test;
+            bool test = false;
             try 
             { 
                 DateCalculator.ageCalc(new DateTime(2016, 1, 1));
-                test = false;
             }
             catch (DateCalculator.InvalidBornDate) 
             { 
                 test = true;
-                Assert.AreEqual(true, test); 
             }
+            Assert.AreEqual(true, test); 
         }
         [TestMethod]
         public void TesttimeInterval()
@@ -130,6 +129,5 @@ namespace UnitTestProject1
             }
             Assert.AreEqual(true, test);
         }
-
     }
 }

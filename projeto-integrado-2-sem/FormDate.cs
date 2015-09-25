@@ -77,6 +77,11 @@ namespace projeto_integrado_2_sem
             return new string(a);
         }
 
+        private void dates_TextChanged(object sender, EventArgs e)
+        {
+            lblOutput.Text = "";
+        }
+
         private void rdbAge_CheckedChanged(object sender, EventArgs e)
         {
             if (rdbAge.Checked)
@@ -101,9 +106,9 @@ namespace projeto_integrado_2_sem
             {
                 clearAndInvisible();
 
-                gboInput.Size = new Size(480, 180);
-                btnProcess.Location = new Point(336, 80);
-                lblOutput.Location = new Point(210, 295);
+                gboInput.Size = new Size(480, 170);
+                btnProcess.Location = new Point(336, 70);
+                lblOutput.Location = new Point(210, 300);
                 gboInput.Text = "Calcular o intervalo entre duas datas";
                 lblInput1.Text = "Digite a primeira data: ";
                 txtDay.Visible = true;
@@ -127,9 +132,10 @@ namespace projeto_integrado_2_sem
             {
                 clearAndInvisible();
 
-                gboInput.Size = new Size(480, 180);
-                btnProcess.Location = new Point(203, 150);
-                lblOutput.Location = new Point(210, 295);
+                gboInput.Size = new Size(480, 170);
+                btnProcess.Location = new Point(203, 135);
+                lblOutput.Location = new Point(210, 300);
+                gboInput.Text = "Digite uma data e um periodo para acrescentar ou diminuir";
                 rdbAdd.Visible = true;
                 rdbDec.Visible = true;
                 lblInput1.Text = "Digite a data inicial";
@@ -241,6 +247,11 @@ namespace projeto_integrado_2_sem
                 e.KeyChar = char.MinValue;
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnProcess_Click(object sender, EventArgs e) //CLIQUE DO BOTÃO PROCESSAR
         {
             if (rdbAge.Checked)
@@ -345,7 +356,7 @@ namespace projeto_integrado_2_sem
                         try { lblOutput.Text += "\nDia Juliano: " + DateCalculator.julianDay(date.Day, date.Month, date.Year); }
                         catch { lblOutput.Text += "\nData informada não possuí um dia juliano equivalente"; }
 
-                        //lblOutput.Text += "\nDia sequêncial do ano: " + 
+                        lblOutput.Text += "\nDia sequêncial do ano: " + date.DayOfYear;
                         if (DateCalculator.bissextile(date.Year))
                             lblOutput.Text += "\nAno bissexto";
                         else
@@ -359,13 +370,6 @@ namespace projeto_integrado_2_sem
                     MessageBox.Show("Preencha todos os campos com valores corretos!");
                 }
             }
-        }
-
-        private void txtDay_TextChanged(object sender, EventArgs e)
-        {
-            
-                lblOutput.Text = " ";
-
         }
     }
 }

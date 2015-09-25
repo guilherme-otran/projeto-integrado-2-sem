@@ -1,5 +1,6 @@
 ﻿using projeto_integrado_2_sem.Models;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace projeto_integrado_2_sem
@@ -17,6 +18,11 @@ namespace projeto_integrado_2_sem
             this.CurrentUser = CurrentUser;
         }
 
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            btnDate.Visible = CurrentProfile().CanViewDateCalculator;
+        }
+
         private void btnDate_Click(object sender, EventArgs e)
         {
             FormDate.ShowDialog();
@@ -25,11 +31,6 @@ namespace projeto_integrado_2_sem
         private Profile CurrentProfile()
         {
             return CurrentUser.Profile;
-        }
-
-        private void FormMain_Load(object sender, EventArgs e)
-        {
-            btnDate.Visible = CurrentProfile().CanViewDateCalculator;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
