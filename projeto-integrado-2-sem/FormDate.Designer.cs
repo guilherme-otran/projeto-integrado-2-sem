@@ -378,8 +378,7 @@
             "23 de Outubro de 2001",
             "09 de Janeiro de 2007",
             "09 de Maio de 2011",
-            "07 de Janeiro de 2019",
-            ""});
+            "07 de Janeiro de 2019"});
             this.cmbDates.Location = new System.Drawing.Point(129, 42);
             this.cmbDates.Name = "cmbDates";
             this.cmbDates.Size = new System.Drawing.Size(211, 21);

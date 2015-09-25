@@ -188,57 +188,11 @@ namespace projeto_integrado_2_sem
 
         private void cmbDates_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (cmbDates.SelectedIndex)
-            {
-                case 0:
-                    ltbDatesEq.Items.Clear();
-                    ltbDatesEq.Items.Add("Calendario Judaico: 15, Tevet, 5751");
-                    ltbDatesEq.Items.Add("Calendario Muçulmano: 14, Jumada t-Tania, 1411");
-                    ltbDatesEq.Items.Add("Calendario Chinês: 16, Ding-Chou, 4688 - Animal: Cavalo");
-                    break;
-
-                case 1:
-                    ltbDatesEq.Items.Clear();
-                    ltbDatesEq.Items.Add("Calendario Judaico: 15, Elul, 5757");
-                    ltbDatesEq.Items.Add("Calendario Muçulmano: 14, Jumada l-Ula, 1418");
-                    ltbDatesEq.Items.Add("Calendario Chinês: 16, Ji-You, 4695 - Animal: Boi");
-                    break;
-
-                case 2:
-                    ltbDatesEq.Items.Clear();
-                    ltbDatesEq.Items.Add("Calendario Judaico: 13, Elul, 5758 ");
-                    ltbDatesEq.Items.Add("Calendario Muçulmano: 12, Jumada l-Ula, 1419");
-                    ltbDatesEq.Items.Add("Calendario Chinês: 14, Xin-You, 4696 - Animal: Tigre");
-                    break;
-
-                case 3:
-                    ltbDatesEq.Items.Clear();
-                    ltbDatesEq.Items.Add("Calendario Judaico: 6, Cheshvan, 5762");
-                    ltbDatesEq.Items.Add("Calendario Muçulmano: 5, Sha'ban, 1422");
-                    ltbDatesEq.Items.Add("Calendario Chinês: 7, Wu-Xu, 4699 - Animal: Cobra");
-                    break;
-
-                case 4:
-                    ltbDatesEq.Items.Clear();
-                    ltbDatesEq.Items.Add("Calendario Judaico: 19, Tevet, 5767");
-                    ltbDatesEq.Items.Add("Calendario Muçulmano: 19, Dhu I-Hijja, 1427");
-                    ltbDatesEq.Items.Add("Calendario Chinês: 21, Ji-Chou, 4704 - Animal: Cachorro");
-                    break;
-
-                case 5:
-                    ltbDatesEq.Items.Clear();
-                    ltbDatesEq.Items.Add("Calendario Judaico: 5, Iyar, 5771");
-                    ltbDatesEq.Items.Add("Calendario Muçulmano: 5, Jumada t-Tania, 1432");
-                    ltbDatesEq.Items.Add("Calendario Chinês: 7, Gui-Si, 4709 - Animal: Lebre");
-                    break;
-
-                case 6:
-                    ltbDatesEq.Items.Clear();
-                    ltbDatesEq.Items.Add("Calendario Judaico: 1, Shevat, 5779");
-                    ltbDatesEq.Items.Add("Calendario Muçulmano: 29, Rabi'ath-Thani, 1440");
-                    ltbDatesEq.Items.Add("Calendario Chinês: 2, Gui-Chou, 4716 - Animal: Cachorro");
-                    break;
-            }
+            ltbDatesEq.Items.Clear();
+            var dates = DateCalculator.datesForIndex(cmbDates.SelectedIndex);
+            ltbDatesEq.Items.Add(dates[0]);
+            ltbDatesEq.Items.Add(dates[1]);
+            ltbDatesEq.Items.Add(dates[2]);
         }
 
         private void dates_KeyPress(object sender, KeyPressEventArgs e)

@@ -123,11 +123,26 @@ namespace UnitTestProject1
             try
             {
                 DateCalculator.julianDay(7, 10, 1582);
-            } catch (DateCalculator.NoJulianDay)
+            } 
+            catch (DateCalculator.NoJulianDay)
             {
                 test = true;
             }
             Assert.AreEqual(true, test);
+        }
+        [TestMethod]
+        public void TestdatesForIndex()
+        {
+            var test = DateCalculator.datesForIndex(0);
+            Assert.AreEqual("Calendario Judaico: 15, Tevet, 5751", test[0]);
+            Assert.AreEqual("Calendario Muçulmano: 14, Jumada t-Tania, 1411", test[1]);
+            Assert.AreEqual("Calendario Chinês: 16, Ding-Chou, 4688 - Animal: Cavalo", test[2]);
+        }
+        [TestMethod]
+        public void TestdatesForIndex_when_index_does_not_exist()
+        {
+            var test = DateCalculator.datesForIndex(10);
+            Assert.AreEqual(null, test);
         }
     }
 }

@@ -73,6 +73,55 @@ namespace projeto_integrado_2_sem.Interactors
 
             return jd;
         }
+
+        public static string[] datesForIndex(int i)
+        {
+                switch (i)
+                {
+                    case 0:
+                        return new string[] {
+                        "Calendario Judaico: 15, Tevet, 5751",
+                        "Calendario Muçulmano: 14, Jumada t-Tania, 1411",
+                        "Calendario Chinês: 16, Ding-Chou, 4688 - Animal: Cavalo"};
+
+                    case 1:
+                        return new string[] {
+                        "Calendario Judaico: 15, Elul, 5757",
+                        "Calendario Muçulmano: 14, Jumada l-Ula, 1418",
+                        "Calendario Chinês: 16, Ji-You, 4695 - Animal: Boi" };
+
+                    case 2:
+                        return new string[] {
+                        "Calendario Judaico: 13, Elul, 5758 ",
+                        "Calendario Muçulmano: 12, Jumada l-Ula, 1419",
+                        "Calendario Chinês: 14, Xin-You, 4696 - Animal: Tigre" };
+
+                    case 3:
+                        return new string[] {
+                        "Calendario Judaico: 6, Cheshvan, 5762",
+                        "Calendario Muçulmano: 5, Sha'ban, 1422",
+                        "Calendario Chinês: 7, Wu-Xu, 4699 - Animal: Cobra" };
+
+                    case 4:
+                        return new string[] {
+                        "Calendario Judaico: 19, Tevet, 5767",
+                        "Calendario Muçulmano: 19, Dhu I-Hijja, 1427",
+                        "Calendario Chinês: 21, Ji-Chou, 4704 - Animal: Cachorro" };
+
+                    case 5:
+                        return new string[] {
+                        "Calendario Judaico: 5, Iyar, 5771",
+                        "Calendario Muçulmano: 5, Jumada t-Tania, 1432",
+                        "Calendario Chinês: 7, Gui-Si, 4709 - Animal: Lebre" };
+
+                    case 6:
+                        return new string[] {
+                        "Calendario Judaico: 1, Shevat, 5779",
+                        "Calendario Muçulmano: 29, Rabi'ath-Thani, 1440",
+                        "Calendario Chinês: 2, Gui-Chou, 4716 - Animal: Cachorro" };
+                }
+                return null;
+            }
     }
 }
 
