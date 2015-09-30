@@ -58,5 +58,11 @@ namespace projeto_integrado_2_sem
             if (e.KeyChar == '\r')
                 btn_login.PerformClick();
         }
+
+        private void lblRegister_Click(object sender, EventArgs e)
+        {
+            FormRegister FormRegister = new FormRegister();
+            FormRegister.ShowDialog();
+        }
     }
 }
