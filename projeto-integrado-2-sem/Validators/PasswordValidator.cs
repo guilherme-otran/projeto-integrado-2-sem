@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using projeto_integrado_2_sem.Models;
 
 namespace projeto_integrado_2_sem.Validators
 {
     public class PasswordValidator
     {
-        public enum Error 
+        public enum Error : int
         { 
             TOO_SHORT=0, 
             TOO_LONG, 
@@ -23,7 +24,7 @@ namespace projeto_integrado_2_sem.Validators
             EQUALS_USER_CODE 
         }
 
-        public enum Warning
+        public enum Warning : int
         {
             SEQUENCIAL_NUMBERS=0,
             ONLY_TWO_LETTERS,
@@ -37,12 +38,23 @@ namespace projeto_integrado_2_sem.Validators
             CONTAINS_REVERSE_DAY_AND_MONTH_OF_BIRTH_DATE,
         }
 
-        public int[] WarningWeight = new int[] { 1, 1, 1, 2, 2, 2, 3, 3 };
+        public static int[] WarningWeight = new int[] { 1, 1, 1, 2, 2, 2, 3, 3 };
 
         public class ValidaionResult
         {
             public List<Error> errors;
             public List<Warning> warnings;
+
+            public int score()
+            {
+                var peso = WarningWeight[(int) Warning.SEQUENCIAL_NUMBERS];
+                return peso;
+            }
+        }
+
+        public ValidaionResult ValidatePassword(User user, string password)
+        {
+            return new ValidaionResult();
         }
     }
 }
