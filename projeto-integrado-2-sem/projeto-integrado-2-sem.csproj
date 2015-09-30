@@ -74,6 +74,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StorableAdapters\UserStorableAdapter.cs" />
+    <Compile Include="Validators\PasswordValidator.cs" />
     <EmbeddedResource Include="FormDate.resx">
       <DependentUpon>FormDate.cs</DependentUpon>
     </EmbeddedResource>
