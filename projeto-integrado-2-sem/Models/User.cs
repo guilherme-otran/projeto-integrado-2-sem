@@ -10,8 +10,18 @@ namespace projeto_integrado_2_sem.Models
     {
         public string id;
 
+        public string code;
+        public string name;
+        
         public string email;
+
         public string password;
+        public string oldPassword;
+        public DateTime passwordChangeDate;
+
+        public DateTime birthDate;
+        public int status;
+
         public Profile Profile;
 
         string IStorable.id
