@@ -21,5 +21,10 @@ namespace projeto_integrado_2_sem
         {
             cmbYear.DataSource = Enumerable.Range(1950, ((DateTime.Today.Year) - 1949)).ToList();
         }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }
