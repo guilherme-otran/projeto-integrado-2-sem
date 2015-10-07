@@ -74,11 +74,58 @@ namespace projeto_integrado_2_sem.Validators
 
         private void AnaliseErrors(ValidaionResult validationResult, User user, string password)
         {
+            StringBuilder builder = new StringBuilder();
+
             if (password.Length < 6)
                 validationResult.errors.Add(Error.TOO_SHORT);
             
             if (password.Length > 10)
                 validationResult.errors.Add(Error.TOO_LONG);
+
+            bool hasLowerCase = false;
+            bool hasUpperCase = false;
+            foreach (var key in password)
+            {
+                hasLowerCase |= char.IsLetter(key) && char.IsLower(key);
+                hasUpperCase |= char.IsLetter(key) && char.IsUpper(key);
+
+                if (hasLowerCase && hasUpperCase)
+                    break;
+            }
+
+            if (!(hasLowerCase && hasUpperCase))
+                validationResult.errors.Add(Error.NO_DISTINC_CASES);
+
+            foreach (var key in password)
+                if (char.IsWhiteSpace(key))
+                    validationResult.errors.Add(Error.SPACES);
+
+            foreach (var key in password)
+                if (!(char.IsWhiteSpace(key) || char.IsLetter(key) || char.IsNumber(key)))
+                    validationResult.errors.Add(Error.SPECIAL_CHARS);
+
+            foreach (var key in password)
+            {
+                builder.Append(key);
+                if (char.IsNumber(key) && password.Contains(builder.ToString()))
+                {
+                    validationResult.errors.Add(Error.REPEATED_NUMBERS);
+                    break;
+                }
+                builder.Clear();
+            }
+
+            foreach (var key in password)
+            {
+                builder.Append(key);
+                if (char.IsLetter(key) && password.Contains(builder.ToString()))
+                {
+                    validationResult.errors.Add(Error.REPEATED_LETTERS);
+                    break;
+                }
+                builder.Clear();
+            }
+
 
         }
 
