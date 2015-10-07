@@ -45,6 +45,12 @@ namespace projeto_integrado_2_sem.Validators
             public List<Error> errors;
             public List<Warning> warnings;
 
+            public ValidaionResult()
+            {
+                errors = new List<Error>();
+                warnings = new List<Warning>();
+            }
+
             public int score()
             {
                 var peso = WarningWeight[(int) Warning.SEQUENCIAL_NUMBERS];
@@ -54,7 +60,26 @@ namespace projeto_integrado_2_sem.Validators
 
         public ValidaionResult ValidatePassword(User user, string password)
         {
-            return new ValidaionResult();
+            var validationResult = new ValidaionResult();
+            AnaliseErrors(validationResult, user, password);
+            AnaliseWarnings(validationResult, user, password);
+
+            return validationResult;
+        }
+
+        private void AnaliseErrors(ValidaionResult validationResult, User user, string password)
+        {
+            if (password.Length < 6)
+                validationResult.errors.Add(Error.TOO_SHORT);
+            
+            if (password.Length > 10)
+                validationResult.errors.Add(Error.TOO_LONG);
+
+        }
+
+        private void AnaliseWarnings(ValidaionResult validationResult, User user, string password)
+        {
+
         }
     }
 }
