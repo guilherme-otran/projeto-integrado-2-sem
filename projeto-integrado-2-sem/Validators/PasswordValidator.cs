@@ -10,23 +10,23 @@ namespace projeto_integrado_2_sem.Validators
     public class PasswordValidator
     {
         public enum Error : int
-        { 
-            TOO_SHORT=0, 
-            TOO_LONG, 
+        {
+            TOO_SHORT = 0,
+            TOO_LONG,
             SPACES,
             SPECIAL_CHARS,
-            NO_DISTINC_CASES, 
-            TOO_FEW_LETTERS, 
+            NO_DISTINC_CASES,
+            TOO_FEW_LETTERS,
             TOO_FEW_NUMBERS,
-            REPEATED_LETTERS, 
-            REPEATED_NUMBERS, 
-            EQUALS_PREVIOUS_PASSWORD, 
-            EQUALS_USER_CODE 
+            REPEATED_LETTERS,
+            REPEATED_NUMBERS,
+            EQUALS_PREVIOUS_PASSWORD,
+            EQUALS_USER_CODE
         }
 
         public enum Warning : int
         {
-            SEQUENCIAL_NUMBERS=0,
+            SEQUENCIAL_NUMBERS = 0,
             ONLY_TWO_LETTERS,
             ONLY_TWO_NUMBERS,
             CONTAINS_USER_CODE,
@@ -53,10 +53,15 @@ namespace projeto_integrado_2_sem.Validators
 
             public int score()
             {
-                var peso = WarningWeight[(int) Warning.SEQUENCIAL_NUMBERS];
-                return peso;
+                int scoreTotal = 0;
+                foreach (Warning warning in warnings)
+                {
+                    var peso = WarningWeight[(int)warning];
+                    scoreTotal += peso;
+                }
+                return scoreTotal;
             }
-        }
+	}
 
         public ValidaionResult ValidatePassword(User user, string password)
         {
