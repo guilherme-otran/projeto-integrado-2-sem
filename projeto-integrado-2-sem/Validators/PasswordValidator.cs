@@ -97,12 +97,18 @@ namespace projeto_integrado_2_sem.Validators
                 validationResult.errors.Add(Error.NO_DISTINC_CASES);
 
             foreach (var key in password)
-                if (char.IsWhiteSpace(key))
+                if (char.IsWhiteSpace(key)) 
+                {
                     validationResult.errors.Add(Error.SPACES);
+                    break;
+                }
 
             foreach (var key in password)
                 if (!(char.IsWhiteSpace(key) || char.IsLetter(key) || char.IsNumber(key)))
+                {
                     validationResult.errors.Add(Error.SPECIAL_CHARS);
+                    break;
+                }
 
             foreach (var key in password)
             {
