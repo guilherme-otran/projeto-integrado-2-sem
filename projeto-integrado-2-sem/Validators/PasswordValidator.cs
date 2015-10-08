@@ -107,6 +107,8 @@ namespace projeto_integrado_2_sem.Validators
             foreach (var key in password)
             {
                 builder.Append(key);
+                builder.Append(key);
+                builder.Append(key);
                 if (char.IsNumber(key) && password.Contains(builder.ToString()))
                 {
                     validationResult.errors.Add(Error.REPEATED_NUMBERS);
@@ -117,6 +119,8 @@ namespace projeto_integrado_2_sem.Validators
 
             foreach (var key in password)
             {
+                builder.Append(key);
+                builder.Append(key);
                 builder.Append(key);
                 if (char.IsLetter(key) && password.Contains(builder.ToString()))
                 {
