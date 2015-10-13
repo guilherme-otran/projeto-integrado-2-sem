@@ -19,7 +19,7 @@ namespace projeto_integrado_2_sem
             ManagerInstance.closeAll();
         }
 
-        private UserRepository userRepository;
+        public UserRepository userRepository;
 
         public RepositoryManager()
         {
