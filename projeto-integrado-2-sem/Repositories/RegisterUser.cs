@@ -19,7 +19,7 @@ namespace projeto_integrado_2_sem.Repositories
 
         private void registerUser()
         {
-            RepositoryManager.ManagerInstance.userRepository.persist(new User(null, oneUser.email, oneUser.password, Profile.UserProfile()));
+            RepositoryManager.ManagerInstance.userRepository.persist(new User(null, oneUser.email, oneUser.password, oneUser.Profile));
         }
     }
 }

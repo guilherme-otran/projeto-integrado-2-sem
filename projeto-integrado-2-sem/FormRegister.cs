@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using projeto_integrado_2_sem.Repositories;
 using projeto_integrado_2_sem.Models;
+using projeto_integrado_2_sem.Interactors;
 
 namespace projeto_integrado_2_sem
 {
@@ -17,7 +18,7 @@ namespace projeto_integrado_2_sem
 
         private User user = new User();
         RegisterUser registerUser = new RegisterUser();
-
+        
         private bool validateDates(int day, int month, int year)
         {
             try
@@ -69,6 +70,7 @@ namespace projeto_integrado_2_sem
         {
             user.name = this.txtName.Text;
             user.email = this.txtEmail.Text;
+            user.Profile = Profile.UserProfile();
 
             if (validateDates(int.Parse(txtDay.Text), cmbMonth.SelectedIndex + 1, int.Parse(cmbYear.Text)))
                 user.birthDate = new DateTime(int.Parse(cmbYear.Text), cmbMonth.SelectedIndex + 1, int.Parse(txtDay.Text));
@@ -80,7 +82,15 @@ namespace projeto_integrado_2_sem
             else
                 MessageBox.Show("As senhas digitadas não são iguais");
 
-            registerUser.setOneUser(user);
+            registerUser.setOneUser(user); //registra o usuário no txt
+
+
+            LoginInteractor login = new LoginInteractor(user.email, user.password); // Faz o login após o usuario se cadastrar
+
+            FormMain formMain = new FormMain(user);
+            formMain.ShowDialog();
+            this.user = login.performCheck();
+            this.Close();
         }
     }
 }

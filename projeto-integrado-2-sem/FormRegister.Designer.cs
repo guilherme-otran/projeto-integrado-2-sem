@@ -94,7 +94,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(132, 60);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(424, 22);
             this.txtName.TabIndex = 0;
@@ -104,7 +104,7 @@
             // txtDay
             // 
             this.txtDay.Location = new System.Drawing.Point(228, 133);
-            this.txtDay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDay.Margin = new System.Windows.Forms.Padding(4);
             this.txtDay.Name = "txtDay";
             this.txtDay.Size = new System.Drawing.Size(63, 22);
             this.txtDay.TabIndex = 2;
@@ -114,9 +114,9 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(132, 173);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(200, 22);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.TextChanged += new System.EventHandler(this.atualizacao_TextChanged);
@@ -124,9 +124,9 @@
             // txtPassConfirm
             // 
             this.txtPassConfirm.Location = new System.Drawing.Point(192, 249);
-            this.txtPassConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassConfirm.Name = "txtPassConfirm";
-            this.txtPassConfirm.PasswordChar = '*';
+            this.txtPassConfirm.PasswordChar = '●';
             this.txtPassConfirm.Size = new System.Drawing.Size(200, 22);
             this.txtPassConfirm.TabIndex = 6;
             this.txtPassConfirm.TextChanged += new System.EventHandler(this.atualizacao_TextChanged);
@@ -150,7 +150,7 @@
             "Novembro",
             "Dezembro"});
             this.cmbMonth.Location = new System.Drawing.Point(300, 132);
-            this.cmbMonth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbMonth.Margin = new System.Windows.Forms.Padding(4);
             this.cmbMonth.Name = "cmbMonth";
             this.cmbMonth.Size = new System.Drawing.Size(160, 24);
             this.cmbMonth.TabIndex = 3;
@@ -160,7 +160,7 @@
             // 
             this.cmbYear.FormattingEnabled = true;
             this.cmbYear.Location = new System.Drawing.Point(469, 132);
-            this.cmbYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbYear.Margin = new System.Windows.Forms.Padding(4);
             this.cmbYear.MaxLength = 4;
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(87, 24);
@@ -176,7 +176,7 @@
             this.btnProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcess.ForeColor = System.Drawing.Color.White;
             this.btnProcess.Location = new System.Drawing.Point(224, 290);
-            this.btnProcess.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProcess.Margin = new System.Windows.Forms.Padding(4);
             this.btnProcess.Name = "btnProcess";
             this.btnProcess.Size = new System.Drawing.Size(185, 39);
             this.btnProcess.TabIndex = 7;
@@ -197,7 +197,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(132, 95);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(424, 22);
             this.txtEmail.TabIndex = 1;
@@ -219,7 +219,7 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.Location = new System.Drawing.Point(6, 10);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(63, 51);
             this.btnBack.TabIndex = 13;
@@ -261,7 +261,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";

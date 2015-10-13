@@ -48,7 +48,7 @@
             this.txt_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_pass.Location = new System.Drawing.Point(164, 168);
             this.txt_pass.Name = "txt_pass";
-            this.txt_pass.PasswordChar = '*';
+            this.txt_pass.PasswordChar = '●';
             this.txt_pass.Size = new System.Drawing.Size(217, 24);
             this.txt_pass.TabIndex = 1;
             this.txt_pass.Text = "hu3hu3";
@@ -116,14 +116,14 @@
             // 
             this.tsi_about.ForeColor = System.Drawing.Color.White;
             this.tsi_about.Name = "tsi_about";
-            this.tsi_about.Size = new System.Drawing.Size(47, 20);
+            this.tsi_about.Size = new System.Drawing.Size(49, 20);
             this.tsi_about.Text = "Sobre";
             // 
             // tsi_close
             // 
             this.tsi_close.ForeColor = System.Drawing.Color.White;
             this.tsi_close.Name = "tsi_close";
-            this.tsi_close.Size = new System.Drawing.Size(37, 20);
+            this.tsi_close.Size = new System.Drawing.Size(38, 20);
             this.tsi_close.Text = "Sair";
             this.tsi_close.Click += new System.EventHandler(this.tsi_close_Click);
             // 
@@ -143,7 +143,7 @@
             // 
             this.lblRegister.AutoSize = true;
             this.lblRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegister.Location = new System.Drawing.Point(222, 308);
             this.lblRegister.Name = "lblRegister";
             this.lblRegister.Size = new System.Drawing.Size(101, 20);
