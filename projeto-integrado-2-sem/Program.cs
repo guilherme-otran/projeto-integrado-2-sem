@@ -20,14 +20,12 @@ namespace projeto_integrado_2_sem
 
             Application.ApplicationExit += delegate { RepositoryManager.CloseManager(); };
 
-            FormMain formMain;
-
             do
             {
                 FormLogin loginForm = new FormLogin();
-                if (loginForm.ShowDialog() == DialogResult.OK)
+                if (loginForm.dialogLogin)
                 {
-                    formMain = new FormMain(loginForm.LoggedUser);
+                    FormMain formMain = new FormMain(loginForm.LoggedUser);
                     Application.Run(formMain);
                 }
                 else
@@ -35,7 +33,7 @@ namespace projeto_integrado_2_sem
                     Application.Exit();
                     break;
                 }
-            } while (formMain.LogoutRequested);
+            } while (formMain.logoutRequested);
         }
     }
 }
