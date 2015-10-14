@@ -15,8 +15,6 @@ namespace projeto_integrado_2_sem
 {
     public partial class FormRegister : Form
     {
-
-        private User user = new User();
         RegisterUser registerUser = new RegisterUser();
         
         private bool validateDates(int day, int month, int year)
@@ -68,6 +66,7 @@ namespace projeto_integrado_2_sem
 
         private void btnProcess_Click(object sender, EventArgs e)
         {
+            User user = new User();
             user.name = this.txtName.Text;
             user.email = this.txtEmail.Text;
             user.Profile = Profile.UserProfile();
@@ -85,11 +84,10 @@ namespace projeto_integrado_2_sem
             registerUser.setOneUser(user); //registra o usuário no txt
 
 
-            LoginInteractor login = new LoginInteractor(user.email, user.password); // Faz o login após o usuario se cadastrar
+             // Faz o login após o usuario se cadastrar
 
             FormMain formMain = new FormMain(user);
             formMain.ShowDialog();
-            this.user = login.performCheck();
             this.Close();
         }
     }
