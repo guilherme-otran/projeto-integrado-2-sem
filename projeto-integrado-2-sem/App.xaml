@@ -1,0 +1,10 @@
+﻿<Application
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:projeto_integrado_2_sem" x:Class="projeto_integrado_2_sem.App"
+             StartupUri="FormLogin.xaml"
+             Exit="Application_Exit">
+    <Application.MainWindow>
+        <local:FormLogin/>
+    </Application.MainWindow>
+</Application>

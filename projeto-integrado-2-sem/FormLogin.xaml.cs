@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using projeto_integrado_2_sem.Interactors;
 using projeto_integrado_2_sem.Models;
-using System.Windows.Forms;
 
 namespace System.Windows.Controls
 {
@@ -39,7 +38,6 @@ namespace projeto_integrado_2_sem
         public FormLogin()
         {
             InitializeComponent();
-            //this.DialogResult = DialogResult.Cancel;
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -52,15 +50,12 @@ namespace projeto_integrado_2_sem
             try
             {
                 this.LoggedUser = login.performCheck();
-                //labelInvalidCredentials.Hide();
                 labelInvalidCredentials.Visibility = Visibility.Hidden;
-                //this.DialogResult = DialogResult;
                 dialogLogin = true;
                 this.Close();
             } 
             catch (LoginInteractor.InavlidUsernameOrPassword)
             {
-                //labelInvalidCredentials.Show();
                 labelInvalidCredentials.Visibility = Visibility.Visible;
             }
         }
@@ -72,7 +67,6 @@ namespace projeto_integrado_2_sem
 
         private void Credentials_TextChanged(object sender, EventArgs e)
         {
-           // labelInvalidCredentials.Hide();
             labelInvalidCredentials.Visibility = Visibility.Hidden;
         }
 
@@ -91,6 +85,11 @@ namespace projeto_integrado_2_sem
         {
             if (e.GetHashCode() == '\r')
                 btnLogin.PerformClick();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
