@@ -112,31 +112,44 @@ namespace projeto_integrado_2_sem.Validators
 
             foreach (var key in password)
             {
-                builder.Append(key);
-                builder.Append(key);
-                builder.Append(key);
-                if (char.IsNumber(key) && password.Contains(builder.ToString()))
+                if (char.IsNumber(key) && password.Contains(new String(key, 3)))
                 {
                     validationResult.errors.Add(Error.REPEATED_NUMBERS);
                     break;
                 }
-                builder.Clear();
             }
 
             foreach (var key in password)
             {
-                builder.Append(key);
-                builder.Append(key);
-                builder.Append(key);
-                if (char.IsLetter(key) && password.Contains(builder.ToString()))
+                if (char.IsLetter(key) && password.Contains(new String(key, 3)))
                 {
                     validationResult.errors.Add(Error.REPEATED_LETTERS);
                     break;
                 }
-                builder.Clear();
             }
 
+            var numberCount = 0;
+            var letterCount = 0;
 
+            foreach (var key in password)
+            {
+                if (char.IsLetter(key))
+                    letterCount++;
+                if (char.IsNumber(key))
+                    numberCount++;
+            }
+
+            if (numberCount < 2)
+                validationResult.errors.Add(Error.TOO_FEW_NUMBERS);
+
+            if (letterCount < 2)
+                validationResult.errors.Add(Error.TOO_FEW_LETTERS);
+
+            if (password.Equals(user.oldPassword))
+                validationResult.errors.Add(Error.EQUALS_PREVIOUS_PASSWORD);
+
+            if (password.Equals(user.code))
+                validationResult.errors.Add(Error.EQUALS_USER_CODE);
         }
 
         private void AnaliseWarnings(ValidaionResult validationResult, User user, string password)
