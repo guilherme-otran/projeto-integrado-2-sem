@@ -61,7 +61,6 @@
     <Compile Include="FormRegister.xaml.cs">
       <DependentUpon>FormRegister.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\RegisterUser.cs" />
     <Compile Include="Repositories\UserRepository.cs" />

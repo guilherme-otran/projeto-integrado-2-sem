@@ -34,7 +34,6 @@ namespace projeto_integrado_2_sem
     {
 
         public User LoggedUser;
-        public bool dialogLogin = false;
         public FormLogin()
         {
             InitializeComponent();
