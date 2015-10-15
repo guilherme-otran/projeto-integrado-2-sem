@@ -36,8 +36,9 @@ namespace projeto_integrado_2_sem
                 // TODO: Complete member initialization
             }
 
-            private void FormMain_Load(object sender, EventArgs e)
+            private void FormMain1_Loaded(object sender, RoutedEventArgs e)
             {
+                Application.Current.MainWindow.WindowState = WindowState.Maximized;
                 //btnDate.Visible = CurrentProfile().CanViewDateCalculator;
             }
 
@@ -56,5 +57,6 @@ namespace projeto_integrado_2_sem
                 logoutRequested = true;
                 this.Close();
             }
+
     }
 }

@@ -39,10 +39,15 @@ namespace projeto_integrado_2_sem
             InitializeComponent();
         }
 
+        private void FormLogin1_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.KeyDown += new KeyEventHandler(txtPassword_KeyDown);
+        }
+
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             string email = this.txtEmail.Text;
-            string password = this.txtPassword.Text;
+            string password = this.txtPassword.Password;
 
             LoginInteractor login = new LoginInteractor(email, password);
 
@@ -50,7 +55,6 @@ namespace projeto_integrado_2_sem
             {
                 this.LoggedUser = login.performCheck();
                 labelInvalidCredentials.Visibility = Visibility.Hidden;
-                dialogLogin = true;
                 this.Close();
             } 
             catch (LoginInteractor.InavlidUsernameOrPassword)
@@ -59,20 +63,16 @@ namespace projeto_integrado_2_sem
             }
         }
 
-        private void tsi_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void Credentials_TextChanged(object sender, EventArgs e)
         {
             labelInvalidCredentials.Visibility = Visibility.Hidden;
         }
 
-       // private void txt_pass_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-
-        //}
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                btnLogin.PerformClick();
+        }
 
         private void lblRegister_Click(object sender, EventArgs e)
         {
@@ -80,15 +80,15 @@ namespace projeto_integrado_2_sem
             FormRegister.ShowDialog();
         }
 
-        private void txtPassword_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            if (e.GetHashCode() == '\r')
-                btnLogin.PerformClick();
-        }
-
         private void Window_Closed(object sender, EventArgs e)
         {
             Application.Current.Shutdown();
         }
+
+        private void texts_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            labelInvalidCredentials.Visibility = Visibility.Hidden;
+        }
+
     }
 }
