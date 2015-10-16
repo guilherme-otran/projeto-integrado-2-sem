@@ -29,13 +29,17 @@ namespace projeto_integrado_2_sem
                 this.currentUser = CurrentUser;
             }
 
+            private Visibility convertBool(bool b)
+            {
+                if (b)
+                    return Visibility.Visible;
+                else
+                    return Visibility.Hidden;
+            }
+
             private void FormMain_Loaded(object sender, RoutedEventArgs e)
             {
-                //btnDate.Visible = CurrentProfile().CanViewDateCalculator;
-                if (CurrentProfile().CanViewDateCalculator)  //Gambiarra apenas para funcionar, voltarei aqui quando achar um metodo de
-                    btnDate.Visibility = Visibility.Visible; //bool em tipo visibility
-                else
-                    btnDate.Visibility = Visibility.Hidden;
+                btnDate.Visibility = convertBool(CurrentProfile().CanViewDateCalculator);
             }
 
             private void btnDate_Click(object sender, EventArgs e)
