@@ -55,7 +55,9 @@ namespace projeto_integrado_2_sem
             {
                 this.LoggedUser = login.performCheck();
                 labelInvalidCredentials.Visibility = Visibility.Hidden;
+                FormMain formMain = new FormMain(LoggedUser);
                 this.Close();
+                formMain.ShowDialog();
             } 
             catch (LoginInteractor.InavlidUsernameOrPassword)
             {
@@ -82,7 +84,8 @@ namespace projeto_integrado_2_sem
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            Application.Current.Shutdown();
+            if(LoggedUser == null)
+                Application.Current.Shutdown();
         }
 
         private void texts_TextChanged(object sender, TextChangedEventArgs e)

@@ -20,8 +20,6 @@ namespace projeto_integrado_2_sem
     /// </summary>
     public partial class FormMain : Window
     {
-            public bool logoutRequested = false;
-
             private User currentUser;
             //private FormDate FormDate = new FormDate();
 
@@ -31,15 +29,13 @@ namespace projeto_integrado_2_sem
                 this.currentUser = CurrentUser;
             }
 
-            public FormMain()
+            private void FormMain_Loaded(object sender, RoutedEventArgs e)
             {
-                // TODO: Complete member initialization
-            }
-
-            private void FormMain1_Loaded(object sender, RoutedEventArgs e)
-            {
-                Application.Current.MainWindow.WindowState = WindowState.Maximized;
                 //btnDate.Visible = CurrentProfile().CanViewDateCalculator;
+                if (CurrentProfile().CanViewDateCalculator)  //Gambiarra apenas para funcionar, voltarei aqui quando achar um metodo de
+                    btnDate.Visibility = Visibility.Visible; //bool em tipo visibility
+                else
+                    btnDate.Visibility = Visibility.Hidden;
             }
 
             private void btnDate_Click(object sender, EventArgs e)
@@ -52,11 +48,16 @@ namespace projeto_integrado_2_sem
                 return currentUser.Profile;
             }
 
-            private void btnLogout_Click(object sender, EventArgs e)
+            private void btnLogout_Click(object sender, RoutedEventArgs e)
             {
-                logoutRequested = true;
                 this.Close();
             }
 
+            private void FormMain1_Closed(object sender, EventArgs e)
+            {
+                FormLogin formlogin = new FormLogin();
+                formlogin.LoggedUser = null;
+                formlogin.ShowDialog();
+            }
     }
 }
