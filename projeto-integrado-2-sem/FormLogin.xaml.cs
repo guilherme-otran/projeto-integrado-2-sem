@@ -76,12 +76,6 @@ namespace projeto_integrado_2_sem
                 btnLogin.PerformClick();
         }
 
-        private void lblRegister_Click(object sender, EventArgs e)
-        {
-            FormRegister FormRegister = new FormRegister();
-            FormRegister.ShowDialog();
-        }
-
         private void Window_Closed(object sender, EventArgs e)
         {
             if(LoggedUser == null)
@@ -93,5 +87,10 @@ namespace projeto_integrado_2_sem
             labelInvalidCredentials.Visibility = Visibility.Hidden;
         }
 
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            FormRegister FormRegister = new FormRegister();
+            FormRegister.ShowDialog();
+        }
     }
 }

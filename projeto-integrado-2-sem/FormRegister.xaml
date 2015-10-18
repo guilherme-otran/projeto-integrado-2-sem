@@ -1,8 +1,40 @@
-﻿<Window x:Class="projeto_integrado_2_sem.FormRegister"
+﻿<Window x:Name="formRegister" x:Class="projeto_integrado_2_sem.FormRegister"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="FormRegister" Height="300" Width="300">
+        Title="FormRegister" Height="320" Width="544" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" BorderThickness="1" Loaded="formRegister_Loaded">
     <Grid>
-        
+        <Button x:Name="btnBack" Content="" HorizontalAlignment="Left" Margin="14,9,0,0" VerticalAlignment="Top" Width="40" Height="40" BorderThickness="0" BorderBrush="{x:Null}" Cursor="Hand" Click="btnBack_Click" TabIndex="8">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/left-50.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="label1" Content="Junte-se a nós" HorizontalAlignment="Left" Margin="222,39,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Nome" HorizontalAlignment="Left" Margin="74,77,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="122,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="318" TextChanged="atualizacao_TextChanged" TabIndex="0"/>
+        <Label x:Name="label3" Content="Email" HorizontalAlignment="Left" Margin="74,142,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="25" Margin="122,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="318" TextChanged="atualizacao_TextChanged" TabIndex="4"/>
+        <Label x:Name="label4" Content="Data de Nascimento" HorizontalAlignment="Left" Margin="74,108,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDay" HorizontalAlignment="Left" Height="23" Margin="197,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" TextAlignment="Center" TextChanged="atualizacao_TextChanged" TabIndex="1"/>
+        <ComboBox x:Name="cmbMonth" HorizontalAlignment="Left" Margin="248,108,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" ScrollViewer.CanContentScroll="True" TabIndex="2">
+            <ListBoxItem Content="Janeiro"/>
+            <ListBoxItem Content="Fevereiro"/>
+            <ListBoxItem Content="Março"/>
+            <ListBoxItem Content="Abril"/>
+            <ListBoxItem Content="Maio"/>
+            <ListBoxItem Content="Junho"/>
+            <ListBoxItem Content="Julho"/>
+            <ListBoxItem Content="Agosto"/>
+            <ListBoxItem Content="Setembro"/>
+            <ListBoxItem Content="Outubro"/>
+            <ListBoxItem Content="Novembro"/>
+            <ListBoxItem Content="Dezembro"/>
+        </ComboBox>
+        <ComboBox x:Name="cmbYear" HorizontalAlignment="Left" Margin="373,108,0,0" VerticalAlignment="Top" Width="67" IsEditable="True" SelectedIndex="0" TabIndex="3"/>
+        <Label x:Name="label5" Content="Senha" HorizontalAlignment="Left" Margin="74,179,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label6" Content="Digite novamente sua senha" HorizontalAlignment="Left" Margin="74,241,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="122,182,0,0" VerticalAlignment="Top" Width="198" Height="23" PasswordChanged="atualizacao_TextChanged" TabIndex="5"/>
+        <PasswordBox x:Name="txtPassConfirm" HorizontalAlignment="Left" Margin="234,244,0,0" VerticalAlignment="Top" Width="177" Height="23" PasswordChanged="atualizacao_TextChanged" TabIndex="6"/>
+        <Button x:Name="btnProcess" Content="Login" HorizontalAlignment="Left" Margin="234,277,0,0" VerticalAlignment="Top" Width="96" Click="btnProcess_Click" TabIndex="2" Height="28" Background="#FF2196F3" Cursor="Hand" FontSize="16" Foreground="White" IsEnabled="False"/>
+
     </Grid>
 </Window>
