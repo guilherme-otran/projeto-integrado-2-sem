@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace projeto_integrado_2_sem.Models
 {
@@ -44,6 +41,24 @@ namespace projeto_integrado_2_sem.Models
             this.email = email;
             this.password = password;
             this.Profile = profile;
+        }
+
+        public string FirstName()
+        {
+            if (name == null)
+                return null;
+
+            var splitted = name.Trim().Split(' ');
+            return splitted.FirstOrDefault();
+        }
+
+        public string NameInitials()
+        {
+            if (name == null)
+                return null;
+
+            var splitted = name.Trim().Split(' ').Select(part => part.First());
+            return String.Join("", splitted).ToUpper();
         }
 
     }

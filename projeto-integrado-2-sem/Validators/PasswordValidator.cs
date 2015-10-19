@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using projeto_integrado_2_sem.Models;
+using System.Text.RegularExpressions;
 
 namespace projeto_integrado_2_sem.Validators
 {
@@ -21,7 +22,8 @@ namespace projeto_integrado_2_sem.Validators
             REPEATED_LETTERS,
             REPEATED_NUMBERS,
             EQUALS_PREVIOUS_PASSWORD,
-            EQUALS_USER_CODE
+            EQUALS_USER_CODE,
+            TOO_WEAK
         }
 
         public enum Warning : int
@@ -38,7 +40,7 @@ namespace projeto_integrado_2_sem.Validators
             CONTAINS_REVERSE_DAY_AND_MONTH_OF_BIRTH_DATE,
         }
 
-        public static int[] WarningWeight = new int[] { 1, 1, 1, 2, 2, 2, 3, 3 };
+        public static int[] WarningWeight = new int[] { 1, 1, 1, 2, 2, 2, 3, 3, 3, 3 };
 
         public class ValidaionResult
         {
@@ -51,15 +53,24 @@ namespace projeto_integrado_2_sem.Validators
                 warnings = new List<Warning>();
             }
 
+            public bool valid()
+            {
+                return errors.Count == 0;
+            }
+
             public int score()
             {
-                int scoreTotal = 0;
+                int badScoreTotal = 0;
                 foreach (Warning warning in warnings)
                 {
                     var peso = WarningWeight[(int)warning];
-                    scoreTotal += peso;
+                    badScoreTotal += peso;
                 }
-                return scoreTotal;
+
+                if (badScoreTotal > 10)
+                    return 0;
+
+                return 10 - badScoreTotal;
             }
 	}
 
@@ -68,6 +79,9 @@ namespace projeto_integrado_2_sem.Validators
             var validationResult = new ValidaionResult();
             AnaliseErrors(validationResult, user, password);
             AnaliseWarnings(validationResult, user, password);
+
+            if (validationResult.score() < 3)
+                validationResult.errors.Add(Error.TOO_WEAK);
 
             return validationResult;
         }
@@ -103,12 +117,9 @@ namespace projeto_integrado_2_sem.Validators
                     break;
                 }
 
-            foreach (var key in password)
-                if (!(char.IsWhiteSpace(key) || char.IsLetter(key) || char.IsNumber(key)))
-                {
-                    validationResult.errors.Add(Error.SPECIAL_CHARS);
-                    break;
-                }
+            var acceptableRegexp = new Regex(@"\A[A-Za-z0-9\s]*\Z");
+            if (!acceptableRegexp.Match(password).Success)
+                validationResult.errors.Add(Error.SPECIAL_CHARS);
 
             foreach (var key in password)
             {
@@ -119,9 +130,10 @@ namespace projeto_integrado_2_sem.Validators
                 }
             }
 
-            foreach (var key in password)
+            var lowerPassword = password.ToLower();
+            foreach (var key in lowerPassword)
             {
-                if (char.IsLetter(key) && password.Contains(new String(key, 3)))
+                if (char.IsLetter(key) && lowerPassword.Contains(new String(key, 3)))
                 {
                     validationResult.errors.Add(Error.REPEATED_LETTERS);
                     break;
@@ -154,6 +166,81 @@ namespace projeto_integrado_2_sem.Validators
 
         private void AnaliseWarnings(ValidaionResult validationResult, User user, string password)
         {
+            // Check for 4+ digits sum or subtraction sequences (1234, 2468, 4321, etc)
+            var regexp = new Regex("\\d{4,}"); // Finds 4+ digits toghether
+            var finded = regexp.Match(password);
+            if (finded.Success)
+            {
+                var digits = finded.Value;
+                var deltas = new List<int>();
+
+                for (var i=0; i<(digits.Length-1); i++)
+                    // Delta betwen two digits
+                    deltas.Add(int.Parse(digits[i + 1].ToString()) - int.Parse(digits[i].ToString()));
+
+                // Check for 3 equal deltas (4 digits -> 3 deltas)
+                for (var i=0; i<(deltas.Count - 2); i++)
+                    if (deltas.ElementAt(i) == deltas.ElementAt(i+1) && deltas.ElementAt(i) == deltas.ElementAt(i+2))
+                    {
+                        validationResult.warnings.Add(Warning.SEQUENCIAL_NUMBERS);
+                        break;
+                    }
+            }
+
+            var letterCount = 0;
+            var digitCount = 0;
+            foreach (var c in password)
+            {
+                if (char.IsLetter(c))
+                    letterCount++;
+                if (char.IsDigit(c))
+                    digitCount++;
+            }
+
+            if (letterCount == 2)
+                validationResult.warnings.Add(Warning.ONLY_TWO_LETTERS);
+
+            if (digitCount == 2)
+                validationResult.warnings.Add(Warning.ONLY_TWO_NUMBERS);
+
+            var userCode = user.code;
+            if (userCode != null && password.ToLower().Contains(userCode.ToLower()))
+                validationResult.warnings.Add(Warning.CONTAINS_USER_CODE);
+
+            var firstName = user.FirstName();
+            if (firstName != null && password.ToLower().Contains(firstName.ToLower()))
+                validationResult.warnings.Add(Warning.CONTAINS_NAME);
+
+            var userInitials = user.NameInitials();
+            if (userInitials != null && password.ToUpper().Contains(userInitials))
+                validationResult.warnings.Add(Warning.CONTAINS_NAME_INITIALS);
+
+            if (user.birthDate != null)
+            {
+                var birthDateStr = user.birthDate.ToString("ddMMyyyy");
+                if (password.Contains(birthDateStr))
+                {
+                    validationResult.warnings.Add(Warning.CONTAINS_FULL_BIRTH_DATE);
+                }
+                else
+                {
+                    birthDateStr = user.birthDate.ToString("ddMM");
+                    if (password.Contains(birthDateStr))
+                        validationResult.warnings.Add(Warning.CONTAINS_DAY_AND_MONTH_OF_BIRTH_DATE);
+                }
+
+                birthDateStr = user.birthDate.ToString("yyyyMMdd");
+                if (password.Contains(birthDateStr))
+                {
+                    validationResult.warnings.Add(Warning.CONTAINS_REVERSE_FULL_BIRTH_DATE);
+                }
+                else
+                {
+                    birthDateStr = user.birthDate.ToString("MMdd");
+                    if (password.Contains(birthDateStr))
+                        validationResult.warnings.Add(Warning.CONTAINS_REVERSE_DAY_AND_MONTH_OF_BIRTH_DATE);
+                }
+            }
 
         }
     }
