@@ -69,7 +69,7 @@ namespace projeto_integrado_2_sem
 
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar)))
+            if (!(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsWhiteSpace(e.KeyChar)))
                 e.KeyChar = char.MinValue;
         }
 
@@ -84,7 +84,8 @@ namespace projeto_integrado_2_sem
             if (sender is TextBox && ((TextBox) sender) == txtPassword)
             {
                 var tmpUser = new User();
-                var result = passwordValidator.ValidatePassword(tmpUser, txtPassword.Text);
+                tmpUser.password = txtPassword.Text;
+                var result = (PasswordValidator.UserPasswordValidationResult) passwordValidator.Validate(tmpUser);
 
                 switch (result.score())
                 {
@@ -147,9 +148,9 @@ namespace projeto_integrado_2_sem
                     else
                     {
                         user.password = this.txtPassword.Text;
-                        var result = passwordValidator.ValidatePassword(user, user.password);
+                        var result = (PasswordValidator.UserPasswordValidationResult) passwordValidator.Validate(user);
 
-                        if (result.valid())
+                        if (result.Valid())
                         {
                             registerUser.setOneUser(user); //registra o usuário no txt
 

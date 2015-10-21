@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace projeto_integrado_2_sem.Validators
 {
-    public class PasswordValidator
+    public class PasswordValidator : Validator<User>
     {
         public enum Error : int
         {
@@ -42,12 +42,12 @@ namespace projeto_integrado_2_sem.Validators
 
         public static int[] WarningWeight = new int[] { 1, 1, 1, 2, 2, 2, 3, 3, 3, 3 };
 
-        public class ValidaionResult
+        public class UserPasswordValidationResult : ValidationResult
         {
             public List<Error> errors;
             public List<Warning> warnings;
 
-            public ValidaionResult()
+            public UserPasswordValidationResult()
             {
                 errors = new List<Error>();
                 warnings = new List<Warning>();
@@ -57,14 +57,14 @@ namespace projeto_integrado_2_sem.Validators
                 }
             }
 
-            public bool valid()
+            public bool Valid()
             {
                 return errors.Count == 0;
             }
 
             public int score()
             {
-                if (!valid())
+                if (!Valid())
                 {
                     return 0;
                 }
@@ -81,13 +81,13 @@ namespace projeto_integrado_2_sem.Validators
 
                 return 10 - badScoreTotal;
             }
-	}
+	    }
 
-        public ValidaionResult ValidatePassword(User user, string password)
+        public ValidationResult Validate(User record)
         {
-            var validationResult = new ValidaionResult();
-            AnaliseErrors(validationResult, user, password);
-            AnaliseWarnings(validationResult, user, password);
+            var validationResult = new UserPasswordValidationResult();
+            AnaliseErrors(validationResult, record, record.password);
+            AnaliseWarnings(validationResult, record, record.password);
 
             if (validationResult.score() < 3)
                 validationResult.errors.Add(Error.TOO_WEAK);
@@ -95,7 +95,7 @@ namespace projeto_integrado_2_sem.Validators
             return validationResult;
         }
 
-        private void AnaliseErrors(ValidaionResult validationResult, User user, string password)
+        private void AnaliseErrors(UserPasswordValidationResult validationResult, User user, string password)
         {
             StringBuilder builder = new StringBuilder();
 
@@ -173,7 +173,7 @@ namespace projeto_integrado_2_sem.Validators
                 validationResult.errors.Add(Error.EQUALS_USER_CODE);
         }
 
-        private void AnaliseWarnings(ValidaionResult validationResult, User user, string password)
+        private void AnaliseWarnings(UserPasswordValidationResult validationResult, User user, string password)
         {
             // Check for 4+ digits sum or subtraction sequences (1234, 2468, 4321, etc)
             var regexp = new Regex("\\d{4,}"); // Finds 4+ digits toghether

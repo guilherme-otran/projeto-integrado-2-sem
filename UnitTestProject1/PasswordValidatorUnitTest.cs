@@ -297,7 +297,7 @@ namespace UnitTestProject1
             ShouldIncludeWarning(password, PasswordValidator.Warning.CONTAINS_NAME_INITIALS);
 
             var validationResult = validationResultFor(testUser(), password);
-            Assert.AreEqual(validationResult.valid(), true);
+            Assert.AreEqual(validationResult.Valid(), true);
             Assert.AreEqual(validationResult.score(), 3);
         }
 
@@ -311,7 +311,7 @@ namespace UnitTestProject1
             var password = "As495c02d";
             var validationResult = validationResultFor(testUser(), password);
 
-            Assert.AreEqual(validationResult.valid(), true);
+            Assert.AreEqual(validationResult.Valid(), true);
             Assert.AreEqual(validationResult.score(), 10);
         }
 
@@ -340,7 +340,7 @@ namespace UnitTestProject1
             CollectionAssert.DoesNotContain(warns, warn);
         }
 
-        private PasswordValidator.ValidaionResult validationResultFor(User user, string password)
+        private PasswordValidator.UserPasswordValidationResult validationResultFor(User user, string password)
         {
             return (new PasswordValidator()).ValidatePassword(user, password);
         }
