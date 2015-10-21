@@ -10,12 +10,40 @@ using System.Windows.Forms;
 using projeto_integrado_2_sem.Repositories;
 using projeto_integrado_2_sem.Models;
 using projeto_integrado_2_sem.Interactors;
+using projeto_integrado_2_sem.Validators;
 
 namespace projeto_integrado_2_sem
 {
     public partial class FormRegister : Form
     {
+        private string[] errorMessages = new string[]{ 
+            "Senha muito curta (mínimo 6 caracteres)",
+            "Senha muito longa (maximo 10 caracteres)",
+            "Não pode conter espaços",
+            "São permitidas apenas letras e números",
+            "Não contém letras máiúsculas e minúsculas",
+            "Deve conter pelo menos 2 números",
+            "Deve conter pelo menos 2 letras",
+            "Não pode ser igual a senha antiga",
+            "Não pode ser igual a o código",
+            "É muito fraca"
+        };
+
+        private string[] warnMessages = new string[]{ 
+            "Contém números em sequencia",
+            "Contém menos de 2 letras",
+            "Contém menos de 2 números",
+            "Contém código do usuário",
+            "Contém o primeiro nome",
+            "Contém as iniciais do nome",
+            "Contém a data de nascimento",
+            "Contém o dia e o mes do nascimento",
+            "Contém a data de nascimento inversa",
+            "Contém o mes e o dia do nascimento"
+        };
+
         RegisterUser registerUser = new RegisterUser();
+        PasswordValidator passwordValidator = new PasswordValidator();
         
         private bool validateDates(int day, int month, int year)
         {
@@ -53,6 +81,32 @@ namespace projeto_integrado_2_sem
 
         private void atualizacao_TextChanged(object sender, EventArgs e)
         {
+            if (sender is TextBox && ((TextBox) sender) == txtPassword)
+            {
+                var tmpUser = new User();
+                var result = passwordValidator.ValidatePassword(tmpUser, txtPassword.Text);
+
+                switch (result.score())
+                {
+                    case 0:
+                    case 1:
+                    case 2: lblPassStrenght.Text = "Muito Fraca"; break;
+                    case 3:
+                    case 4: lblPassStrenght.Text = "Fraca"; break;
+                    case 5:
+                    case 6: lblPassStrenght.Text = "Razoável"; break;
+                    case 7:
+                    case 8: lblPassStrenght.Text = "Forte"; break;
+                    case 9:
+                    case 10: lblPassStrenght.Text = "Muito forte"; break;
+                }
+
+                var warnings = "\n";
+                foreach (var warn in result.warnings)
+                    warnings += warnMessages[(int)warn];
+
+                lblPassStrenght.Text += warnings;
+            }
             if (txtName.Text != "" && txtEmail.Text != "" && txtDay.Text != "" && cmbMonth.Text != "" && cmbYear.Text != "" && txtPassword.Text != "" && txtPassConfirm.Text != "")
                 btnProcess.Enabled = true;
             else
@@ -93,14 +147,28 @@ namespace projeto_integrado_2_sem
                     else
                     {
                         user.password = this.txtPassword.Text;
+                        var result = passwordValidator.ValidatePassword(user, user.password);
 
-                        registerUser.setOneUser(user); //registra o usuário no txt
+                        if (result.valid())
+                        {
+                            registerUser.setOneUser(user); //registra o usuário no txt
 
-                        // Faz o login após o usuario se cadastrar
+                            // Faz o login após o usuario se cadastrar
 
-                        FormMain formMain = new FormMain(user);
-                        formMain.ShowDialog();
-                        this.Close();
+                            FormMain formMain = new FormMain(user);
+                            formMain.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            var errorMessagesStr = "";
+                            foreach (var error in result.errors)
+                            {
+                                errorMessagesStr += errorMessages[(int)error] + "\n";
+                            }
+
+                            MessageBox.Show("Sua senha não é valida:\n" + errorMessagesStr);
+                        }
                     }
                 }
             }
@@ -108,6 +176,16 @@ namespace projeto_integrado_2_sem
             {
                 MessageBox.Show("Digite os valores corretamente!");
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPassStrenght_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

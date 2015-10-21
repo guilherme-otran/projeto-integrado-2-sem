@@ -51,6 +51,10 @@ namespace projeto_integrado_2_sem.Validators
             {
                 errors = new List<Error>();
                 warnings = new List<Warning>();
+                for (int i = 0; i <= (int)Warning.CONTAINS_REVERSE_DAY_AND_MONTH_OF_BIRTH_DATE; i++)
+                {
+                    warnings.Add((Warning)i);
+                }
             }
 
             public bool valid()
@@ -60,6 +64,11 @@ namespace projeto_integrado_2_sem.Validators
 
             public int score()
             {
+                if (!valid())
+                {
+                    return 0;
+                }
+
                 int badScoreTotal = 0;
                 foreach (Warning warning in warnings)
                 {
@@ -169,6 +178,7 @@ namespace projeto_integrado_2_sem.Validators
             // Check for 4+ digits sum or subtraction sequences (1234, 2468, 4321, etc)
             var regexp = new Regex("\\d{4,}"); // Finds 4+ digits toghether
             var finded = regexp.Match(password);
+            var valid = true;
             if (finded.Success)
             {
                 var digits = finded.Value;
@@ -182,13 +192,17 @@ namespace projeto_integrado_2_sem.Validators
                 for (var i=0; i<(deltas.Count - 2); i++)
                     if (deltas.ElementAt(i) == deltas.ElementAt(i+1) && deltas.ElementAt(i) == deltas.ElementAt(i+2))
                     {
-                        validationResult.warnings.Add(Warning.SEQUENCIAL_NUMBERS);
+                        valid = false;
                         break;
                     }
             }
 
+            if (valid)
+                validationResult.warnings.Remove(Warning.SEQUENCIAL_NUMBERS);
+
             var letterCount = 0;
             var digitCount = 0;
+            
             foreach (var c in password)
             {
                 if (char.IsLetter(c))
@@ -197,49 +211,60 @@ namespace projeto_integrado_2_sem.Validators
                     digitCount++;
             }
 
-            if (letterCount == 2)
-                validationResult.warnings.Add(Warning.ONLY_TWO_LETTERS);
+            if (letterCount > 2)
+                validationResult.warnings.Remove(Warning.ONLY_TWO_LETTERS);
 
-            if (digitCount == 2)
-                validationResult.warnings.Add(Warning.ONLY_TWO_NUMBERS);
+            if (digitCount > 2)
+                validationResult.warnings.Remove(Warning.ONLY_TWO_NUMBERS);
 
             var userCode = user.code;
-            if (userCode != null && password.ToLower().Contains(userCode.ToLower()))
-                validationResult.warnings.Add(Warning.CONTAINS_USER_CODE);
+            if (userCode == null || (!password.ToLower().Contains(userCode.ToLower())))
+                validationResult.warnings.Remove(Warning.CONTAINS_USER_CODE);
 
             var firstName = user.FirstName();
-            if (firstName != null && password.ToLower().Contains(firstName.ToLower()))
-                validationResult.warnings.Add(Warning.CONTAINS_NAME);
+            if (firstName == null || (!password.ToLower().Contains(firstName.ToLower())))
+                validationResult.warnings.Remove(Warning.CONTAINS_NAME);
 
             var userInitials = user.NameInitials();
-            if (userInitials != null && password.ToUpper().Contains(userInitials))
-                validationResult.warnings.Add(Warning.CONTAINS_NAME_INITIALS);
+            if (userInitials == null || (!password.ToUpper().Contains(userInitials)))
+                validationResult.warnings.Remove(Warning.CONTAINS_NAME_INITIALS);
 
             if (user.birthDate != null)
             {
                 var birthDateStr = user.birthDate.ToString("ddMMyyyy");
-                if (password.Contains(birthDateStr))
+                if (!password.Contains(birthDateStr))
                 {
-                    validationResult.warnings.Add(Warning.CONTAINS_FULL_BIRTH_DATE);
+                    validationResult.warnings.Remove(Warning.CONTAINS_FULL_BIRTH_DATE);
+
+                    birthDateStr = user.birthDate.ToString("ddMM");
+                    if (!password.Contains(birthDateStr))
+                        validationResult.warnings.Remove(Warning.CONTAINS_DAY_AND_MONTH_OF_BIRTH_DATE);
                 }
                 else
                 {
-                    birthDateStr = user.birthDate.ToString("ddMM");
-                    if (password.Contains(birthDateStr))
-                        validationResult.warnings.Add(Warning.CONTAINS_DAY_AND_MONTH_OF_BIRTH_DATE);
+                    validationResult.warnings.Remove(Warning.CONTAINS_DAY_AND_MONTH_OF_BIRTH_DATE);
                 }
 
                 birthDateStr = user.birthDate.ToString("yyyyMMdd");
-                if (password.Contains(birthDateStr))
+                if (!password.Contains(birthDateStr))
                 {
-                    validationResult.warnings.Add(Warning.CONTAINS_REVERSE_FULL_BIRTH_DATE);
+                    validationResult.warnings.Remove(Warning.CONTAINS_REVERSE_FULL_BIRTH_DATE);
+
+                    birthDateStr = user.birthDate.ToString("MMdd");
+                    if (!password.Contains(birthDateStr))
+                        validationResult.warnings.Remove(Warning.CONTAINS_REVERSE_DAY_AND_MONTH_OF_BIRTH_DATE);
                 }
                 else
                 {
-                    birthDateStr = user.birthDate.ToString("MMdd");
-                    if (password.Contains(birthDateStr))
-                        validationResult.warnings.Add(Warning.CONTAINS_REVERSE_DAY_AND_MONTH_OF_BIRTH_DATE);
+                    validationResult.warnings.Remove(Warning.CONTAINS_REVERSE_DAY_AND_MONTH_OF_BIRTH_DATE);
                 }
+            }
+            else
+            {
+                validationResult.warnings.Remove(Warning.CONTAINS_FULL_BIRTH_DATE);
+                validationResult.warnings.Remove(Warning.CONTAINS_DAY_AND_MONTH_OF_BIRTH_DATE);
+                validationResult.warnings.Remove(Warning.CONTAINS_REVERSE_FULL_BIRTH_DATE);
+                validationResult.warnings.Remove(Warning.CONTAINS_REVERSE_DAY_AND_MONTH_OF_BIRTH_DATE);
             }
 
         }

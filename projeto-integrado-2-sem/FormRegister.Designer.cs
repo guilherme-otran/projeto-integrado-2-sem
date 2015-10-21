@@ -85,7 +85,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(77, 252);
+            this.label4.Location = new System.Drawing.Point(77, 199);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 16);
@@ -124,7 +124,7 @@
             // 
             // txtPassConfirm
             // 
-            this.txtPassConfirm.Location = new System.Drawing.Point(192, 249);
+            this.txtPassConfirm.Location = new System.Drawing.Point(192, 196);
             this.txtPassConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassConfirm.Name = "txtPassConfirm";
             this.txtPassConfirm.PasswordChar = '●';
@@ -176,7 +176,7 @@
             this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcess.ForeColor = System.Drawing.Color.White;
-            this.btnProcess.Location = new System.Drawing.Point(224, 290);
+            this.btnProcess.Location = new System.Drawing.Point(208, 502);
             this.btnProcess.Margin = new System.Windows.Forms.Padding(4);
             this.btnProcess.Name = "btnProcess";
             this.btnProcess.Size = new System.Drawing.Size(185, 39);
@@ -188,12 +188,13 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(77, 215);
+            this.label5.Location = new System.Drawing.Point(77, 234);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Força da senha";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtEmail
             // 
@@ -240,19 +241,19 @@
             // 
             // lblPassStrenght
             // 
-            this.lblPassStrenght.AutoSize = true;
-            this.lblPassStrenght.Location = new System.Drawing.Point(189, 215);
+            this.lblPassStrenght.Location = new System.Drawing.Point(189, 234);
             this.lblPassStrenght.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassStrenght.Name = "lblPassStrenght";
-            this.lblPassStrenght.Size = new System.Drawing.Size(0, 16);
+            this.lblPassStrenght.Size = new System.Drawing.Size(367, 120);
             this.lblPassStrenght.TabIndex = 15;
+            this.lblPassStrenght.Click += new System.EventHandler(this.lblPassStrenght_Click);
             // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(632, 351);
+            this.ClientSize = new System.Drawing.Size(632, 554);
             this.ControlBox = false;
             this.Controls.Add(this.lblPassStrenght);
             this.Controls.Add(this.label7);

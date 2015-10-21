@@ -278,7 +278,7 @@ namespace UnitTestProject1
 
             var validationResult = validationResultFor(testUser(), password);
             Assert.AreEqual(validationResult.errors.Count, 1);
-            Assert.AreEqual(validationResult.score(), 2);
+            Assert.AreEqual(validationResult.score(), 0);
 
             ShouldIncludeError(password, PasswordValidator.Error.TOO_WEAK);
         }
