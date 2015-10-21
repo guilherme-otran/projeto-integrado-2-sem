@@ -66,29 +66,48 @@ namespace projeto_integrado_2_sem
 
         private void btnProcess_Click(object sender, EventArgs e)
         {
-            User user = new User();
-            user.name = this.txtName.Text;
-            user.email = this.txtEmail.Text;
-            user.Profile = Profile.UserProfile();
+            try
+            {
+                User user = new User();
+                user.name = this.txtName.Text;
+                user.email = this.txtEmail.Text;
+                user.Profile = Profile.UserProfile();
 
-            if (validateDates(int.Parse(txtDay.Text), cmbMonth.SelectedIndex + 1, int.Parse(cmbYear.Text)))
-                user.birthDate = new DateTime(int.Parse(cmbYear.Text), cmbMonth.SelectedIndex + 1, int.Parse(txtDay.Text));
-            else
-                MessageBox.Show("Data de nascimento inválida");
+                if (!(validateDates(int.Parse(txtDay.Text), cmbMonth.SelectedIndex + 1, int.Parse(cmbYear.Text))))
+                {
+                    MessageBox.Show("Data de nascimento inválida");
+                    txtDay.Text = "";
+                    cmbMonth.Text = "";
+                    cmbYear.Text = "";
+                }
+                else
+                {
+                    user.birthDate = new DateTime(int.Parse(cmbYear.Text), cmbMonth.SelectedIndex + 1, int.Parse(txtDay.Text));
 
-            if (String.Compare(txtPassword.Text, txtPassConfirm.Text) == 0)
-                user.password = this.txtPassword.Text;
-            else
-                MessageBox.Show("As senhas digitadas não são iguais");
+                    if (!(String.Compare(txtPassword.Text, txtPassConfirm.Text) == 0))
+                    {
+                        MessageBox.Show("As senhas digitadas não são iguais");
+                        txtPassword.Text = "";
+                        txtPassConfirm.Text = "";
+                    }
+                    else
+                    {
+                        user.password = this.txtPassword.Text;
 
-            registerUser.setOneUser(user); //registra o usuário no txt
+                        registerUser.setOneUser(user); //registra o usuário no txt
 
+                        // Faz o login após o usuario se cadastrar
 
-             // Faz o login após o usuario se cadastrar
-
-            FormMain formMain = new FormMain(user);
-            formMain.ShowDialog();
-            this.Close();
+                        FormMain formMain = new FormMain(user);
+                        formMain.ShowDialog();
+                        this.Close();
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Digite os valores corretamente!");
+            }
         }
     }
 }

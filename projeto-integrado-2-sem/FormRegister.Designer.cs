@@ -45,6 +45,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblPassStrenght = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -187,12 +188,12 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(184, 219);
+            this.label5.Location = new System.Drawing.Point(77, 215);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 16);
+            this.label5.Size = new System.Drawing.Size(102, 16);
             this.label5.TabIndex = 11;
-            this.label5.Text = "imagem de força da senha";
+            this.label5.Text = "Força da senha";
             // 
             // txtEmail
             // 
@@ -237,6 +238,15 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Junte-se a nós!";
             // 
+            // lblPassStrenght
+            // 
+            this.lblPassStrenght.AutoSize = true;
+            this.lblPassStrenght.Location = new System.Drawing.Point(189, 215);
+            this.lblPassStrenght.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassStrenght.Name = "lblPassStrenght";
+            this.lblPassStrenght.Size = new System.Drawing.Size(0, 16);
+            this.lblPassStrenght.TabIndex = 15;
+            // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -244,6 +254,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(632, 351);
             this.ControlBox = false;
+            this.Controls.Add(this.lblPassStrenght);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtEmail);
@@ -289,6 +300,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblPassStrenght;
 
     }
 }
