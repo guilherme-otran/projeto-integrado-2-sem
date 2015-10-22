@@ -91,20 +91,30 @@ namespace projeto_integrado_2_sem
                 {
                     case 0:
                     case 1:
-                    case 2: lblPassStrenght.Text = "Muito Fraca"; break;
+                    case 2: lblPassStrenght.Text = "Muito Fraca";
+                            lblPassStrenght.ForeColor = Color.Red;
+                            break;
                     case 3:
-                    case 4: lblPassStrenght.Text = "Fraca"; break;
+                    case 4: lblPassStrenght.Text = "Fraca";
+                            lblPassStrenght.ForeColor = Color.Orange;
+                            break;
                     case 5:
-                    case 6: lblPassStrenght.Text = "Razoável"; break;
+                    case 6: lblPassStrenght.Text = "Razoável";
+                            lblPassStrenght.ForeColor = Color.Yellow;
+                            break;
                     case 7:
-                    case 8: lblPassStrenght.Text = "Forte"; break;
+                    case 8: lblPassStrenght.Text = "Forte";
+                            lblPassStrenght.ForeColor = Color.Blue;
+                            break;
                     case 9:
-                    case 10: lblPassStrenght.Text = "Muito forte"; break;
+                    case 10:lblPassStrenght.Text = "Muito Forte";
+                            lblPassStrenght.ForeColor = Color.Green;
+                            break;
                 }
 
                 var warnings = "\n";
                 foreach (var warn in result.warnings)
-                    warnings += warnMessages[(int)warn];
+                    warnings += "\n" + warnMessages[(int)warn];
 
                 lblPassStrenght.Text += warnings;
             }
@@ -177,16 +187,6 @@ namespace projeto_integrado_2_sem
             {
                 MessageBox.Show("Digite os valores corretamente!");
             }
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPassStrenght_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
