@@ -354,7 +354,8 @@ namespace UnitTestProject1
 
         private PasswordValidator.UserPasswordValidationResult validationResultFor(User user, string password)
         {
-            return (new PasswordValidator()).ValidatePassword(user, password);
+            user.password = password;
+            return (new PasswordValidator()).Validate(user);
         }
 
         private User testUser()
