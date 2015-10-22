@@ -8,7 +8,7 @@ using projeto_integrado_2_sem.Validators;
 
 namespace projeto_integrado_2_sem.Interactors
 {
-    class GenericPersister<T>
+    class GenericPersister<T> where T : IStorable
     {
         private BaseRepository<T> repository;
         private Validator<T>[] validators;
