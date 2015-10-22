@@ -9,7 +9,7 @@ using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 #endif
 
-// using NUnitAssert = NUnit.Framework.Assert;
+using NUnitAssert = NUnit.Framework.Assert;
 using MsAssert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using projeto_integrado_2_sem.Validators;
 using projeto_integrado_2_sem.Models;
