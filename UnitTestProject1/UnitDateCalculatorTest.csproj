@@ -46,6 +46,7 @@
     <Otherwise>
       <ItemGroup>
         <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="NUnit.Framework" />
       </ItemGroup>
     </Otherwise>
   </Choose>
