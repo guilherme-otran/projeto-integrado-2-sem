@@ -50,6 +50,8 @@
     <Compile Include="FormRegister.Designer.cs">
       <DependentUpon>FormRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenericTypeCaster.cs" />
+    <Compile Include="Interactors\GenericPersister.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Interactors\DateCalculator.cs" />
     <Compile Include="FormDate.cs">
