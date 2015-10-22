@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using projeto_integrado_2_sem.Repositories;
 using projeto_integrado_2_sem.Validators;
+using projeto_integrado_2_sem.Models;
 
 namespace projeto_integrado_2_sem.Interactors
 {
