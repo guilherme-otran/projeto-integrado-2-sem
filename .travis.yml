@@ -4,5 +4,5 @@ install:
   - nuget restore projeto-integrado-2-sem.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
-  - xbuild /p:Configuration=Release projeto-integrado-2-sem.sln
+  - xbuild /p:Configuration=Release /p:DefineConstants="NUNIT" projeto-integrado-2-sem.sln
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./UnitTestProject1/bin/Release/UnitDateCalculatorTest.dll
