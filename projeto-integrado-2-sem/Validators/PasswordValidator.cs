@@ -97,8 +97,6 @@ namespace projeto_integrado_2_sem.Validators
 
         private void AnaliseErrors(UserPasswordValidationResult validationResult, User user, string password)
         {
-            StringBuilder builder = new StringBuilder();
-
             if (password.Length < 6)
                 validationResult.errors.Add(Error.TOO_SHORT);
             
@@ -229,7 +227,7 @@ namespace projeto_integrado_2_sem.Validators
             if (userInitials == null || (!password.ToUpper().Contains(userInitials)))
                 validationResult.warnings.Remove(Warning.CONTAINS_NAME_INITIALS);
 
-            if (user.birthDate != null)
+            if (user.birthDate != DateTime.MinValue)
             {
                 var birthDateStr = user.birthDate.ToString("ddMMyyyy");
                 if (!password.Contains(birthDateStr))
