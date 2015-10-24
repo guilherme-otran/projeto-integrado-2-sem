@@ -131,6 +131,7 @@
             this.txtPassConfirm.Size = new System.Drawing.Size(200, 22);
             this.txtPassConfirm.TabIndex = 6;
             this.txtPassConfirm.TextChanged += new System.EventHandler(this.atualizacao_TextChanged);
+            this.txtPassConfirm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassConfirm_KeyPress);
             // 
             // cmbMonth
             // 

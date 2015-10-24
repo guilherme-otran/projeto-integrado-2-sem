@@ -188,5 +188,11 @@ namespace projeto_integrado_2_sem
                 MessageBox.Show("Digite os valores corretamente!");
             }
         }
+
+        private void txtPassConfirm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+                btnProcess.PerformClick();
+        }
     }
 }
