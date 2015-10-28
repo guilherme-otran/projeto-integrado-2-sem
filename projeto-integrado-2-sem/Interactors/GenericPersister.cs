@@ -13,19 +13,28 @@ namespace projeto_integrado_2_sem.Interactors
     {
         private BaseRepository<T> repository;
         private Validator<T>[] validators;
+        private GenericTypeCaster<T> caster;
 
-        public GenericPersister(BaseRepository<T> repo, Validator<T>[] validators)
+        public GenericPersister(BaseRepository<T> repo, Validator<T>[] validators, GenericTypeCaster<T> caster)
         {
             this.repository = repo;
             this.validators = validators;
+            this.caster = caster;
         }
 
-        public bool persist(T record)
+        public GenericTypeCaster<T> GetCaster()
         {
+            return this.caster;
+        }
+
+        public bool persist()
+        {
+            var record = caster.GetModel();
             var results = validators.Select(v => v.Validate(record));
             if (results.All(r => r.Valid()))
             {
                 repository.persist(record);
+                return true;
             } 
             
             return false;
