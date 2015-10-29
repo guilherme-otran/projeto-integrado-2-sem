@@ -36,5 +36,10 @@ namespace projeto_integrado_2_sem.Validators
                 errors.Add(attribute, errList);
             }
         }
+
+        public void Clear()
+        {
+            errors.Clear();
+        }
     }
 }

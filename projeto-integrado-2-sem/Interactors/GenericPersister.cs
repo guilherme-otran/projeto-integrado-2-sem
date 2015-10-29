@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using projeto_integrado_2_sem.Repositories;
 using projeto_integrado_2_sem.Validators;
 using projeto_integrado_2_sem.Models;
+using projeto_integrado_2_sem.Casters;
 
 namespace projeto_integrado_2_sem.Interactors
 {
@@ -27,11 +28,26 @@ namespace projeto_integrado_2_sem.Interactors
             return this.caster;
         }
 
-        public bool persist()
+        public ValidationResult CasterErrors()
+        {
+            return this.caster.GetResult();
+        }
+
+        public ValidationResult ValidatorErrors(Validator<T> validator)
+        {
+            var record = caster.GetModel();
+            return validator.Validate(record);
+        }
+
+        public bool Persist()
         {
             var record = caster.GetModel();
             var results = validators.Select(v => v.Validate(record));
-            if (results.All(r => r.Valid()))
+
+            var castValid = caster.Valid();
+            var validation = results.All(r => r.Valid());
+
+            if (castValid && validation)
             {
                 repository.persist(record);
                 return true;
