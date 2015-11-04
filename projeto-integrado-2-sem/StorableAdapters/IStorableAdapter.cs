@@ -13,5 +13,6 @@ namespace projeto_integrado_2_sem
         T FromStringArray(string identifier, string[] data);
         string Identifier(T storable);
         string GenerateIdentifier(T storable);
+        string Version();
     }
 }

@@ -12,6 +12,11 @@ namespace projeto_integrado_2_sem
     {
         public const int EMAIL_INDEX = 0;
 
+        public string Version()
+        {
+            return "0";
+        }
+
         public int AttributeCount()
         {
             return 3;

@@ -21,6 +21,7 @@ namespace projeto_integrado_2_sem
         private void FormMain_Load(object sender, EventArgs e)
         {
             btnDate.Visible = CurrentProfile().CanViewDateCalculator;
+            btnRegister.Visible = CurrentProfile().CanViewRegisterUser;
         }
 
         private void btnDate_Click(object sender, EventArgs e)
@@ -37,6 +38,12 @@ namespace projeto_integrado_2_sem
         {
             LogoutRequested = true;
             this.Close();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            FormRegister formRegister = new FormRegister();
+            formRegister.ShowDialog();
         }
     }
 }

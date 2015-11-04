@@ -10,12 +10,14 @@ namespace projeto_integrado_2_sem.Models
     {
         public string id { get; set; }
         public bool CanViewDateCalculator;
+        public bool CanViewRegisterUser;
 
         public static Profile AdminProfile()
         {
             var profile = new Profile();
             profile.id = "1";
             profile.CanViewDateCalculator = true;
+            profile.CanViewRegisterUser = true;
             return profile;
         }
 
@@ -24,6 +26,7 @@ namespace projeto_integrado_2_sem.Models
             var profile = new Profile();
             profile.id = "2";
             profile.CanViewDateCalculator = true;
+            profile.CanViewRegisterUser = false;
             return profile;
         }
         public static Profile Assistant()
@@ -31,6 +34,7 @@ namespace projeto_integrado_2_sem.Models
             var profile = new Profile();
             profile.id = "3";
             profile.CanViewDateCalculator = false;
+            profile.CanViewRegisterUser = false;
             return profile;
         }
     }

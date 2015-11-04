@@ -7,13 +7,30 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace projeto_integrado_2_sem.Repositories
-{
+{ 
     public abstract class BaseRepository<T> where T : IStorable
     {
         private IStorableAdapter<T> storableAdapter;
         private Stream dataStream;
         private List<StorableNode> buffer;
 
+        private int autoIncrementValue = 0;
+
+        public bool checkHeader()
+        {
+            var reader = new StreamReader(dataStream);
+            var header = reader.ReadLine();
+            
+            if(header == null)
+            {
+                return false;
+            }
+
+            if (!header.StartsWith("{ProjIntegrado2Sem Version " + storableAdapter.Version()))
+                return false;
+
+            return true;
+        }
         protected class StorableNode
         {
             public string id;
@@ -29,9 +46,10 @@ namespace projeto_integrado_2_sem.Repositories
 
         public void initComponents()
         {
+            //if(!checkHeader())
+              //  throw new ArgumentException("Invalid File Header");
             loadBuffer();
         }
-
         public void close()
         {
             dataStream.Dispose();
@@ -126,6 +144,7 @@ namespace projeto_integrado_2_sem.Repositories
             dataStream.SetLength(0);
 
             var writer = new StreamWriter(dataStream);
+
             foreach (var node in buffer)
             {
                 writer.WriteLine(handleDataWrite(node.id));

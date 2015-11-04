@@ -38,8 +38,6 @@
             this.tsi_about = new System.Windows.Forms.ToolStripMenuItem();
             this.tsi_close = new System.Windows.Forms.ToolStripMenuItem();
             this.labelInvalidCredentials = new System.Windows.Forms.Label();
-            this.lblRegister = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,7 +90,7 @@
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
-            this.btn_login.Location = new System.Drawing.Point(227, 203);
+            this.btn_login.Location = new System.Drawing.Point(227, 211);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(90, 32);
             this.btn_login.TabIndex = 2;
@@ -116,14 +114,14 @@
             // 
             this.tsi_about.ForeColor = System.Drawing.Color.White;
             this.tsi_about.Name = "tsi_about";
-            this.tsi_about.Size = new System.Drawing.Size(49, 20);
+            this.tsi_about.Size = new System.Drawing.Size(47, 20);
             this.tsi_about.Text = "Sobre";
             // 
             // tsi_close
             // 
             this.tsi_close.ForeColor = System.Drawing.Color.White;
             this.tsi_close.Name = "tsi_close";
-            this.tsi_close.Size = new System.Drawing.Size(38, 20);
+            this.tsi_close.Size = new System.Drawing.Size(37, 20);
             this.tsi_close.Text = "Sair";
             this.tsi_close.Click += new System.EventHandler(this.tsi_close_Click);
             // 
@@ -131,7 +129,7 @@
             // 
             this.labelInvalidCredentials.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInvalidCredentials.ForeColor = System.Drawing.Color.Red;
-            this.labelInvalidCredentials.Location = new System.Drawing.Point(12, 247);
+            this.labelInvalidCredentials.Location = new System.Drawing.Point(12, 255);
             this.labelInvalidCredentials.Name = "labelInvalidCredentials";
             this.labelInvalidCredentials.Size = new System.Drawing.Size(520, 32);
             this.labelInvalidCredentials.TabIndex = 4;
@@ -139,35 +137,12 @@
             this.labelInvalidCredentials.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelInvalidCredentials.Visible = false;
             // 
-            // lblRegister
-            // 
-            this.lblRegister.AutoSize = true;
-            this.lblRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegister.Location = new System.Drawing.Point(222, 308);
-            this.lblRegister.Name = "lblRegister";
-            this.lblRegister.Size = new System.Drawing.Size(101, 20);
-            this.lblRegister.TabIndex = 5;
-            this.lblRegister.Text = "Cadastrar-se";
-            this.lblRegister.Click += new System.EventHandler(this.lblRegister_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(165, 288);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(214, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Ainda não é cadastrado?  Cadastre-se aqui!";
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(544, 340);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblRegister);
+            this.ClientSize = new System.Drawing.Size(544, 302);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelInvalidCredentials);
             this.Controls.Add(this.btn_login);
@@ -199,8 +174,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsi_about;
         private System.Windows.Forms.ToolStripMenuItem tsi_close;
         private System.Windows.Forms.Label labelInvalidCredentials;
-        private System.Windows.Forms.Label lblRegister;
-        private System.Windows.Forms.Label label3;
     }
 }
 
