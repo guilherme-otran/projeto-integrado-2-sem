@@ -133,10 +133,16 @@ namespace projeto_integrado_2_sem
         {
             try
             {
+                Profile perfil = new Profile();
+
                 User user = new User();
                 user.name = this.txtName.Text;
                 user.email = this.txtEmail.Text;
-                user.Profile = Profile.UserProfile();
+
+                if (cmbProfile.SelectedIndex == 0)
+                    user.Profile = Profile.Operator();
+                else
+                    user.Profile = Profile.Assistant();
 
                 if (!(validateDates(int.Parse(txtDay.Text), cmbMonth.SelectedIndex + 1, int.Parse(cmbYear.Text))))
                 {

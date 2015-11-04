@@ -46,6 +46,8 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.lblPassStrenght = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cmbProfile = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -74,7 +76,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(77, 176);
+            this.label3.Location = new System.Drawing.Point(77, 204);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 16);
@@ -85,7 +87,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(77, 210);
+            this.label4.Location = new System.Drawing.Point(77, 238);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 16);
@@ -114,7 +116,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(132, 173);
+            this.txtPassword.Location = new System.Drawing.Point(132, 201);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
@@ -124,7 +126,7 @@
             // 
             // txtPassConfirm
             // 
-            this.txtPassConfirm.Location = new System.Drawing.Point(192, 207);
+            this.txtPassConfirm.Location = new System.Drawing.Point(192, 235);
             this.txtPassConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassConfirm.Name = "txtPassConfirm";
             this.txtPassConfirm.PasswordChar = '●';
@@ -177,7 +179,7 @@
             this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcess.ForeColor = System.Drawing.Color.White;
-            this.btnProcess.Location = new System.Drawing.Point(224, 370);
+            this.btnProcess.Location = new System.Drawing.Point(224, 398);
             this.btnProcess.Margin = new System.Windows.Forms.Padding(4);
             this.btnProcess.Name = "btnProcess";
             this.btnProcess.Size = new System.Drawing.Size(185, 39);
@@ -189,7 +191,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(77, 244);
+            this.label5.Location = new System.Drawing.Point(77, 272);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 16);
@@ -235,25 +237,51 @@
             this.label7.Location = new System.Drawing.Point(223, 14);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(186, 24);
+            this.label7.Size = new System.Drawing.Size(183, 24);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Cadastre-se agora!";
+            this.label7.Text = "Cadastrar usuários";
             // 
             // lblPassStrenght
             // 
-            this.lblPassStrenght.Location = new System.Drawing.Point(189, 244);
+            this.lblPassStrenght.Location = new System.Drawing.Point(189, 272);
             this.lblPassStrenght.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassStrenght.Name = "lblPassStrenght";
             this.lblPassStrenght.Size = new System.Drawing.Size(367, 120);
             this.lblPassStrenght.TabIndex = 15;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(77, 170);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 16);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Tipo de perfil";
+            // 
+            // cmbProfile
+            // 
+            this.cmbProfile.BackColor = System.Drawing.Color.White;
+            this.cmbProfile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProfile.Items.AddRange(new object[] {
+            "Operador",
+            "Auxiliar"});
+            this.cmbProfile.Location = new System.Drawing.Point(172, 167);
+            this.cmbProfile.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbProfile.Name = "cmbProfile";
+            this.cmbProfile.Size = new System.Drawing.Size(119, 24);
+            this.cmbProfile.TabIndex = 17;
             // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(632, 421);
+            this.ClientSize = new System.Drawing.Size(632, 443);
             this.ControlBox = false;
+            this.Controls.Add(this.cmbProfile);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.lblPassStrenght);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnBack);
@@ -301,6 +329,8 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblPassStrenght;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cmbProfile;
 
     }
 }

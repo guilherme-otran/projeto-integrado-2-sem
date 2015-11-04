@@ -14,15 +14,22 @@ namespace projeto_integrado_2_sem.Models
         public static Profile AdminProfile()
         {
             var profile = new Profile();
-            profile.id = "1234";
+            profile.id = "1";
             profile.CanViewDateCalculator = true;
             return profile;
         }
 
-        public static Profile UserProfile()
+        public static Profile Operator()
         {
             var profile = new Profile();
-            profile.id = "4321";
+            profile.id = "2";
+            profile.CanViewDateCalculator = true;
+            return profile;
+        }
+        public static Profile Assistant()
+        {
+            var profile = new Profile();
+            profile.id = "3";
             profile.CanViewDateCalculator = false;
             return profile;
         }

@@ -38,7 +38,7 @@ namespace projeto_integrado_2_sem
             if (userRepository.Count() < 1)
             {
                 userRepository.persist(new User(null, "admin@projeto.com", "hu3hu3", Profile.AdminProfile()));
-                userRepository.persist(new User(null, "user@projeto.com", "hu3hu3", Profile.UserProfile()));
+                userRepository.persist(new User(null, "user@projeto.com", "hu3hu3", Profile.Operator()));
             }
             // Perform an update
             // var user = userRepository.findById("8d2bc7bf8782a73");

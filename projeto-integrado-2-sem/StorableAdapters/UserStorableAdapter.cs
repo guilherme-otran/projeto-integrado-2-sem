@@ -32,7 +32,7 @@ namespace projeto_integrado_2_sem
             if (data[2] == Profile.AdminProfile().id)
                 return new User(identifier, data[0], data[1], Profile.AdminProfile());
 
-            return new User(identifier, data[0], data[1], Profile.UserProfile());
+            return new User(identifier, data[0], data[1], Profile.Operator());
         }
 
         public string Identifier(User storable)
