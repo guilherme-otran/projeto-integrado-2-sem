@@ -42,14 +42,22 @@ namespace projeto_integrado_2_sem
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            FormListUsers formListUser = new FormListUsers();
-            formListUser.ShowDialog();
+            Button btnSender = (Button)sender;
+            Point ptLowerLeft = new Point(0, btnSender.Height);
+            ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
+            ctMenuUserConfig.Show(ptLowerLeft);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnChangePass_Click(object sender, EventArgs e)
         {
             ChangePasswordForm form = new ChangePasswordForm(CurrentUser);
             form.ShowDialog();
+        }
+
+        private void btnUserManager_Click(object sender, EventArgs e)
+        {
+            FormListUsers formListUser = new FormListUsers();
+            formListUser.ShowDialog();
         }
     }
 }

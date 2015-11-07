@@ -1,5 +1,6 @@
 ﻿using projeto_integrado_2_sem.Models;
 using projeto_integrado_2_sem.Repositories;
+using projeto_integrado_2_sem.Casters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +16,13 @@ namespace projeto_integrado_2_sem
     public partial class FormListUsers : Form
     {
         private UserRepository repo = RepositoryManager.ManagerInstance.UserRepository();
+        private User selectedUser;
 
         public FormListUsers()
         {
             InitializeComponent();
             usersGridView.DataSource = new BindingSource(repo.List(), null);
+            //selectedUser = (User)usersGridView.SelectedRows[0].DataBoundItem;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -27,6 +30,36 @@ namespace projeto_integrado_2_sem
             FormRegister formRegister = new FormRegister();
             formRegister.ShowDialog();
             usersGridView.DataSource = new BindingSource(repo.List(), null);
+            usersGridView.Select();
+        }
+
+        private void usersGridView_RowContextMenuStripChanged(object sender, DataGridViewRowEventArgs e)
+        {
+            selectedUser = (User)usersGridView.SelectedRows[0].DataBoundItem;
+            if(selectedUser.CurrentStatus == User.Status.ACTIVE)
+            {
+                btnBlockUnblock.Text = "Bloquear usuário";
+            }
+            else
+            {
+                btnBlockUnblock.Text = "Desbloquear usuário";
+            }
+        }
+
+        private void usersGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (usersGridView.SelectedRows.Count > 0)
+            {
+                selectedUser = (User)usersGridView.SelectedRows[0].DataBoundItem;
+                if (selectedUser.CurrentStatus == User.Status.ACTIVE)
+                {
+                    btnBlockUnblock.Text = "Bloquear usuário";
+                }
+                else
+                {
+                    btnBlockUnblock.Text = "Desbloquear usuário";
+                }
+            }
         }
     }
 }

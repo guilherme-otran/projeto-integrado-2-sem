@@ -16,11 +16,12 @@ namespace projeto_integrado_2_sem.Models
         public DateTime passwordChangeDate;
 
         public DateTime BirthDate { get; set; }
-        public Status status;
+        public Status CurrentStatus {get; set; }
 
         public Profile Profile;
 
         public string ProfileName { get { return Profile.Name; } }
+        //public string CurrentStatus { get { return User.Status; } }
 
         public enum Status
         {

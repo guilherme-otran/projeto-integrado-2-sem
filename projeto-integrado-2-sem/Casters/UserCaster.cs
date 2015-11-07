@@ -96,10 +96,10 @@ namespace projeto_integrado_2_sem.Casters
             if (int.TryParse(status, out statusInt))
             {
                 if (statusInt == (int)User.Status.INACTIVE)
-                    user.status = User.Status.INACTIVE;
+                    user.CurrentStatus = User.Status.INACTIVE;
                 else
                     if (statusInt == (int)User.Status.ACTIVE)
-                        user.status = User.Status.ACTIVE;
+                        user.CurrentStatus = User.Status.ACTIVE;
                     else
                         this.result.AddError("status", MultipleAttributeValidationResult.Error.INVALID_ASSOCIATION_ID);
             }
