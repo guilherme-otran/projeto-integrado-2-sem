@@ -26,6 +26,7 @@ namespace projeto_integrado_2_sem
 
             this.userRepository = new UserRepository();
             this.userRepository.initComponents();
+
         }
 
         public UserRepository UserRepository()
