@@ -9,6 +9,8 @@ namespace projeto_integrado_2_sem.Models
     public class Profile : IStorable
     {
         public string id { get; set; }
+        public string Name { get; internal set; }
+
         public bool CanViewDateCalculator;
         public bool CanViewRegisterUser;
 
@@ -18,6 +20,7 @@ namespace projeto_integrado_2_sem.Models
             profile.id = "1";
             profile.CanViewDateCalculator = true;
             profile.CanViewRegisterUser = true;
+            profile.Name = "Admin";
             return profile;
         }
 
@@ -27,6 +30,7 @@ namespace projeto_integrado_2_sem.Models
             profile.id = "2";
             profile.CanViewDateCalculator = true;
             profile.CanViewRegisterUser = false;
+            profile.Name = "Operador";
             return profile;
         }
         public static Profile Assistant()
@@ -35,6 +39,7 @@ namespace projeto_integrado_2_sem.Models
             profile.id = "3";
             profile.CanViewDateCalculator = false;
             profile.CanViewRegisterUser = false;
+            profile.Name = "Assistente";
             return profile;
         }
     }

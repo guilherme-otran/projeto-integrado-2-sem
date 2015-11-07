@@ -45,8 +45,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Casters\UserCaster.cs" />
+    <Compile Include="ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ErrorPresenters\GenericErrorPresenter.cs" />
     <Compile Include="ErrorPresenters\PasswordValidationErrorPresenter.cs" />
+    <Compile Include="ErrorPresenters\PasswordWarningPresenter.cs" />
     <Compile Include="FormListUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +105,9 @@
     <Compile Include="Validators\Validator.cs" />
     <Compile Include="Validators\PasswordValidator.cs" />
     <Compile Include="Validators\ValidationResult.cs" />
+    <EmbeddedResource Include="ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDate.resx">
       <DependentUpon>FormDate.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,6 +10,7 @@ namespace projeto_integrado_2_sem.Models
         
         public string Email { get; set; }
 
+        public string currentPassword; // Beware! This is temporary and not stored!
         public string password;
         public string oldPassword;
         public DateTime passwordChangeDate;
@@ -18,6 +19,8 @@ namespace projeto_integrado_2_sem.Models
         public Status status;
 
         public Profile Profile;
+
+        public string ProfileName { get { return Profile.Name; } }
 
         public enum Status
         {

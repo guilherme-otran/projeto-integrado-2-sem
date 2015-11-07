@@ -32,6 +32,7 @@
             this.btnDate = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDate
@@ -71,12 +72,25 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(759, 612);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(170, 57);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Altere sua senha";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1350, 701);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnDate);
@@ -95,5 +109,6 @@
         private System.Windows.Forms.Button btnDate;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -41,7 +41,7 @@ namespace projeto_integrado_2_sem.Repositories
             dataStream.Dispose();
         }
 
-        public void persist(T storable)
+        public virtual void Persist(T storable)
         {
             var asArray = storableAdapter.AsStringArray(storable);
             var finded = findNodeById(storableAdapter.Identifier(storable));

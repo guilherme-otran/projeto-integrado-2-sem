@@ -40,8 +40,6 @@ namespace projeto_integrado_2_sem
             errorPresenters.Add(new GenericErrorPresenter(cmbProfile, this, "profile"));
 
             passwdPresenter = new PasswordValidationErrorPresenter(txtPassword, this);
-
-            ReloadData();
         }
 
         private void dates_KeyPress(object sender, KeyPressEventArgs e)
@@ -116,37 +114,7 @@ namespace projeto_integrado_2_sem
             if (passwdPresenter != null)
                 passwdPresenter.displayMesssages(passwordResult);
 
-            switch (passwordResult.score())
-            {
-                case 0:
-                case 1:
-                case 2: lblPassStrenght.Text = "Muito Fraca";
-                        lblPassStrenght.ForeColor = Color.Red;
-                        break;
-                case 3:
-                case 4: lblPassStrenght.Text = "Fraca";
-                        lblPassStrenght.ForeColor = Color.Orange;
-                        break;
-                case 5:
-                case 6: lblPassStrenght.Text = "Razoável";
-                        lblPassStrenght.ForeColor = Color.Yellow;
-                        break;
-                case 7:
-                case 8: lblPassStrenght.Text = "Forte";
-                        lblPassStrenght.ForeColor = Color.Blue;
-                        break;
-                case 9:
-                case 10: lblPassStrenght.Text = "Muito Forte";
-                         lblPassStrenght.ForeColor = Color.Green;
-                         break;
-            }
-            
-            var warnings = "\n";
-
-            foreach (var warn in passwordResult.warnings)
-                warnings += "\n" + ErrorMessages.passwordValidatorWarningMessages[(int)warn];
-
-            lblPassStrenght.Text += warnings;
+            PasswordWarningPresenter.present(passwordResult, lblPassStrenght);
         }
     }
 }

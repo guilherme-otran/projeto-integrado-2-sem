@@ -35,6 +35,18 @@ namespace projeto_integrado_2_sem.Casters
             this.user.passwordChangeDate = new DateTime();
         }
 
+        public void changePassword(string currentPassword, string newPassword, string confirm)
+        {
+            if (this.user.currentPassword == null)
+                this.user.currentPassword = this.user.password;
+
+            if (this.user.currentPassword != currentPassword)
+                this.result.AddError("currentPassword", MultipleAttributeValidationResult.Error.NOT_EQUAL);
+
+            setPassword(newPassword);
+            setPasswordConfirm(confirm);
+        }
+
         public void setPasswordConfirm(string pwdConfirm)
         {
             if (this.user.password != pwdConfirm)

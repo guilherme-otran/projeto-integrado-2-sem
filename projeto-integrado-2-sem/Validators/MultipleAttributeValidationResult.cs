@@ -15,7 +15,8 @@ namespace projeto_integrado_2_sem.Validators
             INVALID_NUMBER,
             INVALID_ASSOCIATION_ID,
             INVALID_EMAIL,
-            INVALID_CONFIRMATION
+            INVALID_CONFIRMATION,
+            NOT_EQUAL
         }
 
         public Dictionary<String, List<Error>> errors = new Dictionary<String, List<Error>>();

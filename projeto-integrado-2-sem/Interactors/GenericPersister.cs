@@ -49,7 +49,7 @@ namespace projeto_integrado_2_sem.Interactors
 
             if (castValid && validation)
             {
-                repository.persist(record);
+                repository.Persist(record);
                 return true;
             } 
             

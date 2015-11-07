@@ -15,7 +15,8 @@ namespace projeto_integrado_2_sem.Validators
             "Número não é valido",
             "Não existe registro com este código",
             "Não contém @",
-            "É diferente do outro valor"
+            "É diferente do outro valor",
+            "Não é igual"
         };
         public static string[] passwordValidatorErrorMessages = new string[]
         {

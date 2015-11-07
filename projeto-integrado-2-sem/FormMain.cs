@@ -45,5 +45,11 @@ namespace projeto_integrado_2_sem
             FormListUsers formListUser = new FormListUsers();
             formListUser.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ChangePasswordForm form = new ChangePasswordForm(CurrentUser);
+            form.ShowDialog();
+        }
     }
 }

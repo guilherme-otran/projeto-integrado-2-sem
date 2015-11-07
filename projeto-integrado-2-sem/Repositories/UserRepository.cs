@@ -20,5 +20,15 @@ namespace projeto_integrado_2_sem.Repositories
         {
             return findByData(email, UserStorableAdapter.EMAIL_INDEX);
         }
+
+        public override void Persist(User record)
+        {
+            if (record.currentPassword != null)
+                record.oldPassword = record.currentPassword;
+
+            record.currentPassword = null;
+
+            base.Persist(record);
+        }
     }
 }
