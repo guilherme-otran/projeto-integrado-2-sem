@@ -167,7 +167,7 @@ namespace projeto_integrado_2_sem.Validators
             if (password.Equals(user.oldPassword))
                 validationResult.errors.Add(Error.EQUALS_PREVIOUS_PASSWORD);
 
-            if (password.Equals(user.id))
+            if (password.Equals(user.Id))
                 validationResult.errors.Add(Error.EQUALS_USER_CODE);
         }
 
@@ -215,7 +215,7 @@ namespace projeto_integrado_2_sem.Validators
             if (digitCount > 2)
                 validationResult.warnings.Remove(Warning.ONLY_TWO_NUMBERS);
 
-            var userCode = user.id;
+            var userCode = user.Id;
             if (userCode == null || (!password.ToLower().Contains(userCode.ToLower())))
                 validationResult.warnings.Remove(Warning.CONTAINS_USER_CODE);
 
@@ -227,14 +227,14 @@ namespace projeto_integrado_2_sem.Validators
             if (userInitials == null || (!password.ToUpper().Contains(userInitials)))
                 validationResult.warnings.Remove(Warning.CONTAINS_NAME_INITIALS);
 
-            if (user.birthDate != DateTime.MinValue)
+            if (user.BirthDate != DateTime.MinValue)
             {
-                var birthDateStr = user.birthDate.ToString("ddMMyyyy");
+                var birthDateStr = user.BirthDate.ToString("ddMMyyyy");
                 if (!password.Contains(birthDateStr))
                 {
                     validationResult.warnings.Remove(Warning.CONTAINS_FULL_BIRTH_DATE);
 
-                    birthDateStr = user.birthDate.ToString("ddMM");
+                    birthDateStr = user.BirthDate.ToString("ddMM");
                     if (!password.Contains(birthDateStr))
                         validationResult.warnings.Remove(Warning.CONTAINS_DAY_AND_MONTH_OF_BIRTH_DATE);
                 }
@@ -243,12 +243,12 @@ namespace projeto_integrado_2_sem.Validators
                     validationResult.warnings.Remove(Warning.CONTAINS_DAY_AND_MONTH_OF_BIRTH_DATE);
                 }
 
-                birthDateStr = user.birthDate.ToString("yyyyMMdd");
+                birthDateStr = user.BirthDate.ToString("yyyyMMdd");
                 if (!password.Contains(birthDateStr))
                 {
                     validationResult.warnings.Remove(Warning.CONTAINS_REVERSE_FULL_BIRTH_DATE);
 
-                    birthDateStr = user.birthDate.ToString("MMdd");
+                    birthDateStr = user.BirthDate.ToString("MMdd");
                     if (!password.Contains(birthDateStr))
                         validationResult.warnings.Remove(Warning.CONTAINS_REVERSE_DAY_AND_MONTH_OF_BIRTH_DATE);
                 }

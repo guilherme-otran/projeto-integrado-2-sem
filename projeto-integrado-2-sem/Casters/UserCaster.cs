@@ -26,7 +26,7 @@ namespace projeto_integrado_2_sem.Casters
 
         public void setName(string name)
         {
-            this.user.name = name.Trim();
+            this.user.Name = name.Trim();
         }
 
         public void setPassword(string password)
@@ -43,7 +43,7 @@ namespace projeto_integrado_2_sem.Casters
 
         public void setEmail(string email)
         {
-            this.user.email = email.Trim();
+            this.user.Email = email.Trim();
         }
 
         public void setBirthDate(string date)
@@ -52,7 +52,7 @@ namespace projeto_integrado_2_sem.Casters
 
             if (DateTime.TryParse(date, out parsed))
             {
-                this.user.birthDate = parsed;
+                this.user.BirthDate = parsed;
             }
             else
             {

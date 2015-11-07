@@ -130,7 +130,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void Password_EqualCode()
         {
-            testUser().id = "126534";
+            testUser().Id = "126534";
 
             ShouldIncludeError("126534", PasswordValidator.Error.EQUALS_USER_CODE);
             ShouldNotIncludeError("44advdf", PasswordValidator.Error.EQUALS_USER_CODE);
@@ -173,7 +173,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void Password_ContainsUserCode()
         {
-            testUser().id = "1Acd451";
+            testUser().Id = "1Acd451";
 
             ShouldIncludeWarning("rg1Acd451dd", PasswordValidator.Warning.CONTAINS_USER_CODE);
             ShouldIncludeWarning("rg1acd451dd", PasswordValidator.Warning.CONTAINS_USER_CODE);
@@ -185,7 +185,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void Password_ContainsUserFirstName()
         {
-            testUser().name = "Lucas Cone Top";
+            testUser().Name = "Lucas Cone Top";
 
             ShouldIncludeWarning("OlucasEcone", PasswordValidator.Warning.CONTAINS_NAME);
             ShouldIncludeWarning("oLucasEcone", PasswordValidator.Warning.CONTAINS_NAME);
@@ -197,7 +197,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void Password_ContainsUserInitials()
         {
-            testUser().name = "Lucas Muito Cone";
+            testUser().Name = "Lucas Muito Cone";
 
             ShouldIncludeWarning("pqqLmClalala", PasswordValidator.Warning.CONTAINS_NAME_INITIALS);
             ShouldIncludeWarning("LMClalala", PasswordValidator.Warning.CONTAINS_NAME_INITIALS);
@@ -209,7 +209,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void Password_ContainsUserFullBirthDate()
         {
-            testUser().birthDate = new DateTime(1995, 01, 25);
+            testUser().BirthDate = new DateTime(1995, 01, 25);
 
             ShouldIncludeWarning("l2k25011995dd", PasswordValidator.Warning.CONTAINS_FULL_BIRTH_DATE);
             ShouldIncludeWarning("025011995dd", PasswordValidator.Warning.CONTAINS_FULL_BIRTH_DATE);
@@ -222,7 +222,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void Password_ContainsUserBirthDateDayMonth()
         {
-            testUser().birthDate = new DateTime(1995, 01, 25);
+            testUser().BirthDate = new DateTime(1995, 01, 25);
 
             ShouldIncludeWarning("l22501dd", PasswordValidator.Warning.CONTAINS_DAY_AND_MONTH_OF_BIRTH_DATE);
             ShouldIncludeWarning("02501df", PasswordValidator.Warning.CONTAINS_DAY_AND_MONTH_OF_BIRTH_DATE);
@@ -234,7 +234,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void Password_ContainsReverseUserFullBirthDate()
         {
-            testUser().birthDate = new DateTime(1995, 01, 25);
+            testUser().BirthDate = new DateTime(1995, 01, 25);
 
             ShouldIncludeWarning("l2k19950125dd", PasswordValidator.Warning.CONTAINS_REVERSE_FULL_BIRTH_DATE);
             ShouldIncludeWarning("019950125dd", PasswordValidator.Warning.CONTAINS_REVERSE_FULL_BIRTH_DATE);
@@ -247,7 +247,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void Password_ContainsReverseUserBirthDateDayMonth()
         {
-            testUser().birthDate = new DateTime(1995, 01, 25);
+            testUser().BirthDate = new DateTime(1995, 01, 25);
 
             ShouldIncludeWarning("l20125dd", PasswordValidator.Warning.CONTAINS_REVERSE_DAY_AND_MONTH_OF_BIRTH_DATE);
             ShouldIncludeWarning("00125df", PasswordValidator.Warning.CONTAINS_REVERSE_DAY_AND_MONTH_OF_BIRTH_DATE);
@@ -260,8 +260,8 @@ namespace UnitTestProject1
         [TestMethod]
         public void Password_WhenTooWeakZeroScore()
         {
-            testUser().name = "Lucas Cone";
-            testUser().birthDate = new DateTime(1994, 1, 23);
+            testUser().Name = "Lucas Cone";
+            testUser().BirthDate = new DateTime(1994, 1, 23);
             var password = "Lc01232301";
 
             ShouldIncludeWarning(password, PasswordValidator.Warning.CONTAINS_DAY_AND_MONTH_OF_BIRTH_DATE);
@@ -280,8 +280,8 @@ namespace UnitTestProject1
         [TestMethod]
         public void Password_WhenTooWeakTwoScore()
         {
-            testUser().name = "Lucas Cone";
-            testUser().birthDate = new DateTime(1994, 1, 23);
+            testUser().Name = "Lucas Cone";
+            testUser().BirthDate = new DateTime(1994, 1, 23);
             var password = "Ld01232301";
 
             ShouldIncludeWarning(password, PasswordValidator.Warning.CONTAINS_DAY_AND_MONTH_OF_BIRTH_DATE);
@@ -300,9 +300,9 @@ namespace UnitTestProject1
         [TestMethod]
         public void Password_WhenThreeScore()
         {
-            testUser().name = "Lucas Cone";
-            testUser().birthDate = new DateTime(1994, 12, 23);
-            testUser().id = "54";
+            testUser().Name = "Lucas Cone";
+            testUser().BirthDate = new DateTime(1994, 12, 23);
+            testUser().Id = "54";
             var password = "Lc231254d";
 
             ShouldIncludeWarning(password, PasswordValidator.Warning.CONTAINS_DAY_AND_MONTH_OF_BIRTH_DATE);
@@ -317,9 +317,9 @@ namespace UnitTestProject1
         [TestMethod]
         public void Password_WhenStrong()
         {
-            testUser().name = "Lucas Cone";
-            testUser().birthDate = new DateTime(1994, 12, 23);
-            testUser().id = "54";
+            testUser().Name = "Lucas Cone";
+            testUser().BirthDate = new DateTime(1994, 12, 23);
+            testUser().Id = "54";
 
             var password = "As495c02d";
             var validationResult = validationResultFor(testUser(), password);

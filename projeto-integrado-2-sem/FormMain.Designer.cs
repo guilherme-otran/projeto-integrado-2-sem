@@ -36,6 +36,7 @@
             // 
             // btnDate
             // 
+            this.btnDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDate.FlatAppearance.BorderSize = 0;
             this.btnDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDate.Image = ((System.Drawing.Image)(resources.GetObject("btnDate.Image")));
@@ -48,10 +49,11 @@
             // 
             // btnLogout
             // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(1213, 631);
+            this.btnLogout.Location = new System.Drawing.Point(1213, 612);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(108, 36);
+            this.btnLogout.Size = new System.Drawing.Size(108, 55);
             this.btnLogout.TabIndex = 4;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -59,11 +61,13 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(1012, 612);
+            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.Location = new System.Drawing.Point(935, 612);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(93, 57);
+            this.btnRegister.Size = new System.Drawing.Size(170, 57);
             this.btnRegister.TabIndex = 5;
-            this.btnRegister.Text = "Cadastrar usuário";
+            this.btnRegister.Text = "Gerenciar Usuários";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 

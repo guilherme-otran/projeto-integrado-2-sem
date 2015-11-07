@@ -13,13 +13,13 @@ namespace projeto_integrado_2_sem.Validators
         public ValidationResult Validate(User record)
         {
             var result = new MultipleAttributeValidationResult();
-            if (record.name.Length == 0)
+            if (record.Name.Length == 0)
                 result.AddError("name", MultipleAttributeValidationResult.Error.BLANK_ATTRIBUTE);
 
-            if (record.email.Length == 0)
+            if (record.Email.Length == 0)
                 result.AddError("email", MultipleAttributeValidationResult.Error.BLANK_ATTRIBUTE);
 
-            if (!record.email.Contains("@"))
+            if (!record.Email.Contains("@"))
                 result.AddError("email", MultipleAttributeValidationResult.Error.INVALID_EMAIL);
 
             return result;

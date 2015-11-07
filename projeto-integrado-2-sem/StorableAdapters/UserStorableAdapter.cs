@@ -30,12 +30,12 @@ namespace projeto_integrado_2_sem
                 profileId = storable.Profile.id;
 
             return new string[] { 
-                storable.name, 
-                storable.email,
+                storable.Name, 
+                storable.Email,
                 storable.password, 
                 storable.oldPassword, 
                 storable.passwordChangeDate.ToBinary().ToString(), 
-                storable.birthDate.ToBinary().ToString(), 
+                storable.BirthDate.ToBinary().ToString(), 
                 ((int)storable.status).ToString(), 
                 profileId 
             };
@@ -53,12 +53,13 @@ namespace projeto_integrado_2_sem
                 prof = Profile.Operator();
 
             var user = new User();
-            user.name = data[0];
-            user.email = data[1];
+            user.Id = identifier;
+            user.Name = data[0];
+            user.Email = data[1];
             user.password = data[2];
             user.oldPassword = data[3];
             user.passwordChangeDate = DateTime.FromBinary(long.Parse(data[4]));
-            user.birthDate = DateTime.FromBinary(long.Parse(data[5]));
+            user.BirthDate = DateTime.FromBinary(long.Parse(data[5]));
             user.status = (User.Status) int.Parse(data[6]);
             user.Profile = prof;
             return user;
@@ -66,12 +67,12 @@ namespace projeto_integrado_2_sem
 
         public string Identifier(User storable)
         {
-            return storable.id;
+            return storable.Id;
         }
 
         public string DefineIdentifier(User storable, int autoIncrementValue)
         {
-            storable.id = autoIncrementValue.ToString().PadLeft(6, '0');
+            storable.Id = autoIncrementValue.ToString().PadLeft(6, '0');
             return Identifier(storable);
         }
     }

@@ -1,6 +1,7 @@
 ﻿using projeto_integrado_2_sem.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -98,6 +99,16 @@ namespace projeto_integrado_2_sem.Repositories
         public int Count()
         {
             return buffer.Count();
+        }
+
+        public BindingList<T> List()
+        {
+            var list = new BindingList<T>();
+
+            foreach (var node in buffer)
+                list.Add(storableAdapter.FromStringArray(node.id, node.data));
+
+            return list;
         }
 
         public void InitializeFile()

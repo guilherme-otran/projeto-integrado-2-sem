@@ -42,8 +42,8 @@ namespace projeto_integrado_2_sem
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            FormRegister formRegister = new FormRegister();
-            formRegister.ShowDialog();
+            FormListUsers formListUser = new FormListUsers();
+            formListUser.ShowDialog();
         }
     }
 }

@@ -47,6 +47,12 @@
     <Compile Include="Casters\UserCaster.cs" />
     <Compile Include="ErrorPresenters\GenericErrorPresenter.cs" />
     <Compile Include="ErrorPresenters\PasswordValidationErrorPresenter.cs" />
+    <Compile Include="FormListUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListUsers.Designer.cs">
+      <DependentUpon>FormListUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     <Compile Include="Validators\ValidationResult.cs" />
     <EmbeddedResource Include="FormDate.resx">
       <DependentUpon>FormDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListUsers.resx">
+      <DependentUpon>FormListUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

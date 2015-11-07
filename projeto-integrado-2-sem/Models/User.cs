@@ -5,17 +5,16 @@ namespace projeto_integrado_2_sem.Models
 {
     public class User : IStorable
     {
-        public string id;
+        public string Id { get; set; }
+        public string Name { get; set; }
         
-        public string name;
-        
-        public string email;
+        public string Email { get; set; }
 
         public string password;
         public string oldPassword;
         public DateTime passwordChangeDate;
 
-        public DateTime birthDate;
+        public DateTime BirthDate { get; set; }
         public Status status;
 
         public Profile Profile;
@@ -28,44 +27,44 @@ namespace projeto_integrado_2_sem.Models
 
         string IStorable.id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this.Id; }
+            set { this.Id = value; }
         }
 
         public User()
         {
-            this.id = null;
-            this.email = null;
+            this.Id = null;
+            this.Email = null;
             this.password = null;
             this.Profile = null;
         }
 
         public User(string id, string email, string password, Profile profile)
         {
-            this.id = id;
-            this.email = email;
+            this.Id = id;
+            this.Email = email;
             this.password = password;
             this.Profile = profile;
         }
 
         public string FirstName()
         {
-            if (name == null)
+            if (Name == null)
                 return null;
 
-            var splitted = name.Trim().Split(' ');
+            var splitted = Name.Trim().Split(' ');
             return splitted.FirstOrDefault();
         }
 
         public string NameInitials()
         {
-            if (name == null)
+            if (Name == null)
                 return null;
 
-            if (name.Length == 0)
+            if (Name.Length == 0)
                 return "";
 
-            var splitted = name.Trim().Split(' ').Select(part => part.First());
+            var splitted = Name.Trim().Split(' ').Select(part => part.First());
             return String.Join("", splitted).ToUpper();
         }
 
