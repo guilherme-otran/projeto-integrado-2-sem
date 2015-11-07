@@ -16,7 +16,8 @@ namespace projeto_integrado_2_sem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            RepositoryManager.InitManager();
+
+                RepositoryManager.InitManager();
 
             Application.ApplicationExit += delegate { RepositoryManager.CloseManager(); };
 

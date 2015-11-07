@@ -15,7 +15,7 @@ namespace projeto_integrado_2_sem.Repositories
         private List<StorableNode> buffer;
 
         private int autoIncrementValue = 0;
-
+        private string versionFile = "1.0";
         public bool checkHeader()
         {
             var reader = new StreamReader(dataStream);
@@ -31,6 +31,7 @@ namespace projeto_integrado_2_sem.Repositories
 
             return true;
         }
+
         protected class StorableNode
         {
             public string id;
@@ -46,8 +47,6 @@ namespace projeto_integrado_2_sem.Repositories
 
         public void initComponents()
         {
-            //if(!checkHeader())
-              //  throw new ArgumentException("Invalid File Header");
             loadBuffer();
         }
         public void close()
@@ -116,6 +115,10 @@ namespace projeto_integrado_2_sem.Repositories
 
         private void loadBuffer()
         {
+            if(!checkHeader())
+            {
+                //writeBuffer();
+            }
             dataStream.Position = 0;
             buffer.Clear();
 
@@ -142,8 +145,9 @@ namespace projeto_integrado_2_sem.Repositories
         {
             dataStream.Position = 0;
             dataStream.SetLength(0);
-
             var writer = new StreamWriter(dataStream);
+
+            writer.WriteLine(("{ProjIntegrado2Sem Version " + versionFile + " - Quantidade de usuários: " + autoIncrementValue + "}"));
 
             foreach (var node in buffer)
             {
