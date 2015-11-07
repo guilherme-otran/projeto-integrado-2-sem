@@ -32,6 +32,13 @@ namespace projeto_integrado_2_sem.Casters
         public void setPassword(string password)
         {
             this.user.password = password;
+            this.user.passwordChangeDate = new DateTime();
+        }
+
+        public void setPasswordConfirm(string pwdConfirm)
+        {
+            if (this.user.password != pwdConfirm)
+                this.result.AddError("passwordConfirm", MultipleAttributeValidationResult.Error.INVALID_CONFIRMATION);
         }
 
         public void setCode(string code)
@@ -56,6 +63,41 @@ namespace projeto_integrado_2_sem.Casters
             {
                 this.result.AddError("birthDate", MultipleAttributeValidationResult.Error.INVALID_DATE);
             }
+        }
+
+        public void setProfile(string profileId)
+        {
+            user.Profile = null;
+
+            if (profileId == Profile.AdminProfile().id)
+                user.Profile = Profile.AdminProfile();
+            if (profileId == Profile.Assistant().id)
+                user.Profile = Profile.Assistant();
+            if (profileId == Profile.Operator().id)
+                user.Profile = Profile.Operator();
+
+            if (user.Profile == null)
+            {
+                this.result.AddError("profile", MultipleAttributeValidationResult.Error.INVALID_ASSOCIATION_ID);
+            }
+        }
+
+        public void setStatus(string status)
+        {
+            int statusInt;
+
+            if (int.TryParse(status, out statusInt))
+            {
+                if (statusInt == (int)User.Status.INACTIVE)
+                    user.status = User.Status.INACTIVE;
+                else
+                    if (statusInt == (int)User.Status.ACTIVE)
+                        user.status = User.Status.ACTIVE;
+                    else
+                        this.result.AddError("status", MultipleAttributeValidationResult.Error.INVALID_ASSOCIATION_ID);
+            }
+            else
+                this.result.AddError("status", MultipleAttributeValidationResult.Error.INVALID_NUMBER);
         }
     }
 }

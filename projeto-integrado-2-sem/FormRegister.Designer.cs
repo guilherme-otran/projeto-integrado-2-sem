@@ -101,8 +101,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(424, 22);
             this.txtName.TabIndex = 0;
-            this.txtName.TextChanged += new System.EventHandler(this.atualizacao_TextChanged);
-            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
+            this.txtName.TextChanged += new System.EventHandler(this.all_TextChanged);
             // 
             // txtDay
             // 
@@ -111,8 +110,7 @@
             this.txtDay.Name = "txtDay";
             this.txtDay.Size = new System.Drawing.Size(63, 22);
             this.txtDay.TabIndex = 2;
-            this.txtDay.TextChanged += new System.EventHandler(this.atualizacao_TextChanged);
-            this.txtDay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dates_KeyPress);
+            this.txtDay.TextChanged += new System.EventHandler(this.all_TextChanged);
             // 
             // txtPassword
             // 
@@ -122,7 +120,7 @@
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(200, 22);
             this.txtPassword.TabIndex = 5;
-            this.txtPassword.TextChanged += new System.EventHandler(this.atualizacao_TextChanged);
+            this.txtPassword.TextChanged += new System.EventHandler(this.all_TextChanged);
             // 
             // txtPassConfirm
             // 
@@ -132,8 +130,7 @@
             this.txtPassConfirm.PasswordChar = '●';
             this.txtPassConfirm.Size = new System.Drawing.Size(200, 22);
             this.txtPassConfirm.TabIndex = 6;
-            this.txtPassConfirm.TextChanged += new System.EventHandler(this.atualizacao_TextChanged);
-            this.txtPassConfirm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassConfirm_KeyPress);
+            this.txtPassConfirm.TextChanged += new System.EventHandler(this.all_TextChanged);
             // 
             // cmbMonth
             // 
@@ -158,7 +155,8 @@
             this.cmbMonth.Name = "cmbMonth";
             this.cmbMonth.Size = new System.Drawing.Size(160, 24);
             this.cmbMonth.TabIndex = 3;
-            this.cmbMonth.TextChanged += new System.EventHandler(this.atualizacao_TextChanged);
+            this.cmbMonth.SelectedValueChanged += new System.EventHandler(this.all_TextChanged);
+            this.cmbMonth.TextChanged += new System.EventHandler(this.all_TextChanged);
             // 
             // cmbYear
             // 
@@ -169,13 +167,11 @@
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(87, 24);
             this.cmbYear.TabIndex = 4;
-            this.cmbYear.TextChanged += new System.EventHandler(this.atualizacao_TextChanged);
-            this.cmbYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dates_KeyPress);
+            this.cmbYear.TextChanged += new System.EventHandler(this.all_TextChanged);
             // 
             // btnProcess
             // 
             this.btnProcess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnProcess.Enabled = false;
             this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcess.ForeColor = System.Drawing.Color.White;
@@ -205,6 +201,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(424, 22);
             this.txtEmail.TabIndex = 1;
+            this.txtEmail.TextChanged += new System.EventHandler(this.all_TextChanged);
             // 
             // label6
             // 
@@ -272,13 +269,15 @@
             this.cmbProfile.Name = "cmbProfile";
             this.cmbProfile.Size = new System.Drawing.Size(119, 24);
             this.cmbProfile.TabIndex = 17;
+            this.cmbProfile.SelectedValueChanged += new System.EventHandler(this.all_TextChanged);
+            this.cmbProfile.TextChanged += new System.EventHandler(this.all_TextChanged);
             // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(632, 443);
+            this.ClientSize = new System.Drawing.Size(850, 443);
             this.ControlBox = false;
             this.Controls.Add(this.cmbProfile);
             this.Controls.Add(this.label8);

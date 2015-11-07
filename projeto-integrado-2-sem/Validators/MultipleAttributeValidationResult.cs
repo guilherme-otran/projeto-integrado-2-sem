@@ -12,7 +12,10 @@ namespace projeto_integrado_2_sem.Validators
         {
             BLANK_ATTRIBUTE = 0,
             INVALID_DATE,
-            INVALID_NUMBER
+            INVALID_NUMBER,
+            INVALID_ASSOCIATION_ID,
+            INVALID_EMAIL,
+            INVALID_CONFIRMATION
         }
 
         public Dictionary<String, List<Error>> errors = new Dictionary<String, List<Error>>();
@@ -24,7 +27,7 @@ namespace projeto_integrado_2_sem.Validators
 
         public void AddError(string attribute, Error error)
         {
-            var errList = new List<Error>();
+            List<Error> errList;
 
             if (errors.TryGetValue(attribute, out errList))
             {
@@ -32,6 +35,7 @@ namespace projeto_integrado_2_sem.Validators
             }
             else
             {
+                errList = new List<Error>();
                 errList.Add(error);
                 errors.Add(attribute, errList);
             }

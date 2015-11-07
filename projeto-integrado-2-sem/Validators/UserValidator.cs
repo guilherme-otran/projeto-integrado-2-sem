@@ -18,8 +18,9 @@ namespace projeto_integrado_2_sem.Validators
 
             if (record.email.Length == 0)
                 result.AddError("email", MultipleAttributeValidationResult.Error.BLANK_ATTRIBUTE);
-            
-            // TODO: Verificar se o e-mail tem @
+
+            if (!record.email.Contains("@"))
+                result.AddError("email", MultipleAttributeValidationResult.Error.INVALID_EMAIL);
 
             if (record.code.Length == 0)
                 result.AddError("code", MultipleAttributeValidationResult.Error.BLANK_ATTRIBUTE);

@@ -37,7 +37,7 @@ namespace projeto_integrado_2_sem
                 storable.oldPassword, 
                 storable.passwordChangeDate.ToBinary().ToString(), 
                 storable.birthDate.ToBinary().ToString(), 
-                storable.status.ToString(), 
+                ((int)storable.status).ToString(), 
                 profileId 
             };
         }
@@ -61,7 +61,7 @@ namespace projeto_integrado_2_sem
             user.oldPassword = data[4];
             user.passwordChangeDate = DateTime.FromBinary(long.Parse(data[5]));
             user.birthDate = DateTime.FromBinary(long.Parse(data[6]));
-            user.status = int.Parse(data[7]);
+            user.status = (User.Status) int.Parse(data[7]);
             user.Profile = prof;
             return user;
         }

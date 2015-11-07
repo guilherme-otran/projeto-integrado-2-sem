@@ -17,9 +17,15 @@ namespace projeto_integrado_2_sem.Models
         public DateTime passwordChangeDate;
 
         public DateTime birthDate;
-        public int status;
+        public Status status;
 
         public Profile Profile;
+
+        public enum Status
+        {
+            ACTIVE=0,
+            INACTIVE
+        }
 
         string IStorable.id
         {
@@ -56,6 +62,9 @@ namespace projeto_integrado_2_sem.Models
         {
             if (name == null)
                 return null;
+
+            if (name.Length == 0)
+                return "";
 
             var splitted = name.Trim().Split(' ').Select(part => part.First());
             return String.Join("", splitted).ToUpper();
