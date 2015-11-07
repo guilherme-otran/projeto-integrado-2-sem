@@ -93,7 +93,6 @@ namespace projeto_integrado_2_sem
         private void ReloadData()
         {
             userCaster.Reset();
-            userCaster.setCode("123");
             userCaster.setName(txtName.Text);
             userCaster.setBirthDate(birthDate());
             userCaster.setEmail(txtEmail.Text);

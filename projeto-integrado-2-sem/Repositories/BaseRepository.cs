@@ -4,33 +4,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace projeto_integrado_2_sem.Repositories
 { 
     public abstract class BaseRepository<T> where T : IStorable
     {
+        public class InvalidHeader : ArgumentException { };
+
         private IStorableAdapter<T> storableAdapter;
         private Stream dataStream;
         private List<StorableNode> buffer;
-
         private int autoIncrementValue = 0;
-        private string versionFile = "1.0";
-        public bool checkHeader()
-        {
-            var reader = new StreamReader(dataStream);
-            var header = reader.ReadLine();
-            
-            if(header == null)
-            {
-                return false;
-            }
-
-            if (!header.StartsWith("{ProjIntegrado2Sem Version " + storableAdapter.Version()))
-                return false;
-
-            return true;
-        }
 
         protected class StorableNode
         {
@@ -62,7 +48,8 @@ namespace projeto_integrado_2_sem.Repositories
             if (finded == null)
             {
                 var node = new StorableNode();
-                node.id = storableAdapter.GenerateIdentifier(storable);
+                autoIncrementValue++;
+                node.id = storableAdapter.DefineIdentifier(storable, autoIncrementValue);
                 node.data = asArray;
                 buffer.Add(node);
             }
@@ -113,16 +100,21 @@ namespace projeto_integrado_2_sem.Repositories
             return buffer.Count();
         }
 
+        public void InitializeFile()
+        {
+            buffer.Clear();
+            writeBuffer();
+            initComponents();
+        }
+
         private void loadBuffer()
         {
-            if(!checkHeader())
-            {
-                //writeBuffer();
-            }
             dataStream.Position = 0;
             buffer.Clear();
 
             var reader = new StreamReader(dataStream);
+            autoIncrementValue = handleHeader(reader.ReadLine());
+            
             string id;
 
             while ((id = reader.ReadLine()) != null)
@@ -147,7 +139,7 @@ namespace projeto_integrado_2_sem.Repositories
             dataStream.SetLength(0);
             var writer = new StreamWriter(dataStream);
 
-            writer.WriteLine(("{ProjIntegrado2Sem Version " + versionFile + " - Quantidade de usuários: " + autoIncrementValue + "}"));
+            writer.WriteLine(("{ProjIntegrado2Sem Version " + storableAdapter.Version() + " AutoIncrement " + autoIncrementValue + "}"));
 
             foreach (var node in buffer)
             {
@@ -157,6 +149,20 @@ namespace projeto_integrado_2_sem.Repositories
                     writer.WriteLine(handleDataWrite(data));
             }
             writer.Flush();
+        }
+
+        private int handleHeader(string header)
+        {
+            if (header == null)
+                throw new InvalidHeader();
+
+            var regexText = @"^{ProjIntegrado2Sem Version " + storableAdapter.Version() + @" AutoIncrement (?<aival>\d+)}$";
+            var headerMatch = (new Regex(regexText)).Match(header);
+
+            if (headerMatch.Success)
+                return int.Parse(headerMatch.Groups["aival"].Value);
+
+            throw new InvalidHeader();
         }
 
         private string handleDataWrite(string data)

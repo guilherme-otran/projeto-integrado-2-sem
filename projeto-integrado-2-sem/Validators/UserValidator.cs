@@ -22,9 +22,6 @@ namespace projeto_integrado_2_sem.Validators
             if (!record.email.Contains("@"))
                 result.AddError("email", MultipleAttributeValidationResult.Error.INVALID_EMAIL);
 
-            if (record.code.Length == 0)
-                result.AddError("code", MultipleAttributeValidationResult.Error.BLANK_ATTRIBUTE);
-
             return result;
         }
     }

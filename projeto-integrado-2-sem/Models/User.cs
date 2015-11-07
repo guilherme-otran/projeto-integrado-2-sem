@@ -6,8 +6,7 @@ namespace projeto_integrado_2_sem.Models
     public class User : IStorable
     {
         public string id;
-
-        public string code;
+        
         public string name;
         
         public string email;

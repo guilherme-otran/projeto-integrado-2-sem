@@ -130,7 +130,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void Password_EqualCode()
         {
-            testUser().code = "126534";
+            testUser().id = "126534";
 
             ShouldIncludeError("126534", PasswordValidator.Error.EQUALS_USER_CODE);
             ShouldNotIncludeError("44advdf", PasswordValidator.Error.EQUALS_USER_CODE);
@@ -173,7 +173,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void Password_ContainsUserCode()
         {
-            testUser().code = "1Acd451";
+            testUser().id = "1Acd451";
 
             ShouldIncludeWarning("rg1Acd451dd", PasswordValidator.Warning.CONTAINS_USER_CODE);
             ShouldIncludeWarning("rg1acd451dd", PasswordValidator.Warning.CONTAINS_USER_CODE);
@@ -302,7 +302,7 @@ namespace UnitTestProject1
         {
             testUser().name = "Lucas Cone";
             testUser().birthDate = new DateTime(1994, 12, 23);
-            testUser().code = "54";
+            testUser().id = "54";
             var password = "Lc231254d";
 
             ShouldIncludeWarning(password, PasswordValidator.Warning.CONTAINS_DAY_AND_MONTH_OF_BIRTH_DATE);
@@ -319,7 +319,7 @@ namespace UnitTestProject1
         {
             testUser().name = "Lucas Cone";
             testUser().birthDate = new DateTime(1994, 12, 23);
-            testUser().code = "54";
+            testUser().id = "54";
 
             var password = "As495c02d";
             var validationResult = validationResultFor(testUser(), password);

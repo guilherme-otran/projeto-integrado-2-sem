@@ -41,11 +41,6 @@ namespace projeto_integrado_2_sem.Casters
                 this.result.AddError("passwordConfirm", MultipleAttributeValidationResult.Error.INVALID_CONFIRMATION);
         }
 
-        public void setCode(string code)
-        {
-            this.user.code = code.Trim();
-        }
-
         public void setEmail(string email)
         {
             this.user.email = email.Trim();

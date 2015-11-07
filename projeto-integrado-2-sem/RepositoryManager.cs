@@ -23,10 +23,15 @@ namespace projeto_integrado_2_sem
 
         public RepositoryManager()
         {
-
             this.userRepository = new UserRepository();
-            this.userRepository.initComponents();
-
+            try
+            {
+                this.userRepository.initComponents();
+            }
+            catch (BaseRepository<User>.InvalidHeader)
+            {
+                this.userRepository.InitializeFile();
+            }
         }
 
         public UserRepository UserRepository()

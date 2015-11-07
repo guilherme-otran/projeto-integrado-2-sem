@@ -10,16 +10,16 @@ namespace projeto_integrado_2_sem
 {
     class UserStorableAdapter : IStorableAdapter<User>
     {
-        public const int EMAIL_INDEX = 2;
+        public const int EMAIL_INDEX = 1;
 
         public string Version()
         {
-            return "0";
+            return "2";
         }
 
         public int AttributeCount()
         {
-            return 9;
+            return 8;
         }
 
         public string[] AsStringArray(User storable)
@@ -30,7 +30,6 @@ namespace projeto_integrado_2_sem
                 profileId = storable.Profile.id;
 
             return new string[] { 
-                storable.code, 
                 storable.name, 
                 storable.email,
                 storable.password, 
@@ -46,22 +45,21 @@ namespace projeto_integrado_2_sem
         {
             Profile prof = null;
 
-            if (data[8] == Profile.AdminProfile().id)
+            if (data[7] == Profile.AdminProfile().id)
                 prof = Profile.AdminProfile();
-            if (data[8] == Profile.Assistant().id)
+            if (data[7] == Profile.Assistant().id)
                 prof = Profile.Assistant();
             if (prof == null)
                 prof = Profile.Operator();
 
             var user = new User();
-            user.code = data[0];
-            user.name = data[1];
-            user.email = data[2];
-            user.password = data[3];
-            user.oldPassword = data[4];
-            user.passwordChangeDate = DateTime.FromBinary(long.Parse(data[5]));
-            user.birthDate = DateTime.FromBinary(long.Parse(data[6]));
-            user.status = (User.Status) int.Parse(data[7]);
+            user.name = data[0];
+            user.email = data[1];
+            user.password = data[2];
+            user.oldPassword = data[3];
+            user.passwordChangeDate = DateTime.FromBinary(long.Parse(data[4]));
+            user.birthDate = DateTime.FromBinary(long.Parse(data[5]));
+            user.status = (User.Status) int.Parse(data[6]);
             user.Profile = prof;
             return user;
         }
@@ -71,9 +69,9 @@ namespace projeto_integrado_2_sem
             return storable.id;
         }
 
-        public string GenerateIdentifier(User storable)
+        public string DefineIdentifier(User storable, int autoIncrementValue)
         {
-            storable.id = Math.Abs(DateTime.Now.Ticks).ToString("x");
+            storable.id = autoIncrementValue.ToString().PadLeft(6, '0');
             return Identifier(storable);
         }
     }

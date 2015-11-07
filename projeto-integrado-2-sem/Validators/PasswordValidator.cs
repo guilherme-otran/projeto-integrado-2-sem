@@ -167,7 +167,7 @@ namespace projeto_integrado_2_sem.Validators
             if (password.Equals(user.oldPassword))
                 validationResult.errors.Add(Error.EQUALS_PREVIOUS_PASSWORD);
 
-            if (password.Equals(user.code))
+            if (password.Equals(user.id))
                 validationResult.errors.Add(Error.EQUALS_USER_CODE);
         }
 
@@ -215,7 +215,7 @@ namespace projeto_integrado_2_sem.Validators
             if (digitCount > 2)
                 validationResult.warnings.Remove(Warning.ONLY_TWO_NUMBERS);
 
-            var userCode = user.code;
+            var userCode = user.id;
             if (userCode == null || (!password.ToLower().Contains(userCode.ToLower())))
                 validationResult.warnings.Remove(Warning.CONTAINS_USER_CODE);
 
