@@ -75,7 +75,8 @@ namespace projeto_integrado_2_sem
         {
            if (persister.Persist())
            {
-                MessageBox.Show("Usuário registrado.");
+                
+                MessageBox.Show("Usuário registrado com o código " + persister.GetId());
                 this.Close();
            }
            else

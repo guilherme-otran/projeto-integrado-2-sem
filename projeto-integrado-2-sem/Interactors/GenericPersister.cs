@@ -55,5 +55,10 @@ namespace projeto_integrado_2_sem.Interactors
             
             return false;
         }
+
+        public string GetId()
+        {
+            return caster.GetModel().id;
+        }
     }
 }
