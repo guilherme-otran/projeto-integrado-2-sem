@@ -32,6 +32,7 @@
             this.usersGridView = new System.Windows.Forms.DataGridView();
             this.btnBlockUnblock = new System.Windows.Forms.Button();
             this.btnChangeProfile = new System.Windows.Forms.Button();
+            this.cmbProfiles = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,18 +72,35 @@
             // 
             // btnChangeProfile
             // 
-            this.btnChangeProfile.Location = new System.Drawing.Point(211, 439);
+            this.btnChangeProfile.Enabled = false;
+            this.btnChangeProfile.Location = new System.Drawing.Point(178, 466);
             this.btnChangeProfile.Name = "btnChangeProfile";
-            this.btnChangeProfile.Size = new System.Drawing.Size(123, 57);
+            this.btnChangeProfile.Size = new System.Drawing.Size(158, 30);
             this.btnChangeProfile.TabIndex = 9;
-            this.btnChangeProfile.Text = "Mudar perfil do usuário";
+            this.btnChangeProfile.Text = "Alterar perfil do usuário";
             this.btnChangeProfile.UseVisualStyleBackColor = true;
+            this.btnChangeProfile.Click += new System.EventHandler(this.btnChangeProfile_Click);
+            // 
+            // cmbProfiles
+            // 
+            this.cmbProfiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProfiles.FormattingEnabled = true;
+            this.cmbProfiles.Items.AddRange(new object[] {
+            "Admin",
+            "Operador",
+            "Auxiliar"});
+            this.cmbProfiles.Location = new System.Drawing.Point(178, 439);
+            this.cmbProfiles.Name = "cmbProfiles";
+            this.cmbProfiles.Size = new System.Drawing.Size(156, 21);
+            this.cmbProfiles.TabIndex = 10;
+            this.cmbProfiles.SelectedIndexChanged += new System.EventHandler(this.cmbProfiles_SelectedIndexChanged);
             // 
             // FormListUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 508);
+            this.Controls.Add(this.cmbProfiles);
             this.Controls.Add(this.btnChangeProfile);
             this.Controls.Add(this.btnBlockUnblock);
             this.Controls.Add(this.usersGridView);
@@ -101,5 +119,6 @@
         private System.Windows.Forms.DataGridView usersGridView;
         private System.Windows.Forms.Button btnBlockUnblock;
         private System.Windows.Forms.Button btnChangeProfile;
+        private System.Windows.Forms.ComboBox cmbProfiles;
     }
 }
