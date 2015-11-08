@@ -21,7 +21,7 @@ namespace projeto_integrado_2_sem
         private void FormMain_Load(object sender, EventArgs e)
         {
             btnDate.Visible = CurrentProfile().CanViewDateCalculator;
-            btnRegister.Visible = CurrentProfile().CanViewRegisterUser;
+            btnUserManager.Visible = CurrentProfile().CanViewManagerUser;
         }
 
         private void btnDate_Click(object sender, EventArgs e)

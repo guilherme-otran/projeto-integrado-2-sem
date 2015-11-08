@@ -53,8 +53,10 @@
             this.usersGridView.AllowUserToDeleteRows = false;
             this.usersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usersGridView.Location = new System.Drawing.Point(0, 12);
+            this.usersGridView.MultiSelect = false;
             this.usersGridView.Name = "usersGridView";
             this.usersGridView.ReadOnly = true;
+            this.usersGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.usersGridView.Size = new System.Drawing.Size(682, 421);
             this.usersGridView.TabIndex = 7;
             this.usersGridView.RowContextMenuStripChanged += new System.Windows.Forms.DataGridViewRowEventHandler(this.usersGridView_RowContextMenuStripChanged);

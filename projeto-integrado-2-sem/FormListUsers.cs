@@ -101,9 +101,15 @@ namespace projeto_integrado_2_sem
                     selectedUser.Profile = Profile.Assistant();
                     break;
             }
-
-            RepositoryManager.ManagerInstance.userRepository.Persist(selectedUser);
-            usersGridView.DataSource = new BindingSource(repo.List(), null);
+            if (selectedUser.Id == "000001")
+            {
+                MessageBox.Show("O sistema deve haver pelo menos um admin.\nImpossível mudar este perfil!");
+            }
+            else
+            {
+                RepositoryManager.ManagerInstance.userRepository.Persist(selectedUser);
+                usersGridView.DataSource = new BindingSource(repo.List(), null);
+            }
         }
 
         private void cmbProfiles_SelectedIndexChanged(object sender, EventArgs e)

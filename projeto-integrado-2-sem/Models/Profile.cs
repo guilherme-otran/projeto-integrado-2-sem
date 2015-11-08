@@ -12,14 +12,15 @@ namespace projeto_integrado_2_sem.Models
         public string Name { get; internal set; }
 
         public bool CanViewDateCalculator;
-        public bool CanViewRegisterUser;
+        public bool CanViewManagerUser;
 
         public static Profile AdminProfile()
         {
             var profile = new Profile();
             profile.id = "1";
             profile.CanViewDateCalculator = true;
-            profile.CanViewRegisterUser = true;
+
+            profile.CanViewManagerUser = true;
             profile.Name = "Admin";
             return profile;
         }
@@ -29,7 +30,7 @@ namespace projeto_integrado_2_sem.Models
             var profile = new Profile();
             profile.id = "2";
             profile.CanViewDateCalculator = true;
-            profile.CanViewRegisterUser = false;
+            profile.CanViewManagerUser = false;
             profile.Name = "Operador";
             return profile;
         }
@@ -38,7 +39,7 @@ namespace projeto_integrado_2_sem.Models
             var profile = new Profile();
             profile.id = "3";
             profile.CanViewDateCalculator = false;
-            profile.CanViewRegisterUser = false;
+            profile.CanViewManagerUser = false;
             profile.Name = "Assistente";
             return profile;
         }
