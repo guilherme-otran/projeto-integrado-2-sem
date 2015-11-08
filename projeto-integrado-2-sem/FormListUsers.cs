@@ -86,5 +86,30 @@ namespace projeto_integrado_2_sem
             RepositoryManager.ManagerInstance.userRepository.Persist(selectedUser);
             usersGridView.DataSource = new BindingSource(repo.List(), null);
         }
+
+        private void btnChangeProfile_Click(object sender, EventArgs e)
+        {
+            switch(cmbProfiles.SelectedIndex)
+            {
+                case 0:
+                    selectedUser.Profile = Profile.AdminProfile();
+                    break;
+                case 1:
+                    selectedUser.Profile = Profile.Operator();
+                    break;
+                default:
+                    selectedUser.Profile = Profile.Assistant();
+                    break;
+            }
+
+            RepositoryManager.ManagerInstance.userRepository.Persist(selectedUser);
+            usersGridView.DataSource = new BindingSource(repo.List(), null);
+        }
+
+        private void cmbProfiles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbProfiles.SelectedIndex != null)
+                btnChangeProfile.Enabled = true;
+        }
     }
 }
