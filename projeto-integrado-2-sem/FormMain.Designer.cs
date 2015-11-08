@@ -36,6 +36,7 @@
             this.ctMenuUserConfig = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnUserManager = new System.Windows.Forms.ToolStripMenuItem();
             this.btnChangePass = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnChangeDate = new System.Windows.Forms.ToolStripMenuItem();
             this.ctMenuUserConfig.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,15 +80,16 @@
             // 
             this.ctMenuUserConfig.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnUserManager,
-            this.btnChangePass});
+            this.btnChangePass,
+            this.btnChangeDate});
             this.ctMenuUserConfig.Name = "ctMenuUserConfig";
-            this.ctMenuUserConfig.Size = new System.Drawing.Size(173, 70);
+            this.ctMenuUserConfig.Size = new System.Drawing.Size(276, 70);
             // 
             // btnUserManager
             // 
             this.btnUserManager.Image = ((System.Drawing.Image)(resources.GetObject("btnUserManager.Image")));
             this.btnUserManager.Name = "btnUserManager";
-            this.btnUserManager.Size = new System.Drawing.Size(172, 22);
+            this.btnUserManager.Size = new System.Drawing.Size(275, 22);
             this.btnUserManager.Text = "Gerenciar Usuários";
             this.btnUserManager.Click += new System.EventHandler(this.btnUserManager_Click);
             // 
@@ -95,9 +97,16 @@
             // 
             this.btnChangePass.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePass.Image")));
             this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(172, 22);
+            this.btnChangePass.Size = new System.Drawing.Size(275, 22);
             this.btnChangePass.Text = "Mudar Senha";
             this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
+            // 
+            // btnChangeDate
+            // 
+            this.btnChangeDate.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeDate.Image")));
+            this.btnChangeDate.Name = "btnChangeDate";
+            this.btnChangeDate.Size = new System.Drawing.Size(275, 22);
+            this.btnChangeDate.Text = "Consultar/ Alterar data de nascimento";
             // 
             // FormMain
             // 
@@ -127,5 +136,6 @@
         private System.Windows.Forms.ContextMenuStrip ctMenuUserConfig;
         private System.Windows.Forms.ToolStripMenuItem btnUserManager;
         private System.Windows.Forms.ToolStripMenuItem btnChangePass;
+        private System.Windows.Forms.ToolStripMenuItem btnChangeDate;
     }
 }
