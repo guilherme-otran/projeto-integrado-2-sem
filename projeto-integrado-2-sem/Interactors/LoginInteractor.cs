@@ -11,6 +11,7 @@ namespace projeto_integrado_2_sem.Interactors
     class LoginInteractor
     {
         public class InavlidUsernameOrPassword : ArgumentException { };
+        public class UserBlocked : ArgumentException { };
 
         private UserRepository userRepository;
         private string email;
@@ -29,6 +30,9 @@ namespace projeto_integrado_2_sem.Interactors
 
             if (user == null || user.password != password)
                 throw new InavlidUsernameOrPassword();
+
+            if (user.CurrentStatus == User.Status.INACTIVE)
+                throw new UserBlocked();
 
             return user;
         }

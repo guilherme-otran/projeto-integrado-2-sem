@@ -66,6 +66,7 @@
             this.btnBlockUnblock.TabIndex = 8;
             this.btnBlockUnblock.Text = "Selecione um usuário";
             this.btnBlockUnblock.UseVisualStyleBackColor = true;
+            this.btnBlockUnblock.Click += new System.EventHandler(this.btnBlockUnblock_Click);
             // 
             // FormListUsers
             // 
@@ -77,6 +78,7 @@
             this.Controls.Add(this.btnRegister);
             this.Name = "FormListUsers";
             this.Text = "Lista de usuários";
+            this.Load += new System.EventHandler(this.FormListUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).EndInit();
             this.ResumeLayout(false);
 

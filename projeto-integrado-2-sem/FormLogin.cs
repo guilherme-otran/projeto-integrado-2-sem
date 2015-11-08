@@ -38,6 +38,12 @@ namespace projeto_integrado_2_sem
             } 
             catch (LoginInteractor.InavlidUsernameOrPassword)
             {
+                labelInvalidCredentials.Text = "E-mail ou Senha incorreto(s)!";
+                labelInvalidCredentials.Show();
+            }
+            catch(LoginInteractor.UserBlocked)
+            {
+                labelInvalidCredentials.Text = "Usuário bloqueado";
                 labelInvalidCredentials.Show();
             }
             

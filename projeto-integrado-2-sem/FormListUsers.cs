@@ -18,11 +18,33 @@ namespace projeto_integrado_2_sem
         private UserRepository repo = RepositoryManager.ManagerInstance.UserRepository();
         private User selectedUser;
 
+
+        private void atualizarButtonBlockUn()
+        {
+            if (usersGridView.SelectedRows.Count > 0)
+            {
+                selectedUser = (User)usersGridView.SelectedRows[0].DataBoundItem;
+                if (selectedUser.CurrentStatus == User.Status.ACTIVE)
+                {
+                    btnBlockUnblock.Text = "Bloquear";
+                }
+                else
+                {
+                    btnBlockUnblock.Text = "Desbloquear usuário";
+                }
+            }
+        }
+
         public FormListUsers()
         {
             InitializeComponent();
             usersGridView.DataSource = new BindingSource(repo.List(), null);
-            //selectedUser = (User)usersGridView.SelectedRows[0].DataBoundItem;
+        }
+
+        private void FormListUsers_Load(object sender, EventArgs e)
+        {
+            //usersGridView.Select(0,0);
+            atualizarButtonBlockUn();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -48,18 +70,21 @@ namespace projeto_integrado_2_sem
 
         private void usersGridView_SelectionChanged(object sender, EventArgs e)
         {
-            if (usersGridView.SelectedRows.Count > 0)
-            {
-                selectedUser = (User)usersGridView.SelectedRows[0].DataBoundItem;
-                if (selectedUser.CurrentStatus == User.Status.ACTIVE)
-                {
-                    btnBlockUnblock.Text = "Bloquear usuário";
-                }
+            atualizarButtonBlockUn();
+        }
+
+        private void btnBlockUnblock_Click(object sender, EventArgs e)
+        {
+            if (btnBlockUnblock.Text == "Bloquear")
+                if(selectedUser.Profile.id == Profile.AdminProfile().id)
+                    MessageBox.Show("Impossível bloquear o admin");
                 else
-                {
-                    btnBlockUnblock.Text = "Desbloquear usuário";
-                }
-            }
+                    selectedUser.CurrentStatus = User.Status.INACTIVE;
+            else
+                selectedUser.CurrentStatus = User.Status.ACTIVE;
+
+            RepositoryManager.ManagerInstance.userRepository.Persist(selectedUser);
+            usersGridView.DataSource = new BindingSource(repo.List(), null);
         }
     }
 }
