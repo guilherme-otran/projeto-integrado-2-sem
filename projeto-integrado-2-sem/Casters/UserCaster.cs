@@ -32,7 +32,7 @@ namespace projeto_integrado_2_sem.Casters
         public void setPassword(string password)
         {
             this.user.password = password;
-            this.user.passwordChangeDate = new DateTime();
+            this.user.passwordChangeDate = DateTime.Now;
         }
 
         public void changePassword(string currentPassword, string newPassword, string confirm)

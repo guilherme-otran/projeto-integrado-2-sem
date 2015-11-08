@@ -51,6 +51,12 @@
     <Compile Include="ChangePasswordForm.Designer.cs">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultUser.Designer.cs">
+      <DependentUpon>ConsultUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="ErrorPresenters\GenericErrorPresenter.cs" />
     <Compile Include="ErrorPresenters\PasswordValidationErrorPresenter.cs" />
     <Compile Include="ErrorPresenters\PasswordWarningPresenter.cs" />
@@ -107,6 +113,9 @@
     <Compile Include="Validators\ValidationResult.cs" />
     <EmbeddedResource Include="ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultUser.resx">
+      <DependentUpon>ConsultUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDate.resx">
       <DependentUpon>FormDate.cs</DependentUpon>

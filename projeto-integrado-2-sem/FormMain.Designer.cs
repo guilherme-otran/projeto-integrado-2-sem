@@ -83,7 +83,7 @@
             this.btnChangePass,
             this.btnChangeDate});
             this.ctMenuUserConfig.Name = "ctMenuUserConfig";
-            this.ctMenuUserConfig.Size = new System.Drawing.Size(276, 70);
+            this.ctMenuUserConfig.Size = new System.Drawing.Size(276, 92);
             // 
             // btnUserManager
             // 
@@ -107,6 +107,7 @@
             this.btnChangeDate.Name = "btnChangeDate";
             this.btnChangeDate.Size = new System.Drawing.Size(275, 22);
             this.btnChangeDate.Text = "Consultar/ Alterar data de nascimento";
+            this.btnChangeDate.Click += new System.EventHandler(this.btnChangeDate_Click);
             // 
             // FormMain
             // 
