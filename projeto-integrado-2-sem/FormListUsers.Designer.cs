@@ -31,6 +31,7 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.usersGridView = new System.Windows.Forms.DataGridView();
             this.btnBlockUnblock = new System.Windows.Forms.Button();
+            this.btnChangeProfile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,19 +61,29 @@
             // 
             // btnBlockUnblock
             // 
-            this.btnBlockUnblock.Location = new System.Drawing.Point(365, 439);
+            this.btnBlockUnblock.Location = new System.Drawing.Point(361, 439);
             this.btnBlockUnblock.Name = "btnBlockUnblock";
-            this.btnBlockUnblock.Size = new System.Drawing.Size(102, 57);
+            this.btnBlockUnblock.Size = new System.Drawing.Size(115, 57);
             this.btnBlockUnblock.TabIndex = 8;
             this.btnBlockUnblock.Text = "Selecione um usuário";
             this.btnBlockUnblock.UseVisualStyleBackColor = true;
             this.btnBlockUnblock.Click += new System.EventHandler(this.btnBlockUnblock_Click);
+            // 
+            // btnChangeProfile
+            // 
+            this.btnChangeProfile.Location = new System.Drawing.Point(211, 439);
+            this.btnChangeProfile.Name = "btnChangeProfile";
+            this.btnChangeProfile.Size = new System.Drawing.Size(123, 57);
+            this.btnChangeProfile.TabIndex = 9;
+            this.btnChangeProfile.Text = "Mudar perfil do usuário";
+            this.btnChangeProfile.UseVisualStyleBackColor = true;
             // 
             // FormListUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 508);
+            this.Controls.Add(this.btnChangeProfile);
             this.Controls.Add(this.btnBlockUnblock);
             this.Controls.Add(this.usersGridView);
             this.Controls.Add(this.btnRegister);
@@ -89,5 +100,6 @@
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.DataGridView usersGridView;
         private System.Windows.Forms.Button btnBlockUnblock;
+        private System.Windows.Forms.Button btnChangeProfile;
     }
 }
