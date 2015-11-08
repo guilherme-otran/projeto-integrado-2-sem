@@ -59,5 +59,10 @@ namespace projeto_integrado_2_sem
             FormListUsers formListUser = new FormListUsers();
             formListUser.ShowDialog();
         }
+
+        private void btnChangeDate_Click(object sender, EventArgs e)
+        {
+            (new ConsultUser()).ShowDialog();
+        }
     }
 }
