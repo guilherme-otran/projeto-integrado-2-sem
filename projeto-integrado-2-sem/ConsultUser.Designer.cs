@@ -41,6 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtProfile = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnChange = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -56,16 +57,16 @@
             // 
             this.txtConsultId.Location = new System.Drawing.Point(163, 14);
             this.txtConsultId.Name = "txtConsultId";
-            this.txtConsultId.Size = new System.Drawing.Size(115, 20);
+            this.txtConsultId.Size = new System.Drawing.Size(196, 20);
             this.txtConsultId.TabIndex = 1;
             this.txtConsultId.TextChanged += new System.EventHandler(this.txtConsultId_TextChanged);
             this.txtConsultId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsultId_KeyPress);
             // 
             // btnConsult
             // 
-            this.btnConsult.Location = new System.Drawing.Point(284, 12);
+            this.btnConsult.Location = new System.Drawing.Point(365, 12);
             this.btnConsult.Name = "btnConsult";
-            this.btnConsult.Size = new System.Drawing.Size(75, 23);
+            this.btnConsult.Size = new System.Drawing.Size(143, 23);
             this.btnConsult.TabIndex = 2;
             this.btnConsult.Text = "Consultar";
             this.btnConsult.UseVisualStyleBackColor = true;
@@ -74,7 +75,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(119, 44);
+            this.label2.Location = new System.Drawing.Point(119, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 3;
@@ -100,11 +101,12 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(163, 41);
+            this.txtName.Location = new System.Drawing.Point(163, 174);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(345, 20);
             this.txtName.TabIndex = 6;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtEmail
             // 
@@ -124,16 +126,17 @@
             // 
             // txtBirthDate
             // 
-            this.txtBirthDate.Location = new System.Drawing.Point(163, 119);
+            this.txtBirthDate.Location = new System.Drawing.Point(163, 200);
             this.txtBirthDate.Name = "txtBirthDate";
             this.txtBirthDate.ReadOnly = true;
-            this.txtBirthDate.Size = new System.Drawing.Size(196, 20);
+            this.txtBirthDate.Size = new System.Drawing.Size(143, 20);
             this.txtBirthDate.TabIndex = 10;
+            this.txtBirthDate.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(52, 122);
+            this.label5.Location = new System.Drawing.Point(52, 203);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 13);
             this.label5.TabIndex = 9;
@@ -141,7 +144,7 @@
             // 
             // txtProfile
             // 
-            this.txtProfile.Location = new System.Drawing.Point(163, 145);
+            this.txtProfile.Location = new System.Drawing.Point(163, 119);
             this.txtProfile.Name = "txtProfile";
             this.txtProfile.ReadOnly = true;
             this.txtProfile.Size = new System.Drawing.Size(196, 20);
@@ -150,17 +153,29 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(124, 148);
+            this.label6.Location = new System.Drawing.Point(124, 122);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Perfil:";
             // 
+            // btnChange
+            // 
+            this.btnChange.Enabled = false;
+            this.btnChange.Location = new System.Drawing.Point(163, 226);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(143, 23);
+            this.btnChange.TabIndex = 13;
+            this.btnChange.Text = "Alterar";
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+            // 
             // ConsultUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 185);
+            this.ClientSize = new System.Drawing.Size(719, 264);
+            this.Controls.Add(this.btnChange);
             this.Controls.Add(this.txtProfile);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtBirthDate);
@@ -176,6 +191,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ConsultUser";
             this.Text = "Consultar usuário";
+            this.Load += new System.EventHandler(this.ConsultUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +212,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtProfile;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnChange;
     }
 }
