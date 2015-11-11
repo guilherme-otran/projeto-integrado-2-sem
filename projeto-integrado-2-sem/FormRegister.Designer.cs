@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegister));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,6 +49,17 @@
             this.lblPassStrenght = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbProfile = new System.Windows.Forms.ComboBox();
+            this.picErrorName = new System.Windows.Forms.PictureBox();
+            this.picErrorEmail = new System.Windows.Forms.PictureBox();
+            this.picErrorDate = new System.Windows.Forms.PictureBox();
+            this.picErrorPass = new System.Windows.Forms.PictureBox();
+            this.picErrorRePass = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.picErrorName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picErrorEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picErrorDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picErrorPass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picErrorRePass)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -272,13 +284,73 @@
             this.cmbProfile.SelectedValueChanged += new System.EventHandler(this.all_TextChanged);
             this.cmbProfile.TextChanged += new System.EventHandler(this.all_TextChanged);
             // 
+            // picErrorName
+            // 
+            this.picErrorName.Image = ((System.Drawing.Image)(resources.GetObject("picErrorName.Image")));
+            this.picErrorName.Location = new System.Drawing.Point(563, 56);
+            this.picErrorName.Name = "picErrorName";
+            this.picErrorName.Size = new System.Drawing.Size(26, 26);
+            this.picErrorName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picErrorName.TabIndex = 18;
+            this.picErrorName.TabStop = false;
+            this.picErrorName.Visible = false;
+            // 
+            // picErrorEmail
+            // 
+            this.picErrorEmail.Image = ((System.Drawing.Image)(resources.GetObject("picErrorEmail.Image")));
+            this.picErrorEmail.Location = new System.Drawing.Point(563, 91);
+            this.picErrorEmail.Name = "picErrorEmail";
+            this.picErrorEmail.Size = new System.Drawing.Size(26, 26);
+            this.picErrorEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picErrorEmail.TabIndex = 19;
+            this.picErrorEmail.TabStop = false;
+            this.picErrorEmail.Visible = false;
+            // 
+            // picErrorDate
+            // 
+            this.picErrorDate.Image = ((System.Drawing.Image)(resources.GetObject("picErrorDate.Image")));
+            this.picErrorDate.Location = new System.Drawing.Point(563, 130);
+            this.picErrorDate.Name = "picErrorDate";
+            this.picErrorDate.Size = new System.Drawing.Size(26, 26);
+            this.picErrorDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picErrorDate.TabIndex = 20;
+            this.picErrorDate.TabStop = false;
+            this.picErrorDate.Visible = false;
+            // 
+            // picErrorPass
+            // 
+            this.picErrorPass.Image = ((System.Drawing.Image)(resources.GetObject("picErrorPass.Image")));
+            this.picErrorPass.Location = new System.Drawing.Point(339, 197);
+            this.picErrorPass.Name = "picErrorPass";
+            this.picErrorPass.Size = new System.Drawing.Size(26, 26);
+            this.picErrorPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picErrorPass.TabIndex = 21;
+            this.picErrorPass.TabStop = false;
+            this.picErrorPass.Visible = false;
+            // 
+            // picErrorRePass
+            // 
+            this.picErrorRePass.Image = ((System.Drawing.Image)(resources.GetObject("picErrorRePass.Image")));
+            this.picErrorRePass.Location = new System.Drawing.Point(399, 231);
+            this.picErrorRePass.Name = "picErrorRePass";
+            this.picErrorRePass.Size = new System.Drawing.Size(26, 26);
+            this.picErrorRePass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picErrorRePass.TabIndex = 22;
+            this.picErrorRePass.TabStop = false;
+            this.picErrorRePass.Visible = false;
+            // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(850, 443);
+            this.ClientSize = new System.Drawing.Size(656, 443);
             this.ControlBox = false;
+            this.Controls.Add(this.picErrorRePass);
+            this.Controls.Add(this.picErrorPass);
+            this.Controls.Add(this.picErrorDate);
+            this.Controls.Add(this.picErrorEmail);
+            this.Controls.Add(this.picErrorName);
             this.Controls.Add(this.cmbProfile);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblPassStrenght);
@@ -304,6 +376,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
             this.Load += new System.EventHandler(this.FormRegister_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picErrorName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picErrorEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picErrorDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picErrorPass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picErrorRePass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,6 +407,12 @@
         private System.Windows.Forms.Label lblPassStrenght;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbProfile;
+        private System.Windows.Forms.PictureBox picErrorName;
+        private System.Windows.Forms.PictureBox picErrorEmail;
+        private System.Windows.Forms.PictureBox picErrorDate;
+        private System.Windows.Forms.PictureBox picErrorPass;
+        private System.Windows.Forms.PictureBox picErrorRePass;
+        private System.Windows.Forms.ToolTip toolTip1;
 
     }
 }
