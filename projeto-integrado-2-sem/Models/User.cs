@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 
 namespace projeto_integrado_2_sem.Models
@@ -30,8 +31,11 @@ namespace projeto_integrado_2_sem.Models
         public string Name { get { return name; } set { name = value; } }
         public string Email { get { return email; } set { email = value; } }
 
+        [Browsable(false)]
         public string Password { get { return password; } set { password = value; } }
+        [Browsable(false)]
         public string OldPassword { get { return oldPassword; } set { oldPassword = value; } }
+        [Browsable(false)]
         public string CurrentPassword { get { return currentPassword; } set { currentPassword = value; } }
 
         public DateTime PasswordChangeDate { get { return passwordChangeDate; } set { passwordChangeDate = value; } }
@@ -39,6 +43,7 @@ namespace projeto_integrado_2_sem.Models
         public Status CurrentStatus { get { return currentStatus; } set { currentStatus = value; } }
         public string ProfileName { get { return profile.Name; } }
 
+        [Browsable(false)]
         public Profile Profile
         {
             get { return profile; }

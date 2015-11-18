@@ -38,6 +38,7 @@
             // 
             // btnRegister
             // 
+            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.Location = new System.Drawing.Point(494, 439);
             this.btnRegister.Name = "btnRegister";
@@ -51,19 +52,23 @@
             // 
             this.usersGridView.AllowUserToAddRows = false;
             this.usersGridView.AllowUserToDeleteRows = false;
+            this.usersGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.usersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usersGridView.Location = new System.Drawing.Point(0, 12);
+            this.usersGridView.Location = new System.Drawing.Point(0, 0);
             this.usersGridView.MultiSelect = false;
             this.usersGridView.Name = "usersGridView";
             this.usersGridView.ReadOnly = true;
             this.usersGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.usersGridView.Size = new System.Drawing.Size(682, 421);
+            this.usersGridView.Size = new System.Drawing.Size(683, 425);
             this.usersGridView.TabIndex = 7;
             this.usersGridView.RowContextMenuStripChanged += new System.Windows.Forms.DataGridViewRowEventHandler(this.usersGridView_RowContextMenuStripChanged);
             this.usersGridView.SelectionChanged += new System.EventHandler(this.usersGridView_SelectionChanged);
             // 
             // btnBlockUnblock
             // 
+            this.btnBlockUnblock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBlockUnblock.Location = new System.Drawing.Point(361, 439);
             this.btnBlockUnblock.Name = "btnBlockUnblock";
             this.btnBlockUnblock.Size = new System.Drawing.Size(115, 57);
@@ -74,6 +79,7 @@
             // 
             // btnChangeProfile
             // 
+            this.btnChangeProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChangeProfile.Enabled = false;
             this.btnChangeProfile.Location = new System.Drawing.Point(178, 466);
             this.btnChangeProfile.Name = "btnChangeProfile";
@@ -85,6 +91,7 @@
             // 
             // cmbProfiles
             // 
+            this.cmbProfiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbProfiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProfiles.FormattingEnabled = true;
             this.cmbProfiles.Items.AddRange(new object[] {

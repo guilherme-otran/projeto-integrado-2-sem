@@ -38,12 +38,11 @@ namespace projeto_integrado_2_sem
         public FormListUsers()
         {
             InitializeComponent();
-            usersGridView.DataSource = new BindingSource(repo.List(), null);
+            updateDs();
         }
 
         private void FormListUsers_Load(object sender, EventArgs e)
         {
-            //usersGridView.Select(0,0);
             atualizarButtonBlockUn();
         }
 
@@ -51,7 +50,7 @@ namespace projeto_integrado_2_sem
         {
             FormRegister formRegister = new FormRegister();
             formRegister.ShowDialog();
-            usersGridView.DataSource = new BindingSource(repo.List(), null);
+            updateDs();
             usersGridView.Select();
         }
 
@@ -83,13 +82,19 @@ namespace projeto_integrado_2_sem
             else
                 selectedUser.CurrentStatus = User.Status.ACTIVE;
 
-            RepositoryManager.ManagerInstance.userRepository.Persist(selectedUser);
-            usersGridView.DataSource = new BindingSource(repo.List(), null);
+            repo.Persist(selectedUser);
+            updateDs();
         }
 
         private void btnChangeProfile_Click(object sender, EventArgs e)
         {
-            switch(cmbProfiles.SelectedIndex)
+            if (selectedUser.Id == "000001")
+            {
+                MessageBox.Show("O sistema deve haver pelo menos um admin.\nImpossível mudar este perfil!");
+                return;
+            }
+
+            switch (cmbProfiles.SelectedIndex)
             {
                 case 0:
                     selectedUser.Profile = Profile.AdminProfile();
@@ -101,21 +106,20 @@ namespace projeto_integrado_2_sem
                     selectedUser.Profile = Profile.Assistant();
                     break;
             }
-            if (selectedUser.Id == "000001")
-            {
-                MessageBox.Show("O sistema deve haver pelo menos um admin.\nImpossível mudar este perfil!");
-            }
-            else
-            {
-                RepositoryManager.ManagerInstance.userRepository.Persist(selectedUser);
-                usersGridView.DataSource = new BindingSource(repo.List(), null);
-            }
+
+            repo.Persist(selectedUser);
+            updateDs();
         }
 
         private void cmbProfiles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (cmbProfiles.SelectedIndex != null)
-                btnChangeProfile.Enabled = true;
+            btnChangeProfile.Enabled = true;
+        }
+
+        private void updateDs()
+        {
+            var source = new BindingSource(repo.List(), null);
+            usersGridView.DataSource = source;
         }
     }
 }
