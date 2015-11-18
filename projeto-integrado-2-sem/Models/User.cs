@@ -52,7 +52,9 @@ namespace projeto_integrado_2_sem.Models
             get { return profile; }
             set
             {
-                profileId = value.id;
+                if (value != null)
+                    profileId = value.id;  
+
                 profile = value;
             }
         }
