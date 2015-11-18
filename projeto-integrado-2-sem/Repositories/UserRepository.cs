@@ -23,10 +23,10 @@ namespace projeto_integrado_2_sem.Repositories
 
         public override void Persist(User record)
         {
-            if (record.currentPassword != null)
-                record.oldPassword = record.currentPassword;
+            if (record.CurrentPassword != null)
+                record.OldPassword = record.CurrentPassword;
 
-            record.currentPassword = null;
+            record.CurrentPassword = null;
 
             base.Persist(record);
         }

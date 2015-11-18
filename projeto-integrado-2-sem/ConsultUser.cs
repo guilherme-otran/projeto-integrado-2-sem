@@ -48,8 +48,8 @@ namespace projeto_integrado_2_sem
             txtEmail.Text = user.Email;
             txtProfile.Text = user.ProfileName;
 
-            if (user.passwordChangeDate != DateTime.MinValue)
-                txtPassChange.Text = user.passwordChangeDate.ToShortDateString();
+            if (user.PasswordChangeDate != DateTime.MinValue)
+                txtPassChange.Text = user.PasswordChangeDate.ToShortDateString();
 
             if (user.BirthDate != DateTime.MinValue)
                 txtBirthDate.Text = user.BirthDate.ToShortDateString();

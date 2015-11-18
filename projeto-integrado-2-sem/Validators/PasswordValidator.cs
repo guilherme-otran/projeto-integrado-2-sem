@@ -86,8 +86,8 @@ namespace projeto_integrado_2_sem.Validators
         public ValidationResult Validate(User record)
         {
             var validationResult = new UserPasswordValidationResult();
-            AnaliseErrors(validationResult, record, record.password);
-            AnaliseWarnings(validationResult, record, record.password);
+            AnaliseErrors(validationResult, record, record.Password);
+            AnaliseWarnings(validationResult, record, record.Password);
 
             if (validationResult.score() < 3)
                 validationResult.errors.Add(Error.TOO_WEAK);
@@ -164,7 +164,7 @@ namespace projeto_integrado_2_sem.Validators
             if (letterCount < 2)
                 validationResult.errors.Add(Error.TOO_FEW_LETTERS);
 
-            if (password.Equals(user.oldPassword))
+            if (password.Equals(user.OldPassword))
                 validationResult.errors.Add(Error.EQUALS_PREVIOUS_PASSWORD);
 
             if (password.Equals(user.Id))

@@ -3,25 +3,51 @@ using System.Linq;
 
 namespace projeto_integrado_2_sem.Models
 {
+    [Serializable]
     public class User : IStorable
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        
-        public string Email { get; set; }
 
-        public string currentPassword; // Beware! This is temporary and not stored!
-        public string password;
-        public string oldPassword;
-        public DateTime passwordChangeDate;
+        public string id;
+        protected string name;
+        protected string email;
 
-        public DateTime BirthDate { get; set; }
-        public Status CurrentStatus {get; set; }
+        [NonSerializedAttribute]
+        protected string currentPassword; // Beware! This is temporary and not stored!
 
-        public Profile Profile;
+        protected string password;
+        protected string oldPassword;
+        protected DateTime passwordChangeDate;
 
-        public string ProfileName { get { return Profile.Name; } }
-        //public string CurrentStatus { get { return User.Status; } }
+        protected DateTime birthDate;
+        protected Status currentStatus;
+        protected string profileId;
+
+        [NonSerializedAttribute]
+        protected Profile profile;
+
+        // View
+        public string Id { get { return id; } }
+        public string Name { get { return name; } set { name = value; } }
+        public string Email { get { return email; } set { email = value; } }
+
+        public string Password { get { return password; } set { password = value; } }
+        public string OldPassword { get { return oldPassword; } set { oldPassword = value; } }
+        public string CurrentPassword { get { return currentPassword; } set { currentPassword = value; } }
+
+        public DateTime PasswordChangeDate { get { return passwordChangeDate; } set { passwordChangeDate = value; } }
+        public DateTime BirthDate { get { return birthDate; } set { birthDate = value; } }
+        public Status CurrentStatus { get { return currentStatus; } set { currentStatus = value; } }
+        public string ProfileName { get { return profile.Name; } }
+
+        public Profile Profile
+        {
+            get { return profile; }
+            set
+            {
+                profileId = value.id;
+                profile = value;
+            }
+        }
 
         public enum Status
         {
@@ -32,23 +58,12 @@ namespace projeto_integrado_2_sem.Models
         string IStorable.id
         {
             get { return this.Id; }
-            set { this.Id = value; }
+            set { this.id = value; }
         }
 
         public User()
         {
-            this.Id = null;
-            this.Email = null;
-            this.password = null;
-            this.Profile = null;
-        }
-
-        public User(string id, string email, string password, Profile profile)
-        {
-            this.Id = id;
-            this.Email = email;
-            this.password = password;
-            this.Profile = profile;
+            this.id = null;
         }
 
         public string FirstName()

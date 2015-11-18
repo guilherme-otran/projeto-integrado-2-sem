@@ -37,16 +37,16 @@ namespace projeto_integrado_2_sem.Casters
 
         public void setPassword(string password)
         {
-            this.user.password = password;
-            this.user.passwordChangeDate = DateTime.Now;
+            this.user.Password = password;
+            this.user.PasswordChangeDate = DateTime.Now;
         }
 
         public void changePassword(string currentPassword, string newPassword, string confirm)
         {
-            if (this.user.currentPassword == null)
-                this.user.currentPassword = this.user.password;
+            if (this.user.CurrentPassword == null)
+                this.user.CurrentPassword = this.user.Password;
 
-            if (this.user.currentPassword != currentPassword)
+            if (this.user.CurrentPassword != currentPassword)
                 this.result.AddError("currentPassword", MultipleAttributeValidationResult.Error.NOT_EQUAL);
 
             setPassword(newPassword);
@@ -55,7 +55,7 @@ namespace projeto_integrado_2_sem.Casters
 
         public void setPasswordConfirm(string pwdConfirm)
         {
-            if (this.user.password != pwdConfirm)
+            if (this.user.Password != pwdConfirm)
                 this.result.AddError("passwordConfirm", MultipleAttributeValidationResult.Error.INVALID_CONFIRMATION);
         }
 

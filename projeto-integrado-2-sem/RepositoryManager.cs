@@ -43,13 +43,24 @@ namespace projeto_integrado_2_sem
         {
             if (userRepository.Count() < 1)
             {
-                userRepository.Persist(new User(null, "admin@projeto.com", "hu3hu3", Profile.AdminProfile()));
-                userRepository.Persist(new User(null, "user@projeto.com", "hu3hu3", Profile.Operator()));
+                var usr = new User();
+                usr.Name = "Administrador";
+                usr.Email = "admin@projeto.com";
+                usr.Password = "hu3hu3";
+                usr.PasswordChangeDate = System.DateTime.Now;
+                usr.BirthDate = System.DateTime.Now.Date;
+                usr.Profile = Profile.AdminProfile();
+                userRepository.Persist(usr);
+
+                usr = new User();
+                usr.Name = "Usuario teste";
+                usr.Email = "user@projeto.com";
+                usr.Password = "hu3hu3";
+                usr.PasswordChangeDate = System.DateTime.Now;
+                usr.BirthDate = System.DateTime.Now.Date;
+                usr.Profile = Profile.Operator();
+                userRepository.Persist(usr);
             }
-            // Perform an update
-            // var user = userRepository.findById("8d2bc7bf8782a73");
-            // user.password = "BRhu3";
-            // userRepository.persist(user);
         }
 
         public void closeAll()

@@ -28,7 +28,7 @@ namespace projeto_integrado_2_sem.Interactors
         {
             var user = userRepository.findByEmail(email);
 
-            if (user == null || user.password != password)
+            if (user == null || user.Password != password)
                 throw new InavlidUsernameOrPassword();
 
             if (user.CurrentStatus == User.Status.INACTIVE)
