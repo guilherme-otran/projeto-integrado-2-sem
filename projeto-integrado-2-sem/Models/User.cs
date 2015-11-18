@@ -44,6 +44,9 @@ namespace projeto_integrado_2_sem.Models
         public string ProfileName { get { return profile.Name; } }
 
         [Browsable(false)]
+        public string ProfileId { get { return profileId; } }
+
+        [Browsable(false)]
         public Profile Profile
         {
             get { return profile; }
@@ -69,6 +72,7 @@ namespace projeto_integrado_2_sem.Models
         public User()
         {
             this.id = null;
+            this.profile = null;
         }
 
         public string FirstName()

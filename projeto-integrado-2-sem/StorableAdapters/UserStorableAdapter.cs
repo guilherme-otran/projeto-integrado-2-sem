@@ -8,72 +8,41 @@ using System.Threading.Tasks;
 
 namespace projeto_integrado_2_sem
 {
+    [Serializable]
     class UserStorableAdapter : IStorableAdapter<User>
     {
-        public const int EMAIL_INDEX = 1;
-
-        public string Version()
-        {
-            return "3";
-        }
+        private int autoIncrementValue = 1;
 
         public int AttributeCount()
         {
             return 8;
         }
-
-        public string[] AsStringArray(User storable)
-        {
-            string profileId = null;
-
-            if (storable.Profile != null)
-                profileId = storable.Profile.id;
-
-            return new string[] { 
-                storable.Name, 
-                storable.Email,
-                storable.Password, 
-                storable.OldPassword, 
-                storable.PasswordChangeDate.ToBinary().ToString(), 
-                storable.BirthDate.ToBinary().ToString(), 
-                ((int)storable.CurrentStatus).ToString(), 
-                profileId 
-            };
-        }
-
-        public User FromStringArray(string identifier, string[] data)
-        {
-            Profile prof = null;
-
-            if (data[7] == Profile.AdminProfile().id)
-                prof = Profile.AdminProfile();
-            if (data[7] == Profile.Assistant().id)
-                prof = Profile.Assistant();
-            if (prof == null)
-                prof = Profile.Operator();
-
-            var user = new User();
-            user.id = identifier;
-            user.Name = data[0];
-            user.Email = data[1];
-            user.Password = data[2];
-            user.OldPassword = data[3];
-            user.PasswordChangeDate = DateTime.FromBinary(long.Parse(data[4]));
-            user.BirthDate = DateTime.FromBinary(long.Parse(data[5]));
-            user.CurrentStatus = (User.Status) int.Parse(data[6]);
-            user.Profile = prof;
-            return user;
-        }
-
+        
         public string Identifier(User storable)
         {
             return storable.Id;
         }
 
-        public string DefineIdentifier(User storable, int autoIncrementValue)
+        public string DefineIdentifier(User storable)
         {
             storable.id = autoIncrementValue.ToString().PadLeft(6, '0');
+            autoIncrementValue++;
             return Identifier(storable);
+        }
+
+        public User FromSerializedToPublic(User stored)
+        {
+            // TODO: Duplicate user instance.
+            if (Profile.AdminProfile().id == stored.ProfileId)
+                stored.Profile = Profile.AdminProfile();
+
+            if (Profile.Assistant().id == stored.ProfileId)
+                stored.Profile = Profile.Assistant();
+
+            if (stored.Profile == null)
+                stored.Profile = Profile.Operator();
+
+            return stored;
         }
     }
 }

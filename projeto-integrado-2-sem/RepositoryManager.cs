@@ -26,9 +26,9 @@ namespace projeto_integrado_2_sem
             this.userRepository = new UserRepository();
             try
             {
-                this.userRepository.initComponents();
+                this.userRepository.InitComponents();
             }
-            catch (BaseRepository<User>.InvalidHeader)
+            catch (BaseRepository<User>.InvalidFile)
             {
                 this.userRepository.InitializeFile();
             }
@@ -65,7 +65,7 @@ namespace projeto_integrado_2_sem
 
         public void closeAll()
         {
-            this.userRepository.close();
+            this.userRepository.Close();
         }
     }
 }
