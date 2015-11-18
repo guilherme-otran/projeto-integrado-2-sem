@@ -114,7 +114,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(345, 20);
-            this.txtEmail.TabIndex = 7;
+            this.txtEmail.TabIndex = 3;
             // 
             // txtPassChange
             // 
@@ -122,7 +122,7 @@
             this.txtPassChange.Name = "txtPassChange";
             this.txtPassChange.ReadOnly = true;
             this.txtPassChange.Size = new System.Drawing.Size(196, 20);
-            this.txtPassChange.TabIndex = 8;
+            this.txtPassChange.TabIndex = 4;
             // 
             // txtBirthDate
             // 
@@ -130,7 +130,7 @@
             this.txtBirthDate.Name = "txtBirthDate";
             this.txtBirthDate.ReadOnly = true;
             this.txtBirthDate.Size = new System.Drawing.Size(143, 20);
-            this.txtBirthDate.TabIndex = 10;
+            this.txtBirthDate.TabIndex = 7;
             this.txtBirthDate.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // label5
@@ -148,7 +148,7 @@
             this.txtProfile.Name = "txtProfile";
             this.txtProfile.ReadOnly = true;
             this.txtProfile.Size = new System.Drawing.Size(196, 20);
-            this.txtProfile.TabIndex = 12;
+            this.txtProfile.TabIndex = 5;
             // 
             // label6
             // 
@@ -165,7 +165,7 @@
             this.btnChange.Location = new System.Drawing.Point(163, 226);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(143, 23);
-            this.btnChange.TabIndex = 13;
+            this.btnChange.TabIndex = 8;
             this.btnChange.Text = "Alterar";
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);

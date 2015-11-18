@@ -24,6 +24,12 @@ namespace projeto_integrado_2_sem.Casters
             return this.user;
         }
 
+        public override void SetModel(User model)
+        {
+            this.user = model;
+            Reset();
+        }
+
         public void setName(string name)
         {
             this.user.Name = name.Trim();

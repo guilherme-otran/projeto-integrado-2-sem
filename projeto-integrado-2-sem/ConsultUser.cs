@@ -54,6 +54,7 @@ namespace projeto_integrado_2_sem
             if (user.BirthDate != DateTime.MinValue)
                 txtBirthDate.Text = user.BirthDate.ToShortDateString();
 
+            userCaster.SetModel(user);
             enableEdit();
         }
 

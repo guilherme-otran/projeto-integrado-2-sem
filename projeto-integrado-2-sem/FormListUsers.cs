@@ -114,7 +114,7 @@ namespace projeto_integrado_2_sem
 
         private void cmbProfiles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbProfiles.SelectedIndex != null)
+            //if (cmbProfiles.SelectedIndex != null)
                 btnChangeProfile.Enabled = true;
         }
     }
