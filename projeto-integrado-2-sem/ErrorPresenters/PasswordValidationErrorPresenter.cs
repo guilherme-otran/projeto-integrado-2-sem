@@ -19,15 +19,16 @@ namespace projeto_integrado_2_sem.ErrorPresenters
         {
             clearErrors();
             var errors = result.errors;
+            var message = "";
 
             foreach (var error in errors)
             {
-                messageLabel.Text += ErrorMessages.passwordValidatorErrorMessages[(int)error];
-                messageLabel.Text += "; ";
+                message += ErrorMessages.passwordValidatorErrorMessages[(int)error];
+                message += "\n";
             }
 
             if (!result.Valid())
-                markHasErrors();
+                markHasErrors(message);
         }
     }
 }

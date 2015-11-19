@@ -24,81 +24,44 @@ namespace projeto_integrado_2_sem
         UserValidator userValidator = new UserValidator();
         GenericPersister<User> persister;
         List<GenericErrorPresenter> errorPresenters = new List<GenericErrorPresenter>();
+        User currentUser;
 
-        public ConsultUser()
+        public ConsultUser(User currentUser)
         {
             InitializeComponent();
+            this.currentUser = currentUser;
             userRepo = RepositoryManager.ManagerInstance.UserRepository();
             persister = new GenericPersister<User>(userRepo, new Validator<User>[] { userValidator }, userCaster);
-        }
-
-        private void btnConsult_Click(object sender, EventArgs e)
-        {
-            var user = userRepo.findById(txtConsultId.Text);
-            if (user == null)
-            {
-                MessageBox.Show("Usuário não encontrado");
-                txtConsultId.Clear();
-                return;
-            }
-
-            if (user.Name != null)
-                txtName.Text = user.Name;
-
-            txtEmail.Text = user.Email;
-            txtProfile.Text = user.ProfileName;
-
-            if (user.PasswordChangeDate != DateTime.MinValue)
-                txtPassChange.Text = user.PasswordChangeDate.ToShortDateString();
-
-            if (user.BirthDate != DateTime.MinValue)
-                txtBirthDate.Text = user.BirthDate.ToShortDateString();
-
-            userCaster.SetModel(user);
-            enableEdit();
-        }
-
-        private void txtConsultId_TextChanged(object sender, EventArgs e)
-        {
-            txtName.Clear();
-            txtEmail.Clear();
-            txtProfile.Clear();
-            txtPassChange.Clear();
-            txtBirthDate.Clear();
-            blockEdit();
-        }
-
-        private void txtConsultId_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '\r')
-                btnConsult_Click(sender, e);
-        }
-
-        private void enableEdit()
-        {
-            this.txtName.ReadOnly = false;
-            this.txtBirthDate.ReadOnly = false;
-            this.btnChange.Enabled = true;
-        }
-
-        private void blockEdit()
-        {
-            this.txtName.ReadOnly = true;
-            this.txtBirthDate.ReadOnly = true;
-            this.btnChange.Enabled = false;
+            userCaster.SetModel(currentUser);
         }
 
         private void ConsultUser_Load(object sender, EventArgs e)
         {
             errorPresenters.Add(new GenericErrorPresenter(txtName, this, "name"));
-            errorPresenters.Add(new GenericErrorPresenter(txtBirthDate, this, "birthDate"));
+            errorPresenters.Add(new GenericErrorPresenter(new Control[] { txtDay, cmbMonth, cmbYear }, this, "birthDate"));
+
+            if (currentUser.Name != null)
+                txtName.Text = currentUser.Name;
+
+            txtEmail.Text = currentUser.Email;
+            txtProfile.Text = currentUser.ProfileName;
+
+            if (currentUser.PasswordChangeDate != DateTime.MinValue)
+                txtPassChange.Text = currentUser.PasswordChangeDate.ToShortDateString();
+
+            if (currentUser.BirthDate != DateTime.MinValue)
+            {
+                txtDay.Text = currentUser.BirthDate.Day.ToString();
+                cmbMonth.SelectedIndex = currentUser.BirthDate.Month - 1;
+                cmbYear.Text = currentUser.BirthDate.Year.ToString();
+            }
         }
 
         private void ReloadData()
         {
             userCaster.Reset();
             userCaster.setName(txtName.Text);
-            userCaster.setBirthDate(txtBirthDate.Text);
+            userCaster.setBirthDate(txtDay.Text + "/" + (cmbMonth.SelectedIndex + 1).ToString() + cmbYear.Text);
         }
 
         private void displayValidationErrors()

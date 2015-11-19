@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txtConsultId = new System.Windows.Forms.TextBox();
-            this.btnConsult = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassChange = new System.Windows.Forms.TextBox();
-            this.txtBirthDate = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtProfile = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnChange = new System.Windows.Forms.Button();
+            this.txtConsultId = new System.Windows.Forms.TextBox();
+            this.txtDay = new System.Windows.Forms.TextBox();
+            this.cmbYear = new System.Windows.Forms.ComboBox();
+            this.cmbMonth = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -52,25 +53,6 @@
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Código:";
-            // 
-            // txtConsultId
-            // 
-            this.txtConsultId.Location = new System.Drawing.Point(163, 14);
-            this.txtConsultId.Name = "txtConsultId";
-            this.txtConsultId.Size = new System.Drawing.Size(196, 20);
-            this.txtConsultId.TabIndex = 1;
-            this.txtConsultId.TextChanged += new System.EventHandler(this.txtConsultId_TextChanged);
-            this.txtConsultId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsultId_KeyPress);
-            // 
-            // btnConsult
-            // 
-            this.btnConsult.Location = new System.Drawing.Point(365, 12);
-            this.btnConsult.Name = "btnConsult";
-            this.btnConsult.Size = new System.Drawing.Size(143, 23);
-            this.btnConsult.TabIndex = 2;
-            this.btnConsult.Text = "Consultar";
-            this.btnConsult.UseVisualStyleBackColor = true;
-            this.btnConsult.Click += new System.EventHandler(this.btnConsult_Click);
             // 
             // label2
             // 
@@ -103,7 +85,6 @@
             // 
             this.txtName.Location = new System.Drawing.Point(163, 174);
             this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(345, 20);
             this.txtName.TabIndex = 6;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
@@ -123,15 +104,6 @@
             this.txtPassChange.ReadOnly = true;
             this.txtPassChange.Size = new System.Drawing.Size(196, 20);
             this.txtPassChange.TabIndex = 4;
-            // 
-            // txtBirthDate
-            // 
-            this.txtBirthDate.Location = new System.Drawing.Point(163, 200);
-            this.txtBirthDate.Name = "txtBirthDate";
-            this.txtBirthDate.ReadOnly = true;
-            this.txtBirthDate.Size = new System.Drawing.Size(143, 20);
-            this.txtBirthDate.TabIndex = 7;
-            this.txtBirthDate.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // label5
             // 
@@ -170,15 +142,67 @@
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
+            // txtConsultId
+            // 
+            this.txtConsultId.Location = new System.Drawing.Point(163, 14);
+            this.txtConsultId.Name = "txtConsultId";
+            this.txtConsultId.ReadOnly = true;
+            this.txtConsultId.Size = new System.Drawing.Size(196, 20);
+            this.txtConsultId.TabIndex = 1;
+            // 
+            // txtDay
+            // 
+            this.txtDay.Location = new System.Drawing.Point(163, 200);
+            this.txtDay.MaxLength = 2;
+            this.txtDay.Name = "txtDay";
+            this.txtDay.Size = new System.Drawing.Size(57, 20);
+            this.txtDay.TabIndex = 12;
+            // 
+            // cmbYear
+            // 
+            this.cmbYear.FormattingEnabled = true;
+            this.cmbYear.Items.AddRange(new object[] {
+            "{ 1900 , ..., 2015}"});
+            this.cmbYear.Location = new System.Drawing.Point(371, 199);
+            this.cmbYear.MaxLength = 4;
+            this.cmbYear.Name = "cmbYear";
+            this.cmbYear.Size = new System.Drawing.Size(66, 21);
+            this.cmbYear.TabIndex = 14;
+            // 
+            // cmbMonth
+            // 
+            this.cmbMonth.BackColor = System.Drawing.Color.White;
+            this.cmbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMonth.FormattingEnabled = true;
+            this.cmbMonth.Items.AddRange(new object[] {
+            "Janeiro",
+            "Fevereiro",
+            "Março",
+            "Abril",
+            "Maio",
+            "Junho",
+            "Julho",
+            "Agosto",
+            "Setembro",
+            "Outubro",
+            "Novembro",
+            "Dezembro"});
+            this.cmbMonth.Location = new System.Drawing.Point(235, 199);
+            this.cmbMonth.Name = "cmbMonth";
+            this.cmbMonth.Size = new System.Drawing.Size(121, 21);
+            this.cmbMonth.TabIndex = 13;
+            // 
             // ConsultUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 264);
+            this.ClientSize = new System.Drawing.Size(572, 264);
+            this.Controls.Add(this.txtDay);
+            this.Controls.Add(this.cmbYear);
+            this.Controls.Add(this.cmbMonth);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.txtProfile);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtBirthDate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtPassChange);
             this.Controls.Add(this.txtEmail);
@@ -186,7 +210,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnConsult);
             this.Controls.Add(this.txtConsultId);
             this.Controls.Add(this.label1);
             this.Name = "ConsultUser";
@@ -200,18 +223,19 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtConsultId;
-        private System.Windows.Forms.Button btnConsult;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPassChange;
-        private System.Windows.Forms.TextBox txtBirthDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtProfile;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.TextBox txtConsultId;
+        private System.Windows.Forms.TextBox txtDay;
+        private System.Windows.Forms.ComboBox cmbYear;
+        private System.Windows.Forms.ComboBox cmbMonth;
     }
 }

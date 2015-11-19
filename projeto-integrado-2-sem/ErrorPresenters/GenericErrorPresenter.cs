@@ -11,8 +11,8 @@ namespace projeto_integrado_2_sem.ErrorPresenters
     {
         private Control[] validatables;
 
-        protected Label messageLabel;
         protected PictureBox errorIcon;
+        protected ToolTip toolTip;
 
         private string key;
 
@@ -35,30 +35,40 @@ namespace projeto_integrado_2_sem.ErrorPresenters
             errorIcon.Height = errorIcon.Image.Height;
             errorIcon.Visible = false;
 
-            this.messageLabel = new Label();
-            this.messageLabel.Location = validatables.Last().Location;
-            messageLabel.Left += validatables.Last().Width + 25;
-            messageLabel.AutoSize = true;
+            toolTip = new ToolTip();
+            toolTip.IsBalloon = true;
+            toolTip.InitialDelay = 1;
 
             container.Controls.Add(errorIcon);
-            container.Controls.Add(messageLabel);
         }
 
         protected void clearErrors()
         {
             errorIcon.Visible = false;
-            messageLabel.Text = "";
+
+            foreach (var ctr in validatables)
+                toolTip.SetToolTip(ctr, "");
+
+            toolTip.SetToolTip(errorIcon, "");
         }
 
-        protected void markHasErrors()
+        protected void markHasErrors(string errors)
         {
             errorIcon.Visible = true;
+
+            foreach (var ctr in validatables)
+            {
+                toolTip.SetToolTip(ctr, errors);
+            }
+
+            toolTip.SetToolTip(errorIcon, errors);
         }
 
         public void displayMesssages(MultipleAttributeValidationResult[] results)
         {
             clearErrors();
             bool hasErrors = false;
+            var message = "";
 
             foreach (var result in results)
             {
@@ -68,15 +78,15 @@ namespace projeto_integrado_2_sem.ErrorPresenters
                 {
                     foreach (var error in errors)
                     {
-                        messageLabel.Text += ErrorMessages.multipleAttributeErrorMessages[(int)error];
-                        messageLabel.Text += "; ";
+                        message += ErrorMessages.multipleAttributeErrorMessages[(int)error];
+                        message += "\n";
                         hasErrors = true;
                     }
                 }
             }
 
             if (hasErrors)
-                markHasErrors();
+                markHasErrors(message);
         }
     }
 }

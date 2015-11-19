@@ -62,7 +62,7 @@ namespace projeto_integrado_2_sem
 
         private void btnChangeDate_Click(object sender, EventArgs e)
         {
-            (new ConsultUser()).ShowDialog();
+            (new ConsultUser(CurrentUser)).ShowDialog();
         }
     }
 }
