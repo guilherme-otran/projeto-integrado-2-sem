@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Linq;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Resources;
 
 namespace projeto_integrado_2_sem.ErrorPresenters
 {
@@ -11,6 +12,8 @@ namespace projeto_integrado_2_sem.ErrorPresenters
         private Control[] validatables;
 
         protected Label messageLabel;
+        protected PictureBox errorIcon;
+
         private string key;
 
         public GenericErrorPresenter(Control validatable, Form container, string key) :
@@ -23,25 +26,33 @@ namespace projeto_integrado_2_sem.ErrorPresenters
             this.validatables = validatables;
             this.key = key;
 
+            errorIcon = new PictureBox();
+            errorIcon.Image = new Bitmap(Properties.Resources.errorIcon);
+            errorIcon.Location = validatables.Last().Location;
+            errorIcon.Left += validatables.Last().Width + 5;
+            errorIcon.Top -= 5;
+            errorIcon.Width = errorIcon.Image.Width;
+            errorIcon.Height = errorIcon.Image.Height;
+            errorIcon.Visible = false;
+
             this.messageLabel = new Label();
             this.messageLabel.Location = validatables.Last().Location;
-            messageLabel.Left += validatables.Last().Width + 10;
+            messageLabel.Left += validatables.Last().Width + 25;
             messageLabel.AutoSize = true;
 
+            container.Controls.Add(errorIcon);
             container.Controls.Add(messageLabel);
         }
 
         protected void clearErrors()
         {
+            errorIcon.Visible = false;
             messageLabel.Text = "";
-            for (var i = 0; i < validatables.Length; i++)
-                validatables[i].BackColor = Color.White;
         }
 
         protected void markHasErrors()
         {
-            foreach (var v in validatables)
-                v.BackColor = Color.Red;
+            errorIcon.Visible = true;
         }
 
         public void displayMesssages(MultipleAttributeValidationResult[] results)
