@@ -55,6 +55,7 @@
             this.usersGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.usersGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.usersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usersGridView.Location = new System.Drawing.Point(0, 0);
             this.usersGridView.MultiSelect = false;
@@ -108,6 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(683, 508);
             this.Controls.Add(this.cmbProfiles);
             this.Controls.Add(this.btnChangeProfile);
@@ -115,6 +117,7 @@
             this.Controls.Add(this.usersGridView);
             this.Controls.Add(this.btnRegister);
             this.Name = "FormListUsers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de usuários";
             this.Load += new System.EventHandler(this.FormListUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).EndInit();

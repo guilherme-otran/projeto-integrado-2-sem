@@ -40,6 +40,7 @@ namespace projeto_integrado_2_sem
             errorPresenters.Add(new GenericErrorPresenter(txtName, this, "name"));
             errorPresenters.Add(new GenericErrorPresenter(new Control[] { txtDay, cmbMonth, cmbYear }, this, "birthDate"));
 
+            txtConsultId.Text = currentUser.Id;
             if (currentUser.Name != null)
                 txtName.Text = currentUser.Name;
 
@@ -48,6 +49,8 @@ namespace projeto_integrado_2_sem
 
             if (currentUser.PasswordChangeDate != DateTime.MinValue)
                 txtPassChange.Text = currentUser.PasswordChangeDate.ToShortDateString();
+
+            //cmbYear.DataSource = Enumerable.Range(1950, ((DateTime.Today.Year) - 1949)).ToList();
 
             if (currentUser.BirthDate != DateTime.MinValue)
             {
@@ -61,7 +64,7 @@ namespace projeto_integrado_2_sem
         {
             userCaster.Reset();
             userCaster.setName(txtName.Text);
-            userCaster.setBirthDate(txtDay.Text + "/" + (cmbMonth.SelectedIndex + 1).ToString() + cmbYear.Text);
+            userCaster.setBirthDate(txtDay.Text + "/" + (cmbMonth.SelectedIndex + 1).ToString() + "/" + cmbYear.Text);
         }
 
         private void displayValidationErrors()
@@ -72,12 +75,6 @@ namespace projeto_integrado_2_sem
 
             foreach (var presenter in errorPresenters)
                 presenter.displayMesssages(results);
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-            ReloadData();
-            displayValidationErrors();
         }
 
         private void btnChange_Click(object sender, EventArgs e)
@@ -91,6 +88,12 @@ namespace projeto_integrado_2_sem
             {
                 displayValidationErrors();
             }
+        }
+
+        private void update_TextChanged(object sender, EventArgs e)
+        {
+            ReloadData();
+            displayValidationErrors();
         }
     }
 }

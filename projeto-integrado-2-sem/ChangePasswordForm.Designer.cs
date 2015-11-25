@@ -96,19 +96,24 @@
             // btnChange
             // 
             this.btnChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChange.Location = new System.Drawing.Point(129, 214);
+            this.btnChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnChange.FlatAppearance.BorderSize = 0;
+            this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChange.ForeColor = System.Drawing.Color.White;
+            this.btnChange.Location = new System.Drawing.Point(117, 215);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(201, 23);
+            this.btnChange.Size = new System.Drawing.Size(183, 28);
             this.btnChange.TabIndex = 6;
             this.btnChange.Text = "Alterar";
-            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.UseVisualStyleBackColor = false;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // lblPasswordWarn
             // 
             this.lblPasswordWarn.Location = new System.Drawing.Point(129, 91);
             this.lblPasswordWarn.Name = "lblPasswordWarn";
-            this.lblPasswordWarn.Size = new System.Drawing.Size(456, 120);
+            this.lblPasswordWarn.Size = new System.Drawing.Size(235, 120);
             this.lblPasswordWarn.TabIndex = 7;
             // 
             // label4
@@ -124,7 +129,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 249);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.ClientSize = new System.Drawing.Size(417, 255);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblPasswordWarn);
             this.Controls.Add(this.btnChange);

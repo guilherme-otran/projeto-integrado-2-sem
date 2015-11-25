@@ -87,10 +87,11 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(345, 20);
             this.txtName.TabIndex = 6;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
+            this.txtName.TextChanged += new System.EventHandler(this.update_TextChanged);
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Location = new System.Drawing.Point(163, 67);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
@@ -99,6 +100,7 @@
             // 
             // txtPassChange
             // 
+            this.txtPassChange.Enabled = false;
             this.txtPassChange.Location = new System.Drawing.Point(163, 93);
             this.txtPassChange.Name = "txtPassChange";
             this.txtPassChange.ReadOnly = true;
@@ -116,6 +118,7 @@
             // 
             // txtProfile
             // 
+            this.txtProfile.Enabled = false;
             this.txtProfile.Location = new System.Drawing.Point(163, 119);
             this.txtProfile.Name = "txtProfile";
             this.txtProfile.ReadOnly = true;
@@ -133,17 +136,22 @@
             // 
             // btnChange
             // 
-            this.btnChange.Enabled = false;
-            this.btnChange.Location = new System.Drawing.Point(163, 226);
+            this.btnChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnChange.FlatAppearance.BorderSize = 0;
+            this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChange.ForeColor = System.Drawing.Color.White;
+            this.btnChange.Location = new System.Drawing.Point(215, 226);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(143, 23);
+            this.btnChange.Size = new System.Drawing.Size(143, 26);
             this.btnChange.TabIndex = 8;
             this.btnChange.Text = "Alterar";
-            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.UseVisualStyleBackColor = false;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // txtConsultId
             // 
+            this.txtConsultId.Enabled = false;
             this.txtConsultId.Location = new System.Drawing.Point(163, 14);
             this.txtConsultId.Name = "txtConsultId";
             this.txtConsultId.ReadOnly = true;
@@ -157,17 +165,17 @@
             this.txtDay.Name = "txtDay";
             this.txtDay.Size = new System.Drawing.Size(57, 20);
             this.txtDay.TabIndex = 12;
+            this.txtDay.TextChanged += new System.EventHandler(this.update_TextChanged);
             // 
             // cmbYear
             // 
             this.cmbYear.FormattingEnabled = true;
-            this.cmbYear.Items.AddRange(new object[] {
-            "{ 1900 , ..., 2015}"});
             this.cmbYear.Location = new System.Drawing.Point(371, 199);
             this.cmbYear.MaxLength = 4;
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(66, 21);
             this.cmbYear.TabIndex = 14;
+            this.cmbYear.TextChanged += new System.EventHandler(this.update_TextChanged);
             // 
             // cmbMonth
             // 
@@ -191,11 +199,13 @@
             this.cmbMonth.Name = "cmbMonth";
             this.cmbMonth.Size = new System.Drawing.Size(121, 21);
             this.cmbMonth.TabIndex = 13;
+            this.cmbMonth.TextChanged += new System.EventHandler(this.update_TextChanged);
             // 
             // ConsultUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(572, 264);
             this.Controls.Add(this.txtDay);
             this.Controls.Add(this.cmbYear);
@@ -213,6 +223,7 @@
             this.Controls.Add(this.txtConsultId);
             this.Controls.Add(this.label1);
             this.Name = "ConsultUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar usuário";
             this.Load += new System.EventHandler(this.ConsultUser_Load);
             this.ResumeLayout(false);
