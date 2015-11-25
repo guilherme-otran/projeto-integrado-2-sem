@@ -6,7 +6,7 @@ namespace projeto_integrado_2_sem.Repositories
     public class UserRepository : BaseRepository<User>
     {
         public UserRepository() : 
-            base(new BufferedStream(new FileStream("C:\\temp\\users.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite)))
+            base(new BufferedStream(new FileStream("C:\\temp\\users.dat", FileMode.OpenOrCreate, FileAccess.ReadWrite)))
         {
         }
 
