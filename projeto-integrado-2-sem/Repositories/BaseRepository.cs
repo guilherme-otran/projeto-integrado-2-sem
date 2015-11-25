@@ -52,7 +52,7 @@ namespace projeto_integrado_2_sem.Repositories
 
         public virtual void Persist(T storable)
         {
-            var finded = findById(storable.id);
+            var finded = this.data.objects.FirstOrDefault(st => st.id == storable.id);
 
             if (finded == null)
             {

@@ -5,7 +5,7 @@ using System.Linq;
 namespace projeto_integrado_2_sem.Models
 {
     [Serializable]
-    public class User : IStorable
+    public class User : IStorable, ICloneable
     {
 
         public string id;
@@ -98,5 +98,28 @@ namespace projeto_integrado_2_sem.Models
             return String.Join("", splitted).ToUpper();
         }
 
+
+        public object Clone()
+        {
+            var copy = new User();
+            
+            copy.id = this.id;
+            copy.name = this.name;
+            copy.email = this.email;
+            copy.currentPassword = this.currentPassword;
+            copy.password = this.password;
+            copy.oldPassword = this.oldPassword;
+            copy.passwordChangeDate = this.passwordChangeDate;
+            copy.birthDate = this.birthDate;
+            copy.currentStatus = this.currentStatus;
+            copy.profileId = this.profileId;
+
+            if (this.profile == null)
+                copy.profile = null;
+            else
+                copy.profile = (Profile)this.Profile.Clone();
+
+            return copy;
+        }
     }
 }

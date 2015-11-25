@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace projeto_integrado_2_sem.Models
 {
-    public class Profile : IStorable
+    public class Profile : IStorable, ICloneable
     {
         public string id { get; set; }
         public string Name { get; internal set; }
@@ -42,6 +42,14 @@ namespace projeto_integrado_2_sem.Models
             profile.CanViewManagerUser = false;
             profile.Name = "Assistente";
             return profile;
+        }
+
+        public object Clone()
+        {
+            var copy = new Profile();
+            copy.id = this.id;
+            copy.Name = this.Name;
+            return copy;
         }
     }
 }

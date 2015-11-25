@@ -32,7 +32,8 @@ namespace projeto_integrado_2_sem
 
         public User FromSerializedToPublic(User stored)
         {
-            // TODO: Duplicate user instance.
+            stored = (User) stored.Clone();
+
             if (Profile.AdminProfile().id == stored.ProfileId)
                 stored.Profile = Profile.AdminProfile();
 
