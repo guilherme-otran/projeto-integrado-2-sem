@@ -116,6 +116,7 @@
             this.tsi_about.Name = "tsi_about";
             this.tsi_about.Size = new System.Drawing.Size(47, 20);
             this.tsi_about.Text = "Sobre";
+            this.tsi_about.Click += new System.EventHandler(this.tsi_about_Click);
             // 
             // tsi_close
             // 

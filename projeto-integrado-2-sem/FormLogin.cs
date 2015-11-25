@@ -70,5 +70,11 @@ namespace projeto_integrado_2_sem
             FormRegister FormRegister = new FormRegister();
             FormRegister.ShowDialog();
         }
+
+        private void tsi_about_Click(object sender, EventArgs e)
+        {
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
+        }
     }
 }
