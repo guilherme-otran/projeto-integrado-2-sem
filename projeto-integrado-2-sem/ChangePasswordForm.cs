@@ -23,11 +23,13 @@ namespace projeto_integrado_2_sem
         List<GenericErrorPresenter> errorPresenters = new List<GenericErrorPresenter>();
         PasswordValidationErrorPresenter passwdPresenter;
 
-        public ChangePasswordForm(User user)
+        public ChangePasswordForm(string userId)
         {
             InitializeComponent();
-            var userRepo = RepositoryManager.ManagerInstance.UserRepository();
 
+            var userRepo = RepositoryManager.ManagerInstance.UserRepository();
+            var user = userRepo.findById(userId);
+            
             caster = new UserCaster(user);
             persister = new GenericPersister<User>(userRepo, new Validator<User>[] { validator }, caster);
         }

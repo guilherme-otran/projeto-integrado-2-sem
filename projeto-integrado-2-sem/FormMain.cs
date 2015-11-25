@@ -50,7 +50,7 @@ namespace projeto_integrado_2_sem
 
         private void btnChangePass_Click(object sender, EventArgs e)
         {
-            ChangePasswordForm form = new ChangePasswordForm(CurrentUser);
+            ChangePasswordForm form = new ChangePasswordForm(CurrentUser.Id);
             form.ShowDialog();
         }
 
@@ -62,7 +62,7 @@ namespace projeto_integrado_2_sem
 
         private void btnChangeDate_Click(object sender, EventArgs e)
         {
-            (new ConsultUser(CurrentUser)).ShowDialog();
+            (new ConsultUser(CurrentUser.Id)).ShowDialog();
         }
     }
 }

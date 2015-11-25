@@ -26,11 +26,11 @@ namespace projeto_integrado_2_sem
         List<GenericErrorPresenter> errorPresenters = new List<GenericErrorPresenter>();
         User currentUser;
 
-        public ConsultUser(User currentUser)
+        public ConsultUser(string userId)
         {
             InitializeComponent();
-            this.currentUser = currentUser;
             userRepo = RepositoryManager.ManagerInstance.UserRepository();
+            this.currentUser = userRepo.findById(userId);
             persister = new GenericPersister<User>(userRepo, new Validator<User>[] { userValidator }, userCaster);
             userCaster.SetModel(currentUser);
         }
