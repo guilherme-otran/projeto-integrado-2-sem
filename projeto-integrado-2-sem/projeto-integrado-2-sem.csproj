@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="Casters\GenericTypeCaster.cs" />
     <Compile Include="Interactors\GenericPersister.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Interactors\DateCalculator.cs" />
     <Compile Include="FormDate.cs">
