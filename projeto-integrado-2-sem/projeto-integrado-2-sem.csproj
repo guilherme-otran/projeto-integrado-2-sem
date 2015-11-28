@@ -96,7 +96,9 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\IStorable.cs" />
+    <Compile Include="Repositories\CustomerRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="StorableAdapters\CustomerStorableAdapter.cs" />
     <Compile Include="StorableAdapters\IStorableAdapter.cs" />
     <Compile Include="Interactors\LoginInteractor.cs" />
     <Compile Include="Models\Profile.cs" />
