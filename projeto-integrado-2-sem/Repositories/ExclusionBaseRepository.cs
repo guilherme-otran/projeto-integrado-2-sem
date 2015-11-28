@@ -5,13 +5,18 @@ namespace projeto_integrado_2_sem.Repositories
 {
     public abstract class ExclusionBaseRepository<T> : BaseRepository<T> where T : IStorable
     {
-        private class DeadRepository : BaseRepository<T>
+        public class DeadRepository : BaseRepository<T>
         {
             public DeadRepository(string fileName) : base(fileName) { }
 
             public override void InitializeFile()
             {
                 throw new NotImplementedException();
+            }
+
+            public new T findBy(Func<T, Boolean> func)
+            {
+                return base.findBy(func);
             }
         }
 
@@ -46,7 +51,7 @@ namespace projeto_integrado_2_sem.Repositories
             deadFileRepository.Close();
         }
 
-        public BaseRepository<T> DeadRecordsRepo()
+        public DeadRepository DeadRecordsRepo()
         {
             return deadFileRepository;
         }

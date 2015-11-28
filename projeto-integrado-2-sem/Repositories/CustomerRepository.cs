@@ -16,6 +16,11 @@ namespace projeto_integrado_2_sem.Repositories
         {
             base.InitializeFile(new CustomerStorableAdapter());
         }
+
+        public Customer findByCpf(string cpf)
+        {
+            return findBy(c => c.Cpf.Equals(cpf));
+        }
     }
 
 }

@@ -64,5 +64,10 @@ namespace projeto_integrado_2_sem
         {
             (new ConsultUser(CurrentUser.Id)).ShowDialog();
         }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            (new FormListCustomers()).ShowDialog();
+        }
     }
 }

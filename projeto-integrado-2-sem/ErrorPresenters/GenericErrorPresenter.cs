@@ -64,6 +64,11 @@ namespace projeto_integrado_2_sem.ErrorPresenters
             toolTip.SetToolTip(errorIcon, errors);
         }
 
+        public void displayMesssages(MultipleAttributeValidationResult result)
+        {
+            displayMesssages(new MultipleAttributeValidationResult[] { result });
+        }
+
         public void displayMesssages(MultipleAttributeValidationResult[] results)
         {
             clearErrors();

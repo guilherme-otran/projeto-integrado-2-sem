@@ -96,6 +96,11 @@ namespace projeto_integrado_2_sem.Repositories
             writeBuffer();
         }
 
+        public virtual bool Any(Func<T, Boolean> func)
+        {
+            return this.data.objects.Any(func);
+        }
+
         public virtual T Destroy(T storable)
         {
             var finded = this.data.objects.FirstOrDefault(st => st.id == storable.id);
@@ -132,12 +137,18 @@ namespace projeto_integrado_2_sem.Repositories
 
         public BindingList<T> List()
         {
+            return List(r => true);
+        }
+
+        public BindingList<T> List(Func<T, bool> filter)
+        {
             var list = new BindingList<T>();
 
             foreach (var node in this.data.objects)
             {
                 var record = data.storableAdapter.FromSerializedToPublic(node);
-                list.Add(record);
+                if (filter(record))
+                    list.Add(record);
             }
                
             return list;

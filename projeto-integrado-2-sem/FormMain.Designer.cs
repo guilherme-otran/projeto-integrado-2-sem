@@ -37,11 +37,13 @@
             this.btnUserManager = new System.Windows.Forms.ToolStripMenuItem();
             this.btnChangePass = new System.Windows.Forms.ToolStripMenuItem();
             this.btnChangeDate = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCustomers = new System.Windows.Forms.Button();
             this.ctMenuUserConfig.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDate
             // 
+            this.btnDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDate.FlatAppearance.BorderSize = 0;
             this.btnDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDate.Image = ((System.Drawing.Image)(resources.GetObject("btnDate.Image")));
@@ -54,6 +56,7 @@
             // 
             // btnLogout
             // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.Location = new System.Drawing.Point(1194, 614);
             this.btnLogout.Name = "btnLogout";
@@ -65,6 +68,7 @@
             // 
             // btnRegister
             // 
+            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegister.FlatAppearance.BorderSize = 0;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,7 +87,7 @@
             this.btnChangePass,
             this.btnChangeDate});
             this.ctMenuUserConfig.Name = "ctMenuUserConfig";
-            this.ctMenuUserConfig.Size = new System.Drawing.Size(276, 92);
+            this.ctMenuUserConfig.Size = new System.Drawing.Size(276, 70);
             // 
             // btnUserManager
             // 
@@ -109,12 +113,24 @@
             this.btnChangeDate.Text = "Consultar/ Alterar data de nascimento";
             this.btnChangeDate.Click += new System.EventHandler(this.btnChangeDate_Click);
             // 
+            // btnCustomers
+            // 
+            this.btnCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCustomers.Location = new System.Drawing.Point(908, 614);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Size = new System.Drawing.Size(134, 55);
+            this.btnCustomers.TabIndex = 6;
+            this.btnCustomers.Text = "Clientes";
+            this.btnCustomers.UseVisualStyleBackColor = true;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1350, 701);
+            this.Controls.Add(this.btnCustomers);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnDate);
@@ -138,5 +154,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnUserManager;
         private System.Windows.Forms.ToolStripMenuItem btnChangePass;
         private System.Windows.Forms.ToolStripMenuItem btnChangeDate;
+        private System.Windows.Forms.Button btnCustomers;
     }
 }

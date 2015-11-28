@@ -23,6 +23,9 @@ namespace projeto_integrado_2_sem.Interactors
             this.caster = caster;
         }
 
+        public GenericPersister(BaseRepository<T> repo, Validator<T> validator, GenericTypeCaster<T> caster) : 
+            this(repo, new Validator<T>[] { validator }, caster) { }
+
         public GenericTypeCaster<T> GetCaster()
         {
             return this.caster;

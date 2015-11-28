@@ -16,8 +16,12 @@ namespace projeto_integrado_2_sem.Validators
             "Não existe registro com este código",
             "Não contém @",
             "É diferente do outro valor",
-            "Não é igual"
+            "Não é igual",
+            "Digitos de verificação não conferem",
+            "Já está presente em outro registro",
+            "Está presente num registro inativo"
         };
+
         public static string[] passwordValidatorErrorMessages = new string[]
         {
             "Senha muito curta (mínimo 6 caracteres)",
