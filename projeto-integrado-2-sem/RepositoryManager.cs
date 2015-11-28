@@ -5,7 +5,6 @@ namespace projeto_integrado_2_sem
 {
     public class RepositoryManager
     {
-
         public static RepositoryManager ManagerInstance;
 
         public static void InitManager()
@@ -20,6 +19,7 @@ namespace projeto_integrado_2_sem
         }
 
         public UserRepository userRepository;
+        public CustomerRepository customerRepository;
 
         public RepositoryManager()
         {
@@ -28,15 +28,30 @@ namespace projeto_integrado_2_sem
             {
                 this.userRepository.InitComponents();
             }
-            catch (BaseRepository<User>.InvalidFile)
+            catch (UserRepository.InvalidFile)
             {
                 this.userRepository.InitializeFile();
+            }
+
+            this.customerRepository = new CustomerRepository();
+            try
+            {
+                this.customerRepository.InitComponents();
+            }
+            catch (CustomerRepository.InvalidFile)
+            {
+                this.customerRepository.InitializeFile();
             }
         }
 
         public UserRepository UserRepository()
         {
             return userRepository;
+        }
+
+        public CustomerRepository CustomerRepository()
+        {
+            return customerRepository;
         }
 
         public void seedData()
@@ -66,6 +81,7 @@ namespace projeto_integrado_2_sem
         public void closeAll()
         {
             this.userRepository.Close();
+            this.customerRepository.Close();
         }
     }
 }

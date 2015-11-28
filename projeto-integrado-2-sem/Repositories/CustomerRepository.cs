@@ -8,12 +8,9 @@ using System.IO;
 
 namespace projeto_integrado_2_sem.Repositories
 {
-    class CustomerRepository : BaseRepository<Customer>
+    public class CustomerRepository : ExclusionBaseRepository<Customer>
     {
-        public CustomerRepository() :
-            base(new BufferedStream(new FileStream("C:\\temp\\customers.dat", FileMode.OpenOrCreate, FileAccess.ReadWrite)))
-        {
-        }
+        public CustomerRepository() : base("customers.dat", "dead-customers.dat") { }
 
         public override void InitializeFile()
         {

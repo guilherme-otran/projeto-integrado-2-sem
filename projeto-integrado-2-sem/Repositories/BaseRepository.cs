@@ -13,10 +13,6 @@ namespace projeto_integrado_2_sem.Repositories
     {
         public class InvalidFile : ArgumentException { };
 
-        private Stream dataStream;
-        private SerializedData data;
-        private IFormatter formatter = new BinaryFormatter();
-
         [Serializable]
         private class SerializedData
         {
@@ -24,14 +20,43 @@ namespace projeto_integrado_2_sem.Repositories
             public IList<T> objects;
         }
 
-        public BaseRepository(BufferedStream dataStream)
+        public class DestroyRecordEventArgs : EventArgs
         {
-            this.dataStream = dataStream;
+            private T storable;
+            private T findedStorable;
+
+            public DestroyRecordEventArgs(T storable, T findedStorable)
+            {
+                this.storable = storable;
+                this.findedStorable = findedStorable;
+            }
+
+            public T Storable { get { return storable; } }
+            public T FindedStorable { get { return findedStorable; } }
+        }
+
+        private Stream dataStream;
+        private SerializedData data;
+        private IFormatter formatter = new BinaryFormatter();
+
+        protected EventHandlerList listEventDelegates = new EventHandlerList();
+
+        static readonly object onDestroyRecordEventKey = new object();
+        public delegate void DestroyRecordEventHandler(object sender, DestroyRecordEventArgs e);
+        public event DestroyRecordEventHandler DestroyRecord
+        {
+            add { listEventDelegates.AddHandler(onDestroyRecordEventKey, value); }
+            remove { listEventDelegates.AddHandler(onDestroyRecordEventKey, value); }
+        }
+
+        public BaseRepository(string fileName)
+        {
+            this.dataStream = new BufferedStream(new FileStream("C:\\temp\\" + fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite));
         }
 
         public abstract void InitializeFile();
 
-        protected void InitializeFile(IStorableAdapter<T> storableAdapter)
+        public virtual void InitializeFile(IStorableAdapter<T> storableAdapter)
         {
             this.data = new SerializedData();
             this.data.storableAdapter = storableAdapter;
@@ -40,12 +65,12 @@ namespace projeto_integrado_2_sem.Repositories
             InitComponents();
         }
 
-        public void InitComponents()
+        public virtual void InitComponents()
         {
             loadBuffer();
         }
 
-        public void Close()
+        public virtual void Close()
         {
             dataStream.Dispose();
         }
@@ -56,7 +81,9 @@ namespace projeto_integrado_2_sem.Repositories
 
             if (finded == null)
             {
-                this.data.storableAdapter.DefineIdentifier(storable);
+                if (storable.id == null)
+                    this.data.storableAdapter.DefineIdentifier(storable);
+
                 this.data.objects.Add(storable);
             }
             else
@@ -67,6 +94,20 @@ namespace projeto_integrado_2_sem.Repositories
             }
 
             writeBuffer();
+        }
+
+        public virtual T Destroy(T storable)
+        {
+            var finded = this.data.objects.FirstOrDefault(st => st.id == storable.id);
+
+            if (finded != null)
+            {
+                OnDestroyRecord(new DestroyRecordEventArgs(storable, finded));
+                this.data.objects.Remove(finded);
+                writeBuffer();
+            }
+
+            return finded;
         }
 
         public T findById(string id)
@@ -123,6 +164,12 @@ namespace projeto_integrado_2_sem.Repositories
             dataStream.SetLength(0);
             formatter.Serialize(dataStream, data);
             dataStream.Flush();
+        }
+
+        private void OnDestroyRecord(DestroyRecordEventArgs e)
+        {
+            var handler = (DestroyRecordEventHandler)listEventDelegates[onDestroyRecordEventKey];
+            handler(this, e);
         }
     };
 

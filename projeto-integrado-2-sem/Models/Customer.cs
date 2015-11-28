@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace projeto_integrado_2_sem.Models
 {
     [Serializable]
-    class Customer : IStorable, ICloneable
+    public class Customer : IStorable, ICloneable
     {
         public string id;
         protected string name;

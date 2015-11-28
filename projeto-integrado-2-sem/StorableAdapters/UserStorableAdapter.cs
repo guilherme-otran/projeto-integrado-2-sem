@@ -1,10 +1,5 @@
 ﻿using projeto_integrado_2_sem.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace projeto_integrado_2_sem
 {
@@ -12,11 +7,6 @@ namespace projeto_integrado_2_sem
     class UserStorableAdapter : IStorableAdapter<User>
     {
         private int autoIncrementValue = 1;
-
-        public int AttributeCount()
-        {
-            return 8;
-        }
         
         public string Identifier(User storable)
         {

@@ -1,12 +1,10 @@
 ﻿using projeto_integrado_2_sem.Models;
-using System.IO;
 
 namespace projeto_integrado_2_sem.Repositories
 {
     public class UserRepository : BaseRepository<User>
     {
-        public UserRepository() : 
-            base(new BufferedStream(new FileStream("C:\\temp\\users.dat", FileMode.OpenOrCreate, FileAccess.ReadWrite)))
+        public UserRepository() : base("users.dat")
         {
         }
 

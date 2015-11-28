@@ -13,17 +13,12 @@ namespace projeto_integrado_2_sem
     {
         private int autoIncrementValue = 1;
 
-        public int AttributeCount()
-        {
-            return 3;
-        }
-
         public string Identifier(Customer storable)
         {
             return storable.Id;
         }
 
-        public string DefineIdentifier(Customer storable)
+        public virtual string DefineIdentifier(Customer storable)
         {
             storable.id = autoIncrementValue.ToString().PadLeft(6, '0');
             autoIncrementValue++;
