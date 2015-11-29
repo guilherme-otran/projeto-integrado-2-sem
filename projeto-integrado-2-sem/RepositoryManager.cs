@@ -103,6 +103,21 @@ namespace projeto_integrado_2_sem
                 usr.Profile = Profile.Operator();
                 userRepository.Persist(usr);
             }
+
+            if (productRepository.Count() < 1)
+            {
+                var prod = new Product();
+                prod.Name = "Mouse";
+                prod.Price = 15;
+                prod.InventoryCount = 10;
+                productRepository.Persist(prod);
+
+                prod = new Product();
+                prod.Name = "Teclado";
+                prod.Price = 30;
+                prod.InventoryCount = 8;
+                productRepository.Persist(prod);
+            }
         }
 
         public void closeAll()
