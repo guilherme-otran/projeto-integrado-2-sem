@@ -21,6 +21,7 @@ namespace projeto_integrado_2_sem
         public UserRepository userRepository;
         public CustomerRepository customerRepository;
         public ProductRepository productRepository;
+        public SaleRepository saleRepository;
 
         public RepositoryManager()
         {
@@ -52,6 +53,16 @@ namespace projeto_integrado_2_sem
             catch (CustomerRepository.InvalidFile)
             {
                 this.customerRepository.InitializeFile();
+            }
+
+            this.saleRepository = new SaleRepository(productRepository, customerRepository);
+            try
+            {
+                this.saleRepository.InitComponents();
+            }
+            catch (SaleRepository.InvalidFile)
+            {
+                this.saleRepository.InitializeFile();
             }
         }
 

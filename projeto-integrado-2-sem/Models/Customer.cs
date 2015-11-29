@@ -12,19 +12,11 @@ namespace projeto_integrado_2_sem.Models
         public string id;
         protected string name;
         protected string cpf;
-        protected Status currentStatus;
 
         // View
         public string Id { get { return id; } }
         public string Name { get { return name; } set { name = value; } }
         public string Cpf { get { return cpf; } set { cpf = value; } }
-        public Status CurrentStatus { get { return currentStatus; } set { currentStatus = value; } }
-
-        public enum Status
-        {
-            ACTIVE = 0,
-            INACTIVE
-        }
 
         string IStorable.id
         {
@@ -38,7 +30,6 @@ namespace projeto_integrado_2_sem.Models
             customer.id = this.id;
             customer.name = this.name;
             customer.cpf = this.cpf;
-            customer.currentStatus = this.currentStatus;
 
             return customer;
         }
