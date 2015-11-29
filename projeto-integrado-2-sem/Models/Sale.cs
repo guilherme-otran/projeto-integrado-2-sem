@@ -13,6 +13,7 @@ namespace projeto_integrado_2_sem.Models
         public string id;
         private string customerId;
         private string productId;
+        private DateTime? saleDate;
         private int quantity;
 
         [NonSerialized]
@@ -24,6 +25,7 @@ namespace projeto_integrado_2_sem.Models
         // View
         public string Id { get { return id; } }
         public int Quantity { get { return quantity; } set { quantity = value; } }
+        public DateTime? SaleDate { get { return this.saleDate; } set { this.saleDate = value; } }
 
         [Browsable(false)]
         public string CustomerId { get { return customerId; } }
