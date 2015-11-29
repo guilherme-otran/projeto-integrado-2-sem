@@ -114,13 +114,13 @@ namespace projeto_integrado_2_sem
                 var prod = new Product();
                 prod.Name = "Mouse";
                 prod.Price = 15;
-                prod.InventoryCount = 10;
+                prod.Amount = 10;
                 productRepository.Persist(prod);
 
                 prod = new Product();
                 prod.Name = "Teclado";
                 prod.Price = 30;
-                prod.InventoryCount = 8;
+                prod.Amount = 8;
                 productRepository.Persist(prod);
             }
         }

@@ -48,9 +48,9 @@
             // 
             this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(125, 439);
+            this.btnRegister.Location = new System.Drawing.Point(140, 442);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(143, 57);
+            this.btnRegister.Size = new System.Drawing.Size(170, 57);
             this.btnRegister.TabIndex = 6;
             this.btnRegister.Text = "Cadastrar Cliente";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -72,7 +72,7 @@
             this.customersGridView.ReadOnly = true;
             this.customersGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.customersGridView.ShowEditingIcon = false;
-            this.customersGridView.Size = new System.Drawing.Size(698, 353);
+            this.customersGridView.Size = new System.Drawing.Size(674, 356);
             this.customersGridView.TabIndex = 7;
             this.customersGridView.SelectionChanged += new System.EventHandler(this.usersGridView_SelectionChanged);
             // 
@@ -81,7 +81,7 @@
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEdit.Enabled = false;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(414, 439);
+            this.btnEdit.Location = new System.Drawing.Point(316, 442);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(132, 57);
             this.btnEdit.TabIndex = 8;
@@ -94,7 +94,7 @@
             this.btnInactive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInactive.Enabled = false;
             this.btnInactive.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInactive.Location = new System.Drawing.Point(552, 439);
+            this.btnInactive.Location = new System.Drawing.Point(492, 442);
             this.btnInactive.Name = "btnInactive";
             this.btnInactive.Size = new System.Drawing.Size(134, 57);
             this.btnInactive.TabIndex = 9;
@@ -107,7 +107,7 @@
             this.radioActives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioActives.AutoSize = true;
             this.radioActives.Checked = true;
-            this.radioActives.Location = new System.Drawing.Point(12, 449);
+            this.radioActives.Location = new System.Drawing.Point(12, 452);
             this.radioActives.Name = "radioActives";
             this.radioActives.Size = new System.Drawing.Size(54, 17);
             this.radioActives.TabIndex = 10;
@@ -120,7 +120,7 @@
             // 
             this.radioInactives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioInactives.AutoSize = true;
-            this.radioInactives.Location = new System.Drawing.Point(12, 472);
+            this.radioInactives.Location = new System.Drawing.Point(12, 475);
             this.radioInactives.Name = "radioInactives";
             this.radioInactives.Size = new System.Drawing.Size(62, 17);
             this.radioInactives.TabIndex = 11;

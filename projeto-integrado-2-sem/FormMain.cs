@@ -69,5 +69,10 @@ namespace projeto_integrado_2_sem
         {
             (new FormListCustomers()).ShowDialog();
         }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            (new FormListProducts()).ShowDialog();
+        }
     }
 }

@@ -22,7 +22,9 @@ namespace projeto_integrado_2_sem.Validators
             IN_USE_BY_INACTIVE,
             AFTER_TEN_DAYS,
             BEFORE_TEN_DAYS,
-            LESS_THAN_ONE
+            LESS_THAN_ONE,
+            AMOUNT_LESS_THAN_0,
+            INVALID_PRICE
         }
 
         public Dictionary<String, List<Error>> errors = new Dictionary<String, List<Error>>();

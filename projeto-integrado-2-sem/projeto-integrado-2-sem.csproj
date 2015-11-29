@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Casters\SaleCaster.cs" />
     <Compile Include="Casters\CustomerCaster.cs" />
+    <Compile Include="Casters\ProductCaster.cs" />
     <Compile Include="Casters\UserCaster.cs" />
     <Compile Include="ChangePasswordForm.cs">
       <SubType>Form</SubType>
@@ -80,11 +81,23 @@
     <Compile Include="FormListCustomers.Designer.cs">
       <DependentUpon>FormListCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormListProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListProducts.Designer.cs">
+      <DependentUpon>FormListProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormListUsers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormListUsers.Designer.cs">
       <DependentUpon>FormListUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProduct.Designer.cs">
+      <DependentUpon>FormProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOrder.cs">
       <SubType>Form</SubType>
@@ -144,6 +157,7 @@
     <Compile Include="Validators\CustomerValidator.cs" />
     <Compile Include="Validators\ErrorMessages.cs" />
     <Compile Include="Validators\MultipleAttributeValidationResult.cs" />
+    <Compile Include="Validators\ProductValidator.cs" />
     <Compile Include="Validators\UserValidator.cs" />
     <Compile Include="Validators\Validator.cs" />
     <Compile Include="Validators\PasswordValidator.cs" />
@@ -166,6 +180,9 @@
     <EmbeddedResource Include="FormListCustomers.resx">
       <DependentUpon>FormListCustomers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormListProducts.resx">
+      <DependentUpon>FormListProducts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormListUsers.resx">
       <DependentUpon>FormListUsers.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProduct.resx">
+      <DependentUpon>FormProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOrder.resx">
       <DependentUpon>FormOrder.cs</DependentUpon>
