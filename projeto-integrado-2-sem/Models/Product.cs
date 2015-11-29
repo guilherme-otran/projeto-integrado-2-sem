@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace projeto_integrado_2_sem.Models
 {
+    [Serializable]
     public class Product : IStorable, ICloneable
     {
         public string id;

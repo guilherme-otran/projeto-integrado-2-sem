@@ -20,6 +20,7 @@ namespace projeto_integrado_2_sem
 
         public UserRepository userRepository;
         public CustomerRepository customerRepository;
+        public ProductRepository productRepository;
 
         public RepositoryManager()
         {
@@ -31,6 +32,16 @@ namespace projeto_integrado_2_sem
             catch (UserRepository.InvalidFile)
             {
                 this.userRepository.InitializeFile();
+            }
+
+            this.productRepository = new ProductRepository();
+            try
+            {
+                this.productRepository.InitComponents();
+            }
+            catch (ProductRepository.InvalidFile)
+            {
+                this.productRepository.InitializeFile();
             }
 
             this.customerRepository = new CustomerRepository();
@@ -52,6 +63,11 @@ namespace projeto_integrado_2_sem
         public CustomerRepository CustomerRepository()
         {
             return customerRepository;
+        }
+
+        public ProductRepository ProductRepository()
+        {
+            return productRepository;
         }
 
         public void seedData()
@@ -82,6 +98,7 @@ namespace projeto_integrado_2_sem
         {
             this.userRepository.Close();
             this.customerRepository.Close();
+            this.productRepository.Close();
         }
     }
 }
