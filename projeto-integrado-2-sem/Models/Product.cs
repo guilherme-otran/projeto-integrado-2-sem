@@ -12,13 +12,13 @@ namespace projeto_integrado_2_sem.Models
         public string id;
         private string name;
         private int inventoryCount = 0;
-        private Decimal? price;
+        private float price;
 
         // View
         public string Id { get { return id; } }
         public string Name { get { return name; } set { name = value; } }
         public int InventoryCount { get { return inventoryCount; } set { inventoryCount = value; } }
-        public Decimal? Price { get { return price; } set { price = value; } }
+        public float Price { get { return price; } set { price = value; } }
 
         string IStorable.id
         {
