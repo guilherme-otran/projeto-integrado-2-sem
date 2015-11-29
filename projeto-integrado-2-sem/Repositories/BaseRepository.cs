@@ -20,33 +20,34 @@ namespace projeto_integrado_2_sem.Repositories
             public IList<T> objects;
         }
 
-        public class DestroyRecordEventArgs : EventArgs
+        public class DestroyRecordsEventArgs : EventArgs
         {
-            private T storable;
-            private T findedStorable;
+            private IEnumerable<T> storables;
+            private IEnumerable<T> findedStorables;
 
-            public DestroyRecordEventArgs(T storable, T findedStorable)
+            public DestroyRecordsEventArgs(IEnumerable<T> storables, IEnumerable<T> findedStorables)
             {
-                this.storable = storable;
-                this.findedStorable = findedStorable;
+                this.storables = storables;
+                this.findedStorables = findedStorables;
             }
 
-            public T Storable { get { return storable; } }
-            public T FindedStorable { get { return findedStorable; } }
+            public IEnumerable<T> Storables { get { return storables; } }
+            public IEnumerable<T> FindedStorables { get { return findedStorables; } }
         }
 
         private Stream dataStream;
         private SerializedData data;
         private IFormatter formatter = new BinaryFormatter();
+        protected IStorableAdapter<T> StorableAdapter { get { return this.data.storableAdapter; } }
 
         protected EventHandlerList listEventDelegates = new EventHandlerList();
 
-        static readonly object onDestroyRecordEventKey = new object();
-        public delegate void DestroyRecordEventHandler(object sender, DestroyRecordEventArgs e);
-        public event DestroyRecordEventHandler DestroyRecord
+        static readonly object onDestroyRecordsEventKey = new object();
+        public delegate void DestroyRecordsEventHandler(object sender, DestroyRecordsEventArgs e);
+        public event DestroyRecordsEventHandler DestroyRecords
         {
-            add { listEventDelegates.AddHandler(onDestroyRecordEventKey, value); }
-            remove { listEventDelegates.AddHandler(onDestroyRecordEventKey, value); }
+            add { listEventDelegates.AddHandler(onDestroyRecordsEventKey, value); }
+            remove { listEventDelegates.AddHandler(onDestroyRecordsEventKey, value); }
         }
 
         public BaseRepository(string fileName)
@@ -77,6 +78,20 @@ namespace projeto_integrado_2_sem.Repositories
 
         public virtual void Persist(T storable)
         {
+            persistRecord(storable);
+            writeBuffer();
+        }
+
+        public virtual void PersistMany(IEnumerable<T> storables)
+        {
+            foreach (var st in storables)
+                persistRecord(st);
+
+            writeBuffer();
+        }
+
+        protected virtual void persistRecord(T storable)
+        {
             var finded = this.data.objects.FirstOrDefault(st => st.id == storable.id);
 
             if (finded == null)
@@ -92,8 +107,6 @@ namespace projeto_integrado_2_sem.Repositories
                 this.data.objects.RemoveAt(idx);
                 this.data.objects.Insert(idx, storable);
             }
-
-            writeBuffer();
         }
 
         public virtual bool Any(Func<T, Boolean> func)
@@ -103,24 +116,36 @@ namespace projeto_integrado_2_sem.Repositories
 
         public virtual T Destroy(T storable)
         {
-            var finded = this.data.objects.FirstOrDefault(st => st.id == storable.id);
+            var list = new List<T>();
+            list.Add(storable);
 
-            if (finded != null)
+            return DestroyMany(list).FirstOrDefault();
+        }
+
+
+        public virtual IEnumerable<T> DestroyMany(IEnumerable<T> storables)
+        {
+            var finds = storables.Select(str => this.data.objects.FirstOrDefault(node => node.id == str.id)).Where(rec => rec != null);
+
+            if (finds.Count() > 0)
             {
-                OnDestroyRecord(new DestroyRecordEventArgs(storable, finded));
-                this.data.objects.Remove(finded);
+                OnDestroyRecord(new DestroyRecordsEventArgs(storables, finds));
+
+                foreach (var record in finds)
+                    this.data.objects.Remove(record);
+
                 writeBuffer();
             }
 
-            return finded;
+            return finds;
         }
 
-        public T findById(string id)
+        public T FindById(string id)
         {
-            return findBy(s => s.id == id);
+            return FindBy(s => s.id == id);
         }
 
-        protected T findBy(Func<T, Boolean> condition)
+        protected T FindBy(Func<T, Boolean> condition)
         {
             var finded = this.data.objects.FirstOrDefault(condition);
 
@@ -128,6 +153,19 @@ namespace projeto_integrado_2_sem.Repositories
                 finded = data.storableAdapter.FromSerializedToPublic(finded);
 
             return finded;
+        }
+
+        public virtual IList<T> FindManyWith(Func<T, bool> condition)
+        {
+            var list = new List<T>();
+            foreach (var node in this.data.objects)
+            {
+                var record = data.storableAdapter.FromSerializedToPublic(node);
+                if (condition(record))
+                    list.Add(record);
+            }
+
+            return list;
         }
 
         public int Count()
@@ -140,16 +178,12 @@ namespace projeto_integrado_2_sem.Repositories
             return List(r => true);
         }
 
-        public BindingList<T> List(Func<T, bool> filter)
+        public BindingList<T> List(Func<T, bool> condition)
         {
             var list = new BindingList<T>();
 
-            foreach (var node in this.data.objects)
-            {
-                var record = data.storableAdapter.FromSerializedToPublic(node);
-                if (filter(record))
-                    list.Add(record);
-            }
+            foreach (var record in FindManyWith(condition))
+                list.Add(record);
                
             return list;
         }
@@ -177,9 +211,9 @@ namespace projeto_integrado_2_sem.Repositories
             dataStream.Flush();
         }
 
-        private void OnDestroyRecord(DestroyRecordEventArgs e)
+        private void OnDestroyRecord(DestroyRecordsEventArgs e)
         {
-            var handler = (DestroyRecordEventHandler)listEventDelegates[onDestroyRecordEventKey];
+            var handler = (DestroyRecordsEventHandler)listEventDelegates[onDestroyRecordsEventKey];
             handler(this, e);
         }
     };

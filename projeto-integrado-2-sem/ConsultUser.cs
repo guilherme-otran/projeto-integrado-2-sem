@@ -30,7 +30,7 @@ namespace projeto_integrado_2_sem
         {
             InitializeComponent();
             userRepo = RepositoryManager.ManagerInstance.UserRepository();
-            this.currentUser = userRepo.findById(userId);
+            this.currentUser = userRepo.FindById(userId);
             persister = new GenericPersister<User>(userRepo, new Validator<User>[] { userValidator }, userCaster);
             userCaster.SetModel(currentUser);
         }

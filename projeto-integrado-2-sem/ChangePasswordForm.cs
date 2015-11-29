@@ -28,7 +28,7 @@ namespace projeto_integrado_2_sem
             InitializeComponent();
 
             var userRepo = RepositoryManager.ManagerInstance.UserRepository();
-            var user = userRepo.findById(userId);
+            var user = userRepo.FindById(userId);
             
             caster = new UserCaster(user);
             persister = new GenericPersister<User>(userRepo, new Validator<User>[] { validator }, caster);

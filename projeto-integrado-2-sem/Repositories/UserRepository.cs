@@ -10,7 +10,7 @@ namespace projeto_integrado_2_sem.Repositories
 
         public User findByEmail(string email)
         {
-            return findBy(user => user.Email == email);
+            return FindBy(user => user.Email == email);
         }
 
         public override void InitializeFile()

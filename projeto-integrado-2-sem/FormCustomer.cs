@@ -34,7 +34,7 @@ namespace projeto_integrado_2_sem
 
             if (customerId != null)
             {
-                var customer = customerRepo.findById(customerId);
+                var customer = customerRepo.FindById(customerId);
                 txtName.Text = customer.Name;
                 mTxtCpf.Text = customer.Cpf;
                 caster.SetModel(customer);

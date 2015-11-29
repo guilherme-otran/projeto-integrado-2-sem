@@ -11,7 +11,7 @@ namespace projeto_integrado_2_sem.Models
     {
         public string id;
         private string name;
-        private int inventoryCount;
+        private int inventoryCount = 0;
 
         // View
         public string Id { get { return id; } }

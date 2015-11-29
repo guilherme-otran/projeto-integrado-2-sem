@@ -19,7 +19,7 @@ namespace projeto_integrado_2_sem.Repositories
 
         public Customer findByCpf(string cpf)
         {
-            return findBy(c => c.Cpf.Equals(cpf));
+            return FindBy(c => c.Cpf.Equals(cpf));
         }
     }
 

@@ -14,9 +14,9 @@ namespace projeto_integrado_2_sem.Repositories
                 throw new NotImplementedException();
             }
 
-            public new T findBy(Func<T, Boolean> func)
+            public new T FindBy(Func<T, Boolean> func)
             {
-                return base.findBy(func);
+                return base.FindBy(func);
             }
         }
 
@@ -25,12 +25,12 @@ namespace projeto_integrado_2_sem.Repositories
         public ExclusionBaseRepository(string fileName, string deadFileName) : base(fileName)
         {
             deadFileRepository = new DeadRepository(deadFileName);
-            this.DestroyRecord += ExclusionBaseRepository_DestroyRecord;
+            this.DestroyRecords += ExclusionBaseRepository_DestroyRecords;
         }
 
-        private void ExclusionBaseRepository_DestroyRecord(object sender, DestroyRecordEventArgs e)
+        private void ExclusionBaseRepository_DestroyRecords(object sender, DestroyRecordsEventArgs e)
         {
-            deadFileRepository.Persist(e.FindedStorable);
+            deadFileRepository.PersistMany(e.FindedStorables);
         }
 
         public override void InitializeFile(IStorableAdapter<T> storableAdapter)
