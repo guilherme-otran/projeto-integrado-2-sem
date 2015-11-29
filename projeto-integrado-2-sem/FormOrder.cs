@@ -33,7 +33,7 @@ namespace projeto_integrado_2_sem
         public FormOrder(string customerId)
         {
             InitializeComponent();
-            persister = new GenericPersister<Sale>(saleRepo, validator, caster);
+            persister = new SalePersister(saleRepo, prodRepo, validator, caster);
             this.customer = custRepo.FindById(customerId);
         }
 

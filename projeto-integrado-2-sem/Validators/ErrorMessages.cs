@@ -24,7 +24,8 @@ namespace projeto_integrado_2_sem.Validators
             "Já passaram mais de 10 dias corridos",
             "É menor que 1",
             "Quantidade não pode ser menor do que 0",
-            "Preço inválido"
+            "Preço inválido",
+            "Quantidade indisponivel no estoque!"
         };
 
         public static string[] passwordValidatorErrorMessages = new string[]

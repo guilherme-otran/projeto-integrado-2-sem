@@ -25,8 +25,15 @@ namespace projeto_integrado_2_sem.Validators
                     result.AddError("saleDate", MultipleAttributeValidationResult.Error.BEFORE_TEN_DAYS);
             }
 
-            if (record.Quantity.HasValue && record.Quantity < 1)
-                result.AddError("quantity", MultipleAttributeValidationResult.Error.LESS_THAN_ONE);
+            if (record.Quantity.HasValue)
+            {
+                if (record.Quantity < 1)
+                    result.AddError("quantity", MultipleAttributeValidationResult.Error.LESS_THAN_ONE);
+
+                if (record.Product != null && record.Quantity > record.Product.Amount)
+                    result.AddError("quantity", MultipleAttributeValidationResult.Error.NOT_ENOUGH_INVENTORY);
+
+            }
 
             return result;
         }

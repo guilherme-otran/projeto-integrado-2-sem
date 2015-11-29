@@ -42,7 +42,20 @@ namespace projeto_integrado_2_sem.Interactors
             return validator.Validate(record);
         }
 
-        public bool Persist()
+        public virtual bool Persist()
+        {
+            var record = caster.GetModel();
+
+            if (Valid())
+            {
+                repository.Persist(record);
+                return true;
+            } 
+            
+            return false;
+        }
+
+        public bool Valid()
         {
             var record = caster.GetModel();
             var results = validators.Select(v => v.Validate(record));
@@ -50,13 +63,7 @@ namespace projeto_integrado_2_sem.Interactors
             var castValid = caster.Valid();
             var validation = results.All(r => r.Valid());
 
-            if (castValid && validation)
-            {
-                repository.Persist(record);
-                return true;
-            } 
-            
-            return false;
+            return (castValid && validation);
         }
 
         public string GetId()

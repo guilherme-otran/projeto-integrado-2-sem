@@ -24,7 +24,8 @@ namespace projeto_integrado_2_sem.Validators
             BEFORE_TEN_DAYS,
             LESS_THAN_ONE,
             AMOUNT_LESS_THAN_0,
-            INVALID_PRICE
+            INVALID_PRICE,
+            NOT_ENOUGH_INVENTORY
         }
 
         public Dictionary<String, List<Error>> errors = new Dictionary<String, List<Error>>();

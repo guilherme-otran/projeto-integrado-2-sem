@@ -113,6 +113,7 @@
     </Compile>
     <Compile Include="Casters\GenericTypeCaster.cs" />
     <Compile Include="Interactors\GenericPersister.cs" />
+    <Compile Include="Interactors\SalePersister.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Sale.cs" />
     <Compile Include="Models\Product.cs" />
