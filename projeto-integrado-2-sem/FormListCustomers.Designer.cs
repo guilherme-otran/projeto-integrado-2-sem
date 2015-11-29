@@ -37,8 +37,9 @@
             this.txtFilterName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.mTxtFilterCpf = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnNewOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -47,9 +48,9 @@
             // 
             this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(137, 439);
+            this.btnRegister.Location = new System.Drawing.Point(125, 439);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(170, 57);
+            this.btnRegister.Size = new System.Drawing.Size(143, 57);
             this.btnRegister.TabIndex = 6;
             this.btnRegister.Text = "Cadastrar Cliente";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -71,7 +72,7 @@
             this.customersGridView.ReadOnly = true;
             this.customersGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.customersGridView.ShowEditingIcon = false;
-            this.customersGridView.Size = new System.Drawing.Size(671, 353);
+            this.customersGridView.Size = new System.Drawing.Size(698, 353);
             this.customersGridView.TabIndex = 7;
             this.customersGridView.SelectionChanged += new System.EventHandler(this.usersGridView_SelectionChanged);
             // 
@@ -80,9 +81,9 @@
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEdit.Enabled = false;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(313, 439);
+            this.btnEdit.Location = new System.Drawing.Point(414, 439);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(170, 57);
+            this.btnEdit.Size = new System.Drawing.Size(132, 57);
             this.btnEdit.TabIndex = 8;
             this.btnEdit.Text = "Editar Cliente";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -93,9 +94,9 @@
             this.btnInactive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInactive.Enabled = false;
             this.btnInactive.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInactive.Location = new System.Drawing.Point(489, 439);
+            this.btnInactive.Location = new System.Drawing.Point(552, 439);
             this.btnInactive.Name = "btnInactive";
-            this.btnInactive.Size = new System.Drawing.Size(170, 57);
+            this.btnInactive.Size = new System.Drawing.Size(134, 57);
             this.btnInactive.TabIndex = 9;
             this.btnInactive.Text = "Inativar Cliente";
             this.btnInactive.UseVisualStyleBackColor = true;
@@ -156,15 +157,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(301, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "CPF:";
-            // 
             // mTxtFilterCpf
             // 
             this.mTxtFilterCpf.Location = new System.Drawing.Point(337, 19);
@@ -174,12 +166,34 @@
             this.mTxtFilterCpf.TabIndex = 17;
             this.mTxtFilterCpf.TextChanged += new System.EventHandler(this.mTxtFilterCpf_TextChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(298, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "CPF:";
+            // 
+            // btnNewOrder
+            // 
+            this.btnNewOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewOrder.Location = new System.Drawing.Point(274, 439);
+            this.btnNewOrder.Name = "btnNewOrder";
+            this.btnNewOrder.Size = new System.Drawing.Size(134, 57);
+            this.btnNewOrder.TabIndex = 16;
+            this.btnNewOrder.Text = "Novo Pedido";
+            this.btnNewOrder.UseVisualStyleBackColor = true;
+            this.btnNewOrder.Click += new System.EventHandler(this.btnSale_Click);
+            // 
             // FormListCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(671, 508);
+            this.ClientSize = new System.Drawing.Size(698, 508);
+            this.Controls.Add(this.btnNewOrder);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.radioInactives);
             this.Controls.Add(this.radioActives);
@@ -211,5 +225,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MaskedTextBox mTxtFilterCpf;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnNewOrder;
     }
 }

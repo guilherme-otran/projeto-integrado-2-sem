@@ -33,13 +33,13 @@ namespace projeto_integrado_2_sem
         {
             cmbYear.DataSource = Enumerable.Range(1950, ((DateTime.Today.Year) - 1949)).ToList();
 
-            errorPresenters.Add(new GenericErrorPresenter(txtEmail, this, "email"));
-            errorPresenters.Add(new GenericErrorPresenter(txtName, this, "name"));
-            errorPresenters.Add(new GenericErrorPresenter(txtPassConfirm, this, "passwordConfirm"));
-            errorPresenters.Add(new GenericErrorPresenter(new Control[] { txtDay, cmbMonth, cmbYear }, this, "birthDate"));
-            errorPresenters.Add(new GenericErrorPresenter(cmbProfile, this, "profile"));
+            errorPresenters.Add(new GenericErrorPresenter(txtEmail, "email"));
+            errorPresenters.Add(new GenericErrorPresenter(txtName, "name"));
+            errorPresenters.Add(new GenericErrorPresenter(txtPassConfirm, "passwordConfirm"));
+            errorPresenters.Add(new GenericErrorPresenter(new Control[] { txtDay, cmbMonth, cmbYear }, "birthDate"));
+            errorPresenters.Add(new GenericErrorPresenter(cmbProfile, "profile"));
 
-            passwdPresenter = new PasswordValidationErrorPresenter(txtPassword, this);
+            passwdPresenter = new PasswordValidationErrorPresenter(txtPassword);
         }
 
         private void dates_KeyPress(object sender, KeyPressEventArgs e)

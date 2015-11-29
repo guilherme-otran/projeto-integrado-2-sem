@@ -37,8 +37,8 @@ namespace projeto_integrado_2_sem
 
         private void ConsultUser_Load(object sender, EventArgs e)
         {
-            errorPresenters.Add(new GenericErrorPresenter(txtName, this, "name"));
-            errorPresenters.Add(new GenericErrorPresenter(new Control[] { txtDay, cmbMonth, cmbYear }, this, "birthDate"));
+            errorPresenters.Add(new GenericErrorPresenter(txtName, "name"));
+            errorPresenters.Add(new GenericErrorPresenter(new Control[] { txtDay, cmbMonth, cmbYear }, "birthDate"));
 
             txtConsultId.Text = currentUser.Id;
             if (currentUser.Name != null)

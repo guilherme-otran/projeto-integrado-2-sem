@@ -10,8 +10,8 @@ namespace projeto_integrado_2_sem.ErrorPresenters
 {
     class PasswordValidationErrorPresenter : GenericErrorPresenter
     {
-        public PasswordValidationErrorPresenter(Control validatable, Form container) :
-            base(validatable, container, null)
+        public PasswordValidationErrorPresenter(Control validatable) :
+            base(validatable, null)
         {
         }
 

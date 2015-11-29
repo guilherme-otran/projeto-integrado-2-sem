@@ -65,6 +65,7 @@ namespace projeto_integrado_2_sem
             {
                 btnEdit.Enabled = false;
                 btnInactive.Enabled = false;
+                btnNewOrder.Enabled = false;
                 return;
             }
 
@@ -72,12 +73,14 @@ namespace projeto_integrado_2_sem
             {
                 btnEdit.Enabled = true;
                 btnInactive.Enabled = true;
+                btnNewOrder.Enabled = true;
                 this.selectedCustomer = (Customer)customersGridView.SelectedRows[0].DataBoundItem;
             }
             else
             {
                 btnEdit.Enabled = false;
                 btnInactive.Enabled = false;
+                btnNewOrder.Enabled = false;
             }
         }
 
@@ -107,6 +110,11 @@ namespace projeto_integrado_2_sem
         private void mTxtFilterCpf_TextChanged(object sender, EventArgs e)
         {
             updateDs();
+        }
+
+        private void btnSale_Click(object sender, EventArgs e)
+        {
+            (new FormOrder(selectedCustomer.Id)).ShowDialog();
         }
     }
 }

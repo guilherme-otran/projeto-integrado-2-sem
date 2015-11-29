@@ -13,8 +13,8 @@ namespace projeto_integrado_2_sem.Models
         public string id;
         private string customerId;
         private string productId;
-        private DateTime? saleDate;
-        private int quantity;
+        private DateTime? saleDate = null;
+        private int? quantity = null;
 
         [NonSerialized]
         private Customer customer;
@@ -24,8 +24,19 @@ namespace projeto_integrado_2_sem.Models
 
         // View
         public string Id { get { return id; } }
-        public int Quantity { get { return quantity; } set { quantity = value; } }
+        public int? Quantity { get { return quantity; } set { quantity = value; } }
         public DateTime? SaleDate { get { return this.saleDate; } set { this.saleDate = value; } }
+
+        public Decimal? TotalValue
+        {
+            get
+            {
+                if (product == null || (!product.Price.HasValue) || (!quantity.HasValue))
+                    return null;
+
+                return decimal.Multiply(product.Price.Value, quantity.Value);
+            }
+        }
 
         [Browsable(false)]
         public string CustomerId { get { return customerId; } }

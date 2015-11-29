@@ -16,12 +16,12 @@ namespace projeto_integrado_2_sem.ErrorPresenters
 
         private string key;
 
-        public GenericErrorPresenter(Control validatable, Form container, string key) :
-            this(new Control[] { validatable }, container, key)
+        public GenericErrorPresenter(Control validatable, string key) :
+            this(new Control[] { validatable }, key)
         {
         }
 
-        public GenericErrorPresenter(Control[] validatables, Form container, string key)
+        public GenericErrorPresenter(Control[] validatables, string key)
         {
             this.validatables = validatables;
             this.key = key;
@@ -39,7 +39,7 @@ namespace projeto_integrado_2_sem.ErrorPresenters
             toolTip.IsBalloon = true;
             toolTip.InitialDelay = 1;
 
-            container.Controls.Add(errorIcon);
+            validatables.Last().Parent.Controls.Add(errorIcon);
         }
 
         protected void clearErrors()

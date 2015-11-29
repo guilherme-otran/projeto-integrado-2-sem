@@ -43,8 +43,8 @@ namespace projeto_integrado_2_sem
 
         private void FormCustomer_Load(object sender, EventArgs e)
         {
-            errorPresenters.Add(new GenericErrorPresenter(txtName, this, "name"));
-            errorPresenters.Add(new GenericErrorPresenter(mTxtCpf, this, "cpf"));
+            errorPresenters.Add(new GenericErrorPresenter(txtName, "name"));
+            errorPresenters.Add(new GenericErrorPresenter(mTxtCpf, "cpf"));
         }
 
         private void all_TextChanged(object sender, EventArgs e)

@@ -81,6 +81,11 @@ namespace projeto_integrado_2_sem
             return productRepository;
         }
 
+        public SaleRepository SaleRepository()
+        {
+            return saleRepository;
+        }
+
         public void seedData()
         {
             if (userRepository.Count() < 1)

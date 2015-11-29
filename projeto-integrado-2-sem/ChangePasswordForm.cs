@@ -77,9 +77,9 @@ namespace projeto_integrado_2_sem
 
         private void ChangePasswordForm_Load(object sender, EventArgs e)
         {
-            errorPresenters.Add(new GenericErrorPresenter(txtCurrentPassword, this, "currentPassword"));
-            errorPresenters.Add(new GenericErrorPresenter(txtPassConfirm, this, "passwordConfirm"));
-            passwdPresenter = new PasswordValidationErrorPresenter(txtNewPasswors, this);
+            errorPresenters.Add(new GenericErrorPresenter(txtCurrentPassword, "currentPassword"));
+            errorPresenters.Add(new GenericErrorPresenter(txtPassConfirm, "passwordConfirm"));
+            passwdPresenter = new PasswordValidationErrorPresenter(txtNewPasswors);
         }
     }
 }

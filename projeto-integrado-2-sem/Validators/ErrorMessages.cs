@@ -19,7 +19,10 @@ namespace projeto_integrado_2_sem.Validators
             "Não é igual",
             "Digitos de verificação não conferem",
             "Já está presente em outro registro",
-            "Está presente num registro inativo"
+            "Está presente num registro inativo",
+            "É após 10 dias corridos",
+            "Já passaram mais de 10 dias corridos",
+            "É menor que 1"
         };
 
         public static string[] passwordValidatorErrorMessages = new string[]
