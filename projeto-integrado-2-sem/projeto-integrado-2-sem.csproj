@@ -94,6 +94,7 @@
     <Compile Include="Casters\GenericTypeCaster.cs" />
     <Compile Include="Interactors\GenericPersister.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Interactors\DateCalculator.cs" />
     <Compile Include="FormDate.cs">
@@ -111,7 +112,9 @@
     <Compile Include="Models\IStorable.cs" />
     <Compile Include="Repositories\CustomerRepository.cs" />
     <Compile Include="Repositories\ExclusionBaseRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="StorableAdapters\ProductStorableAdapter.cs" />
     <Compile Include="StorableAdapters\CustomerStorableAdapter.cs" />
     <Compile Include="StorableAdapters\IStorableAdapter.cs" />
     <Compile Include="Interactors\LoginInteractor.cs" />
