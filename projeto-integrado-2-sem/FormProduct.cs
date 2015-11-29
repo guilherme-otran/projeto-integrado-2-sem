@@ -35,9 +35,9 @@ namespace projeto_integrado_2_sem
 
         private void FormProduct_Load(object sender, EventArgs e)
         {
-            errorsPresenters.Add(new GenericErrorPresenter(txtProductName, this, "name"));
-            errorsPresenters.Add(new GenericErrorPresenter(mtxtPrice, this, "price"));
-            errorsPresenters.Add(new GenericErrorPresenter(txtAmount, this, "amount"));
+            errorsPresenters.Add(new GenericErrorPresenter(txtProductName, "name"));
+            errorsPresenters.Add(new GenericErrorPresenter(mtxtPrice, "price"));
+            errorsPresenters.Add(new GenericErrorPresenter(txtAmount, "amount"));
         }
 
         private void all_TextChanged(object sender, EventArgs e)
@@ -50,15 +50,15 @@ namespace projeto_integrado_2_sem
         {
             caster.Reset();
             caster.setName(txtProductName.Text);
-            float priceTest;
-            float.TryParse(mtxtPrice.Text, out priceTest);
-            caster.setPrice(priceTest);
+            caster.setPrice(mtxtPrice.Text);
            // caster.setAmount(int.Parse(txtAmount.Text));
         }
 
         private void displayValidationErrors()
         {
-            var result = (MultipleAttributeValidationResult)persister.ValidatorErrors(validator);
+            var castResult = (MultipleAttributeValidationResult)persister.CasterErrors();
+            var validResult = (MultipleAttributeValidationResult)persister.ValidatorErrors(validator);
+            var result = new MultipleAttributeValidationResult[] { castResult, validResult };
 
             foreach (var presenter in errorsPresenters)
                 presenter.displayMesssages(result);

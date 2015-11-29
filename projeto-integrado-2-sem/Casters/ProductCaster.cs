@@ -25,9 +25,17 @@ namespace projeto_integrado_2_sem.Casters
         {
             this.product.Name = name.Trim();
         }
-        public void setPrice(float price)
+        public void setPrice(string priceStr)
         {
-            this.product.Price = price;
+            Decimal price = Decimal.Zero;
+
+            if (Decimal.TryParse(priceStr, out price))
+                this.product.Price = price;
+            else
+            {
+                this.product.Price = null;
+                this.result.AddError("price", Validators.MultipleAttributeValidationResult.Error.INVALID_PRICE);
+            }
         }
         public void setAmount(int amount)
         {

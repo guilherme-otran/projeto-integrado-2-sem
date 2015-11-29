@@ -12,13 +12,13 @@ namespace projeto_integrado_2_sem.Models
         public string id;
         private string name;
         private int amount;
-        private float price;
+        private Decimal? price;
 
         // View
         public string Id { get { return id; } }
         public string Name { get { return name; } set { name = value; } }
         public int Amount { get { return amount; } set { amount = value; } }
-        public float Price { get { return price; } set { price = value; } }
+        public Decimal? Price { get { return price; } set { price = value; } }
 
         string IStorable.id
         {
