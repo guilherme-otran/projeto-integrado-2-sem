@@ -74,6 +74,7 @@
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(325, 24);
             this.txtProductName.TabIndex = 3;
+            this.txtProductName.TextChanged += new System.EventHandler(this.all_TextChanged);
             // 
             // txtAmount
             // 
@@ -82,6 +83,7 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(100, 24);
             this.txtAmount.TabIndex = 5;
+            this.txtAmount.TextChanged += new System.EventHandler(this.all_TextChanged);
             // 
             // mtxtPrice
             // 
@@ -91,6 +93,7 @@
             this.mtxtPrice.Name = "mtxtPrice";
             this.mtxtPrice.Size = new System.Drawing.Size(126, 24);
             this.mtxtPrice.TabIndex = 6;
+            this.mtxtPrice.TextChanged += new System.EventHandler(this.all_TextChanged);
             // 
             // btnRegister
             // 
@@ -116,6 +119,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormProduct";
             this.Text = "Cadastrar novo produto";
+            this.Load += new System.EventHandler(this.FormProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

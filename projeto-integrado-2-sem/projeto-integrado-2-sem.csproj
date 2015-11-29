@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Casters\CustomerCaster.cs" />
+    <Compile Include="Casters\ProductCaster.cs" />
     <Compile Include="Casters\UserCaster.cs" />
     <Compile Include="ChangePasswordForm.cs">
       <SubType>Form</SubType>
@@ -148,6 +149,7 @@
     <Compile Include="Validators\CustomerValidator.cs" />
     <Compile Include="Validators\ErrorMessages.cs" />
     <Compile Include="Validators\MultipleAttributeValidationResult.cs" />
+    <Compile Include="Validators\ProductValidator.cs" />
     <Compile Include="Validators\UserValidator.cs" />
     <Compile Include="Validators\Validator.cs" />
     <Compile Include="Validators\PasswordValidator.cs" />

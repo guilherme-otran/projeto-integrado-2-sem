@@ -19,7 +19,9 @@ namespace projeto_integrado_2_sem.Validators
             NOT_EQUAL,
             INVALID_CPF,
             IN_USE_BY_ACTIVE,
-            IN_USE_BY_INACTIVE
+            IN_USE_BY_INACTIVE,
+            AMOUNT_LESS_THAN_0,
+            INVALID_PRICE
         }
 
         public Dictionary<String, List<Error>> errors = new Dictionary<String, List<Error>>();

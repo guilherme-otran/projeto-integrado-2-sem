@@ -7,14 +7,61 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using projeto_integrado_2_sem.Casters;
+using projeto_integrado_2_sem.ErrorPresenters;
+using projeto_integrado_2_sem.Validators;
+using projeto_integrado_2_sem.Repositories;
+using projeto_integrado_2_sem.Interactors;
+using projeto_integrado_2_sem.Models;
 namespace projeto_integrado_2_sem
 {
     public partial class FormProduct : Form
     {
-        public FormProduct()
+        private ProductRepository productRepo = RepositoryManager.ManagerInstance.productRepository;
+        private ProductCaster caster = new ProductCaster();
+        private ProductValidator validator;
+        private GenericPersister<Product> persister;
+        private IList<GenericErrorPresenter> errorsPresenters = new List<GenericErrorPresenter>();
+
+        public FormProduct() : this(null) { }
+
+        public FormProduct(string productId)
         {
             InitializeComponent();
+            validator = new ProductValidator(productRepo);
+            persister = new GenericPersister<Product>(productRepo, validator, caster);
+
+        }
+
+        private void FormProduct_Load(object sender, EventArgs e)
+        {
+            errorsPresenters.Add(new GenericErrorPresenter(txtProductName, this, "name"));
+            errorsPresenters.Add(new GenericErrorPresenter(mtxtPrice, this, "price"));
+            errorsPresenters.Add(new GenericErrorPresenter(txtAmount, this, "amount"));
+        }
+
+        private void all_TextChanged(object sender, EventArgs e)
+        {
+            reloadData();
+            displayValidationErrors();
+        }
+
+        private void reloadData()
+        {
+            caster.Reset();
+            caster.setName(txtProductName.Text);
+            float priceTest;
+            float.TryParse(mtxtPrice.Text, out priceTest);
+            caster.setPrice(priceTest);
+           // caster.setAmount(int.Parse(txtAmount.Text));
+        }
+
+        private void displayValidationErrors()
+        {
+            var result = (MultipleAttributeValidationResult)persister.ValidatorErrors(validator);
+
+            foreach (var presenter in errorsPresenters)
+                presenter.displayMesssages(result);
         }
     }
 }

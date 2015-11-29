@@ -19,7 +19,9 @@ namespace projeto_integrado_2_sem.Validators
             "Não é igual",
             "Digitos de verificação não conferem",
             "Já está presente em outro registro",
-            "Está presente num registro inativo"
+            "Está presente num registro inativo",
+            "Quantidade não pode ser menor do que 0",
+            "Preço inválido"
         };
 
         public static string[] passwordValidatorErrorMessages = new string[]
