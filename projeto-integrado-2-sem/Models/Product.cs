@@ -12,11 +12,13 @@ namespace projeto_integrado_2_sem.Models
         public string id;
         private string name;
         private int inventoryCount = 0;
+        private float price;
 
         // View
         public string Id { get { return id; } }
         public string Name { get { return name; } set { name = value; } }
         public int InventoryCount { get { return inventoryCount; } set { inventoryCount = value; } }
+        public float Price { get { return price; } set { price = value; } }
 
         string IStorable.id
         {
@@ -30,6 +32,7 @@ namespace projeto_integrado_2_sem.Models
             product.id = this.id;
             product.name = this.name;
             product.inventoryCount = this.inventoryCount;
+            product.price = this.price;
 
             return product;
         }
