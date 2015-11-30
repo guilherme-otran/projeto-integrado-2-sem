@@ -37,9 +37,16 @@ namespace projeto_integrado_2_sem.Casters
                 this.result.AddError("price", Validators.MultipleAttributeValidationResult.Error.INVALID_PRICE);
             }
         }
-        public void setAmount(int amount)
+        public void setAmount(string amountStr)
         {
-            this.product.Amount = amount;
+            int amount;
+            if (int.TryParse(amountStr, out amount))
+                this.product.Amount = amount;
+            else
+            {
+                this.product.Amount = 0;
+                this.result.AddError("amount", Validators.MultipleAttributeValidationResult.Error.AMOUNT_LESS_THAN_0);
+            }
         }
     }
 } 

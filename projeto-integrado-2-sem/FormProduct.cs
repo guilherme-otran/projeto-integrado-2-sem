@@ -36,7 +36,7 @@ namespace projeto_integrado_2_sem
         private void FormProduct_Load(object sender, EventArgs e)
         {
             errorsPresenters.Add(new GenericErrorPresenter(txtProductName, "name"));
-            errorsPresenters.Add(new GenericErrorPresenter(mtxtPrice, "price"));
+            errorsPresenters.Add(new GenericErrorPresenter(txtPrice, "price"));
             errorsPresenters.Add(new GenericErrorPresenter(txtAmount, "amount"));
         }
 
@@ -50,8 +50,8 @@ namespace projeto_integrado_2_sem
         {
             caster.Reset();
             caster.setName(txtProductName.Text);
-            caster.setPrice(mtxtPrice.Text);
-           // caster.setAmount(int.Parse(txtAmount.Text));
+            caster.setPrice(txtPrice.Text);
+            caster.setAmount(txtAmount.Text);
         }
 
         private void displayValidationErrors()
@@ -62,6 +62,23 @@ namespace projeto_integrado_2_sem
 
             foreach (var presenter in errorsPresenters)
                 presenter.displayMesssages(result);
+        }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsPunctuation(e.KeyChar)))
+                e.KeyChar = char.MinValue;
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            reloadData();
+            if (persister.Persist())
+                MessageBox.Show("Produto cadastrado com o código " + persister.GetId());
+            else
+            {
+                displayValidationErrors();
+            }
         }
     }
 }
