@@ -119,5 +119,10 @@ namespace projeto_integrado_2_sem
             else
                 MessageBox.Show("Selecione um cliente para continuar");
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

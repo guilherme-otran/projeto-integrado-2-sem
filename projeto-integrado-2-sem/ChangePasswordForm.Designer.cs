@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePasswordForm));
             this.label1 = new System.Windows.Forms.Label();
             this.txtCurrentPassword = new System.Windows.Forms.TextBox();
             this.txtNewPasswors = new System.Windows.Forms.TextBox();
@@ -37,31 +38,36 @@
             this.btnChange = new System.Windows.Forms.Button();
             this.lblPasswordWarn = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 15);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(42, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.Size = new System.Drawing.Size(90, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Senha Atual:";
             // 
             // txtCurrentPassword
             // 
-            this.txtCurrentPassword.Location = new System.Drawing.Point(129, 12);
+            this.txtCurrentPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCurrentPassword.Location = new System.Drawing.Point(137, 55);
             this.txtCurrentPassword.Name = "txtCurrentPassword";
-            this.txtCurrentPassword.Size = new System.Drawing.Size(201, 20);
+            this.txtCurrentPassword.Size = new System.Drawing.Size(201, 24);
             this.txtCurrentPassword.TabIndex = 1;
             this.txtCurrentPassword.UseSystemPasswordChar = true;
             this.txtCurrentPassword.TextChanged += new System.EventHandler(this.TextBox_TextChange);
             // 
             // txtNewPasswors
             // 
-            this.txtNewPasswors.Location = new System.Drawing.Point(129, 38);
+            this.txtNewPasswors.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPasswors.Location = new System.Drawing.Point(137, 93);
             this.txtNewPasswors.Name = "txtNewPasswors";
-            this.txtNewPasswors.Size = new System.Drawing.Size(201, 20);
+            this.txtNewPasswors.Size = new System.Drawing.Size(201, 24);
             this.txtNewPasswors.TabIndex = 3;
             this.txtNewPasswors.UseSystemPasswordChar = true;
             this.txtNewPasswors.TextChanged += new System.EventHandler(this.TextBox_TextChange);
@@ -69,17 +75,19 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 41);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(40, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.Size = new System.Drawing.Size(93, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Senha Nova:";
             // 
             // txtPassConfirm
             // 
-            this.txtPassConfirm.Location = new System.Drawing.Point(129, 64);
+            this.txtPassConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassConfirm.Location = new System.Drawing.Point(210, 129);
             this.txtPassConfirm.Name = "txtPassConfirm";
-            this.txtPassConfirm.Size = new System.Drawing.Size(201, 20);
+            this.txtPassConfirm.Size = new System.Drawing.Size(201, 24);
             this.txtPassConfirm.TabIndex = 5;
             this.txtPassConfirm.UseSystemPasswordChar = true;
             this.txtPassConfirm.TextChanged += new System.EventHandler(this.TextBox_TextChange);
@@ -87,9 +95,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 67);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(39, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 13);
+            this.label3.Size = new System.Drawing.Size(165, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Confirme a senha nova:";
             // 
@@ -101,7 +110,7 @@
             this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChange.ForeColor = System.Drawing.Color.White;
-            this.btnChange.Location = new System.Drawing.Point(117, 215);
+            this.btnChange.Location = new System.Drawing.Point(165, 302);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(183, 28);
             this.btnChange.TabIndex = 6;
@@ -111,26 +120,54 @@
             // 
             // lblPasswordWarn
             // 
-            this.lblPasswordWarn.Location = new System.Drawing.Point(129, 91);
+            this.lblPasswordWarn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordWarn.Location = new System.Drawing.Point(158, 169);
             this.lblPasswordWarn.Name = "lblPasswordWarn";
-            this.lblPasswordWarn.Size = new System.Drawing.Size(235, 120);
+            this.lblPasswordWarn.Size = new System.Drawing.Size(287, 120);
             this.lblPasswordWarn.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 91);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(39, 167);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 13);
+            this.label4.Size = new System.Drawing.Size(115, 18);
             this.label4.TabIndex = 8;
             this.label4.Text = "Força da senha:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(192, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(129, 25);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Alterar Senha";
+            // 
+            // btnBack
+            // 
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(0, 0);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(63, 51);
+            this.btnBack.TabIndex = 19;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // ChangePasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(417, 255);
+            this.ClientSize = new System.Drawing.Size(512, 343);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblPasswordWarn);
             this.Controls.Add(this.btnChange);
@@ -141,6 +178,7 @@
             this.Controls.Add(this.txtCurrentPassword);
             this.Controls.Add(this.label1);
             this.Name = "ChangePasswordForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alterar Senha";
             this.Load += new System.EventHandler(this.ChangePasswordForm_Load);
             this.ResumeLayout(false);
@@ -159,5 +197,7 @@
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Label lblPasswordWarn;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnBack;
     }
 }

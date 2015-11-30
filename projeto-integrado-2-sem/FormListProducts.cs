@@ -54,5 +54,10 @@ namespace projeto_integrado_2_sem
         {
             (new FormProduct(selectecProduct.Id)).ShowDialog();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

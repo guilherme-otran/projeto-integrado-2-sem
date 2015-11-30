@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCustomer));
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.mTxtCpf = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -79,13 +81,31 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(210, 169);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(134, 37);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Salvar";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(-1, -1);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(63, 51);
+            this.btnBack.TabIndex = 15;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // FormCustomer
             // 
@@ -93,12 +113,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(554, 221);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.mTxtCpf);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
             this.Name = "FormCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar/Editar Cliente";
             this.Load += new System.EventHandler(this.FormCustomer_Load);
             this.ResumeLayout(false);
@@ -113,5 +136,6 @@
         private System.Windows.Forms.MaskedTextBox mTxtCpf;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnBack;
     }
 }

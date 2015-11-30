@@ -118,5 +118,10 @@ namespace projeto_integrado_2_sem
                 numOrderQtd.Value -= 1;
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

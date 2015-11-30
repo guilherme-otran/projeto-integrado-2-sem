@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListCustomers));
             this.btnRegister = new System.Windows.Forms.Button();
             this.customersGridView = new System.Windows.Forms.DataGridView();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.mTxtFilterCpf = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnNewOrder = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -141,9 +143,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(10, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Nome:";
+            this.label2.Text = "Nome";
             // 
             // groupBox1
             // 
@@ -151,7 +153,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtFilterName);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(110, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(471, 54);
             this.groupBox1.TabIndex = 15;
@@ -172,9 +174,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(298, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 16;
-            this.label1.Text = "CPF:";
+            this.label1.Text = "CPF";
             // 
             // btnNewOrder
             // 
@@ -188,12 +190,27 @@
             this.btnNewOrder.UseVisualStyleBackColor = true;
             this.btnNewOrder.Click += new System.EventHandler(this.btnSale_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(2, 0);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(63, 51);
+            this.btnBack.TabIndex = 17;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // FormListCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(690, 508);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnNewOrder);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.radioInactives);
@@ -228,5 +245,6 @@
         private System.Windows.Forms.MaskedTextBox mTxtFilterCpf;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnNewOrder;
+        private System.Windows.Forms.Button btnBack;
     }
 }

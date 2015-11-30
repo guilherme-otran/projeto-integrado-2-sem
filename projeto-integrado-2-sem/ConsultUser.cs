@@ -95,5 +95,10 @@ namespace projeto_integrado_2_sem
             ReloadData();
             displayValidationErrors();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

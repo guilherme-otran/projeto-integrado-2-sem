@@ -82,5 +82,10 @@ namespace projeto_integrado_2_sem
                 displayValidationErrors();
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

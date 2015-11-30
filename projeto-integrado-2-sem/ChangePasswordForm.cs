@@ -81,5 +81,10 @@ namespace projeto_integrado_2_sem
             errorPresenters.Add(new GenericErrorPresenter(txtPassConfirm, "passwordConfirm"));
             passwdPresenter = new PasswordValidationErrorPresenter(txtNewPasswors);
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
