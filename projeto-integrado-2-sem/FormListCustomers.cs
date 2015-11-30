@@ -114,7 +114,10 @@ namespace projeto_integrado_2_sem
 
         private void btnSale_Click(object sender, EventArgs e)
         {
-            (new FormOrder(selectedCustomer.Id)).ShowDialog();
+            if (customersGridView.SelectedRows.Count == 1)
+                (new FormOrder(selectedCustomer.Id)).ShowDialog();
+            else
+                MessageBox.Show("Selecione um cliente para continuar");
         }
     }
 }

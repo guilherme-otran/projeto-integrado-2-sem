@@ -31,6 +31,15 @@ namespace projeto_integrado_2_sem
             validator = new ProductValidator(productRepo);
             persister = new GenericPersister<Product>(productRepo, validator, caster);
 
+            if(productId != null)
+            {
+                Product product = productRepo.FindById(productId);
+                txtProductName.Text = product.Name;
+                txtPrice.Text = product.Price.ToString();
+                txtAmount.Text = product.Amount.ToString();
+                caster.SetModel(product);
+            }
+
         }
 
         private void FormProduct_Load(object sender, EventArgs e)
