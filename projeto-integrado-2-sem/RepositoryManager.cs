@@ -109,20 +109,20 @@ namespace projeto_integrado_2_sem
                 userRepository.Persist(usr);
             }
 
-            if (productRepository.Count() < 1)
-            {
-                var prod = new Product();
-                prod.Name = "Mouse";
-                prod.Price = 15;
-                prod.Amount = 10;
-                productRepository.Persist(prod);
+            //if (productRepository.Count() < 1)
+            //{
+            //    var prod = new Product();
+            //    prod.Name = "Mouse";
+            //    prod.Price = 15;
+            //    prod.Amount = 10;
+            //    productRepository.Persist(prod);
 
-                prod = new Product();
-                prod.Name = "Teclado";
-                prod.Price = 30;
-                prod.Amount = 8;
-                productRepository.Persist(prod);
-            }
+            //    prod = new Product();
+            //    prod.Name = "Teclado";
+            //    prod.Price = 30;
+            //    prod.Amount = 8;
+            //    productRepository.Persist(prod);
+            //}
         }
 
         public void closeAll()

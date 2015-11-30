@@ -231,6 +231,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Roboto-Black.ttf" />
+    <None Include="Resources\Roboto-BlackItalic.ttf" />
+    <None Include="Resources\Roboto-Bold.ttf" />
+    <None Include="Resources\Roboto-BoldItalic.ttf" />
+    <None Include="Resources\Roboto-Italic.ttf" />
+    <None Include="Resources\Roboto-Light.ttf" />
+    <None Include="Resources\Roboto-LightItalic.ttf" />
+    <None Include="Resources\Roboto-Medium.ttf" />
+    <None Include="Resources\Roboto-MediumItalic.ttf" />
+    <None Include="Resources\Roboto-Regular.ttf" />
+    <None Include="Resources\Roboto-Thin.ttf" />
+    <None Include="Resources\Roboto-ThinItalic.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

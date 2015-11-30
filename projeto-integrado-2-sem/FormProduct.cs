@@ -83,7 +83,10 @@ namespace projeto_integrado_2_sem
         {
             reloadData();
             if (persister.Persist())
+            {
                 MessageBox.Show("Produto cadastrado com o código " + persister.GetId());
+                this.Close();
+            }
             else
             {
                 displayValidationErrors();
