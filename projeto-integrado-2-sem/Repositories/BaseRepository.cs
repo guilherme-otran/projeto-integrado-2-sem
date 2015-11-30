@@ -168,6 +168,11 @@ namespace projeto_integrado_2_sem.Repositories
             return list;
         }
 
+        protected IList<T> Nodes()
+        {
+            return this.data.objects;
+        }
+
         public int Count()
         {
             return this.data.objects.Count();

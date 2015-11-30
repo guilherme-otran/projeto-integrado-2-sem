@@ -16,8 +16,11 @@ namespace projeto_integrado_2_sem.Models
 
         // View
         public string Id { get { return id; } }
+        [System.ComponentModel.DisplayName("Nome")]
         public string Name { get { return name; } set { name = value; } }
+        [System.ComponentModel.DisplayName("Qtd. Disponível")]
         public int Amount { get { return amount; } set { amount = value; } }
+        [System.ComponentModel.DisplayName("Preço")]
         public Decimal? Price { get { return price; } set { price = value; } }
 
         string IStorable.id

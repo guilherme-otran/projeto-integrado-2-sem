@@ -22,10 +22,17 @@ namespace projeto_integrado_2_sem.Models
         [NonSerialized]
         private Product product;
 
-        // View
+        // Properties
+        [Browsable(false)]
         public string Id { get { return id; } }
         public int? Quantity { get { return quantity; } set { quantity = value; } }
         public DateTime? SaleDate { get { return this.saleDate; } set { this.saleDate = value; } }
+
+        // View
+        public string CustomerName { get { return Customer.Name; } }
+        public string CustomerCpf  { get { return Customer.Cpf; } }
+        public string ProductName { get { return Product.Name; } }
+        public Decimal ProductPrice { get { return Product.Price.Value; } }
 
         public Decimal? TotalValue
         {
@@ -81,6 +88,7 @@ namespace projeto_integrado_2_sem.Models
             sale.customerId = customerId;
             sale.customer = customer;
             sale.quantity = quantity;
+            sale.saleDate = saleDate;
             return sale;
         }
     }

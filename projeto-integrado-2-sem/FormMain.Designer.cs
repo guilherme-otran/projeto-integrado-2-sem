@@ -32,13 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.btnLogout = new System.Windows.Forms.Button();
             this.ctMenuUserConfig = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnUserManager = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnChangePass = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnChangeDate = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnDate = new System.Windows.Forms.Button();
-            this.btnUserManager = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnChangePass = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnChangeDate = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSaleReports = new System.Windows.Forms.Button();
             this.ctMenuUserConfig.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +63,30 @@
             this.btnChangeDate});
             this.ctMenuUserConfig.Name = "ctMenuUserConfig";
             this.ctMenuUserConfig.Size = new System.Drawing.Size(276, 70);
+            // 
+            // btnUserManager
+            // 
+            this.btnUserManager.Image = ((System.Drawing.Image)(resources.GetObject("btnUserManager.Image")));
+            this.btnUserManager.Name = "btnUserManager";
+            this.btnUserManager.Size = new System.Drawing.Size(275, 22);
+            this.btnUserManager.Text = "Gerenciar Usuários";
+            this.btnUserManager.Click += new System.EventHandler(this.btnUserManager_Click);
+            // 
+            // btnChangePass
+            // 
+            this.btnChangePass.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePass.Image")));
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.Size = new System.Drawing.Size(275, 22);
+            this.btnChangePass.Text = "Mudar Senha";
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
+            // 
+            // btnChangeDate
+            // 
+            this.btnChangeDate.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeDate.Image")));
+            this.btnChangeDate.Name = "btnChangeDate";
+            this.btnChangeDate.Size = new System.Drawing.Size(275, 22);
+            this.btnChangeDate.Text = "Consultar/ Alterar data de nascimento";
+            this.btnChangeDate.Click += new System.EventHandler(this.btnChangeDate_Click);
             // 
             // btnCustomers
             // 
@@ -112,29 +137,16 @@
             this.btnDate.UseVisualStyleBackColor = true;
             this.btnDate.Click += new System.EventHandler(this.btnDate_Click);
             // 
-            // btnUserManager
+            // btnSaleReports
             // 
-            this.btnUserManager.Image = ((System.Drawing.Image)(resources.GetObject("btnUserManager.Image")));
-            this.btnUserManager.Name = "btnUserManager";
-            this.btnUserManager.Size = new System.Drawing.Size(275, 22);
-            this.btnUserManager.Text = "Gerenciar Usuários";
-            this.btnUserManager.Click += new System.EventHandler(this.btnUserManager_Click);
-            // 
-            // btnChangePass
-            // 
-            this.btnChangePass.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePass.Image")));
-            this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(275, 22);
-            this.btnChangePass.Text = "Mudar Senha";
-            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
-            // 
-            // btnChangeDate
-            // 
-            this.btnChangeDate.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeDate.Image")));
-            this.btnChangeDate.Name = "btnChangeDate";
-            this.btnChangeDate.Size = new System.Drawing.Size(275, 22);
-            this.btnChangeDate.Text = "Consultar/ Alterar data de nascimento";
-            this.btnChangeDate.Click += new System.EventHandler(this.btnChangeDate_Click);
+            this.btnSaleReports.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaleReports.Location = new System.Drawing.Point(568, 615);
+            this.btnSaleReports.Name = "btnSaleReports";
+            this.btnSaleReports.Size = new System.Drawing.Size(134, 55);
+            this.btnSaleReports.TabIndex = 8;
+            this.btnSaleReports.Text = "Relatório de Vendas";
+            this.btnSaleReports.UseVisualStyleBackColor = true;
+            this.btnSaleReports.Click += new System.EventHandler(this.btnSaleReports_Click);
             // 
             // FormMain
             // 
@@ -142,6 +154,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1350, 701);
+            this.Controls.Add(this.btnSaleReports);
             this.Controls.Add(this.btnProducts);
             this.Controls.Add(this.btnCustomers);
             this.Controls.Add(this.btnRegister);
@@ -169,5 +182,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnChangeDate;
         private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.Button btnProducts;
+        private System.Windows.Forms.Button btnSaleReports;
     }
 }

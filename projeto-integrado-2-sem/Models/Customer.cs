@@ -15,7 +15,11 @@ namespace projeto_integrado_2_sem.Models
 
         // View
         public string Id { get { return id; } }
+
+        [System.ComponentModel.DisplayName("Nome")]
         public string Name { get { return name; } set { name = value; } }
+
+        [System.ComponentModel.DisplayName("CPF")]
         public string Cpf { get { return cpf; } set { cpf = value; } }
 
         string IStorable.id

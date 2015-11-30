@@ -93,6 +93,12 @@
     <Compile Include="FormListUsers.Designer.cs">
       <DependentUpon>FormListUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOrderReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrderReports.Designer.cs">
+      <DependentUpon>FormOrderReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Sale.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\SaleGroup.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Interactors\DateCalculator.cs" />
     <Compile Include="FormDate.cs">
@@ -192,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrderReports.resx">
+      <DependentUpon>FormOrderReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProduct.resx">
       <DependentUpon>FormProduct.cs</DependentUpon>

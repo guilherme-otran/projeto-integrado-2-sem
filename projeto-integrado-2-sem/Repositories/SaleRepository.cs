@@ -44,5 +44,12 @@ namespace projeto_integrado_2_sem.Repositories
         {
             return FindManyWith(s => s.CustomerId.Equals(customerId));
         }
+
+        public IEnumerable<SaleGroup<TGroupKeyResult>> GroupedBy<TGroupKeyResult>(Func<Sale, TGroupKeyResult> groupFn)
+        {
+            return FindManyWith(c => true)
+                .GroupBy(node => groupFn(node))
+                .Select(g => new SaleGroup<TGroupKeyResult>(g.Key, g.ToList()));
+        }
     }
 }

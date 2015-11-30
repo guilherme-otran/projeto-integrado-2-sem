@@ -28,6 +28,7 @@ namespace projeto_integrado_2_sem.Models
 
         // View
         public string Id { get { return id; } }
+        [System.ComponentModel.DisplayName("Nome")]
         public string Name { get { return name; } set { name = value; } }
         public string Email { get { return email; } set { email = value; } }
 
@@ -38,9 +39,16 @@ namespace projeto_integrado_2_sem.Models
         [Browsable(false)]
         public string CurrentPassword { get { return currentPassword; } set { currentPassword = value; } }
 
+        [System.ComponentModel.DisplayName("Senha Alterada Em")]
         public DateTime PasswordChangeDate { get { return passwordChangeDate; } set { passwordChangeDate = value; } }
+
+        [System.ComponentModel.DisplayName("Data de Nasc.")]
         public DateTime BirthDate { get { return birthDate; } set { birthDate = value; } }
+
+        [System.ComponentModel.DisplayName("Estado")]
         public Status CurrentStatus { get { return currentStatus; } set { currentStatus = value; } }
+
+        [System.ComponentModel.DisplayName("Perfil")]
         public string ProfileName { get { return profile.Name; } }
 
         [Browsable(false)]
