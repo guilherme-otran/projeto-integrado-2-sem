@@ -46,16 +46,16 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 58);
+            this.label1.Location = new System.Drawing.Point(88, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 18);
+            this.label1.Size = new System.Drawing.Size(86, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Senha Atual:";
+            this.label1.Text = "Senha Atual";
             // 
             // txtCurrentPassword
             // 
             this.txtCurrentPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCurrentPassword.Location = new System.Drawing.Point(137, 55);
+            this.txtCurrentPassword.Location = new System.Drawing.Point(183, 55);
             this.txtCurrentPassword.Name = "txtCurrentPassword";
             this.txtCurrentPassword.Size = new System.Drawing.Size(201, 24);
             this.txtCurrentPassword.TabIndex = 1;
@@ -65,7 +65,7 @@
             // txtNewPasswors
             // 
             this.txtNewPasswors.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPasswors.Location = new System.Drawing.Point(137, 93);
+            this.txtNewPasswors.Location = new System.Drawing.Point(183, 93);
             this.txtNewPasswors.Name = "txtNewPasswors";
             this.txtNewPasswors.Size = new System.Drawing.Size(201, 24);
             this.txtNewPasswors.TabIndex = 3;
@@ -76,16 +76,16 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 96);
+            this.label2.Location = new System.Drawing.Point(86, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 18);
+            this.label2.Size = new System.Drawing.Size(89, 18);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Senha Nova:";
+            this.label2.Text = "Senha Nova";
             // 
             // txtPassConfirm
             // 
             this.txtPassConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassConfirm.Location = new System.Drawing.Point(210, 129);
+            this.txtPassConfirm.Location = new System.Drawing.Point(183, 129);
             this.txtPassConfirm.Name = "txtPassConfirm";
             this.txtPassConfirm.Size = new System.Drawing.Size(201, 24);
             this.txtPassConfirm.TabIndex = 5;
@@ -96,11 +96,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 132);
+            this.label3.Location = new System.Drawing.Point(12, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(165, 18);
+            this.label3.Size = new System.Drawing.Size(161, 18);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Confirme a senha nova:";
+            this.label3.Text = "Confirme a senha nova";
             // 
             // btnChange
             // 
@@ -110,9 +110,9 @@
             this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChange.ForeColor = System.Drawing.Color.White;
-            this.btnChange.Location = new System.Drawing.Point(165, 302);
+            this.btnChange.Location = new System.Drawing.Point(183, 301);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(183, 28);
+            this.btnChange.Size = new System.Drawing.Size(201, 28);
             this.btnChange.TabIndex = 6;
             this.btnChange.Text = "Alterar";
             this.btnChange.UseVisualStyleBackColor = false;
@@ -121,7 +121,7 @@
             // lblPasswordWarn
             // 
             this.lblPasswordWarn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasswordWarn.Location = new System.Drawing.Point(158, 169);
+            this.lblPasswordWarn.Location = new System.Drawing.Point(180, 167);
             this.lblPasswordWarn.Name = "lblPasswordWarn";
             this.lblPasswordWarn.Size = new System.Drawing.Size(287, 120);
             this.lblPasswordWarn.TabIndex = 7;
@@ -130,17 +130,17 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(39, 167);
+            this.label4.Location = new System.Drawing.Point(61, 165);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 18);
+            this.label4.Size = new System.Drawing.Size(111, 18);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Força da senha:";
+            this.label4.Text = "Força da senha";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(192, 9);
+            this.label5.Location = new System.Drawing.Point(203, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 25);
             this.label5.TabIndex = 9;
@@ -164,7 +164,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(512, 343);
+            this.ClientSize = new System.Drawing.Size(534, 341);
             this.ControlBox = false;
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label5);

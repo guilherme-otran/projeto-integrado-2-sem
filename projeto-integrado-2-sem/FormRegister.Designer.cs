@@ -54,7 +54,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(77, 61);
+            this.label1.Location = new System.Drawing.Point(131, 61);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 16);
@@ -65,7 +65,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(77, 136);
+            this.label2.Location = new System.Drawing.Point(46, 137);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 16);
@@ -76,7 +76,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(77, 204);
+            this.label3.Location = new System.Drawing.Point(130, 204);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 16);
@@ -87,7 +87,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(77, 238);
+            this.label4.Location = new System.Drawing.Point(70, 234);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 16);
@@ -96,7 +96,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(132, 60);
+            this.txtName.Location = new System.Drawing.Point(186, 60);
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(424, 22);
@@ -105,7 +105,7 @@
             // 
             // txtDay
             // 
-            this.txtDay.Location = new System.Drawing.Point(228, 133);
+            this.txtDay.Location = new System.Drawing.Point(186, 134);
             this.txtDay.Margin = new System.Windows.Forms.Padding(4);
             this.txtDay.Name = "txtDay";
             this.txtDay.Size = new System.Drawing.Size(63, 22);
@@ -114,7 +114,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(132, 201);
+            this.txtPassword.Location = new System.Drawing.Point(186, 201);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
@@ -124,7 +124,7 @@
             // 
             // txtPassConfirm
             // 
-            this.txtPassConfirm.Location = new System.Drawing.Point(192, 235);
+            this.txtPassConfirm.Location = new System.Drawing.Point(186, 231);
             this.txtPassConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassConfirm.Name = "txtPassConfirm";
             this.txtPassConfirm.PasswordChar = '●';
@@ -150,7 +150,7 @@
             "Outubro",
             "Novembro",
             "Dezembro"});
-            this.cmbMonth.Location = new System.Drawing.Point(300, 132);
+            this.cmbMonth.Location = new System.Drawing.Point(258, 133);
             this.cmbMonth.Margin = new System.Windows.Forms.Padding(4);
             this.cmbMonth.Name = "cmbMonth";
             this.cmbMonth.Size = new System.Drawing.Size(160, 24);
@@ -161,7 +161,7 @@
             // cmbYear
             // 
             this.cmbYear.FormattingEnabled = true;
-            this.cmbYear.Location = new System.Drawing.Point(469, 132);
+            this.cmbYear.Location = new System.Drawing.Point(427, 133);
             this.cmbYear.Margin = new System.Windows.Forms.Padding(4);
             this.cmbYear.MaxLength = 4;
             this.cmbYear.Name = "cmbYear";
@@ -187,7 +187,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(77, 272);
+            this.label5.Location = new System.Drawing.Point(74, 274);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 16);
@@ -196,7 +196,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(132, 95);
+            this.txtEmail.Location = new System.Drawing.Point(186, 95);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(424, 22);
@@ -207,7 +207,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(77, 97);
+            this.label6.Location = new System.Drawing.Point(130, 98);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 16);
@@ -219,7 +219,7 @@
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(6, 10);
+            this.btnBack.Location = new System.Drawing.Point(2, 2);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(63, 51);
@@ -240,7 +240,7 @@
             // 
             // lblPassStrenght
             // 
-            this.lblPassStrenght.Location = new System.Drawing.Point(189, 272);
+            this.lblPassStrenght.Location = new System.Drawing.Point(183, 274);
             this.lblPassStrenght.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassStrenght.Name = "lblPassStrenght";
             this.lblPassStrenght.Size = new System.Drawing.Size(367, 120);
@@ -250,7 +250,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(77, 170);
+            this.label8.Location = new System.Drawing.Point(89, 172);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 16);
@@ -264,7 +264,7 @@
             this.cmbProfile.Items.AddRange(new object[] {
             "Operador",
             "Auxiliar"});
-            this.cmbProfile.Location = new System.Drawing.Point(172, 167);
+            this.cmbProfile.Location = new System.Drawing.Point(186, 169);
             this.cmbProfile.Margin = new System.Windows.Forms.Padding(4);
             this.cmbProfile.Name = "cmbProfile";
             this.cmbProfile.Size = new System.Drawing.Size(119, 24);

@@ -70,7 +70,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Email:";
+            this.label1.Text = "Email";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -80,7 +80,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(168, 19);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Senha:";
+            this.label2.Text = "Senha";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_login
@@ -114,7 +114,7 @@
             // 
             this.tsi_about.ForeColor = System.Drawing.Color.White;
             this.tsi_about.Name = "tsi_about";
-            this.tsi_about.Size = new System.Drawing.Size(47, 20);
+            this.tsi_about.Size = new System.Drawing.Size(49, 20);
             this.tsi_about.Text = "Sobre";
             this.tsi_about.Click += new System.EventHandler(this.tsi_about_Click);
             // 
@@ -122,7 +122,7 @@
             // 
             this.tsi_close.ForeColor = System.Drawing.Color.White;
             this.tsi_close.Name = "tsi_close";
-            this.tsi_close.Size = new System.Drawing.Size(37, 20);
+            this.tsi_close.Size = new System.Drawing.Size(38, 20);
             this.tsi_close.Text = "Sair";
             this.tsi_close.Click += new System.EventHandler(this.tsi_close_Click);
             // 
@@ -130,9 +130,9 @@
             // 
             this.labelInvalidCredentials.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInvalidCredentials.ForeColor = System.Drawing.Color.Red;
-            this.labelInvalidCredentials.Location = new System.Drawing.Point(12, 255);
+            this.labelInvalidCredentials.Location = new System.Drawing.Point(151, 255);
             this.labelInvalidCredentials.Name = "labelInvalidCredentials";
-            this.labelInvalidCredentials.Size = new System.Drawing.Size(520, 32);
+            this.labelInvalidCredentials.Size = new System.Drawing.Size(243, 32);
             this.labelInvalidCredentials.TabIndex = 4;
             this.labelInvalidCredentials.Text = "E-mail ou Senha incorreto(s)!";
             this.labelInvalidCredentials.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

@@ -157,5 +157,10 @@ namespace projeto_integrado_2_sem
 
             return new BindingList<SaleGroup<DateTime>>(grouped);
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

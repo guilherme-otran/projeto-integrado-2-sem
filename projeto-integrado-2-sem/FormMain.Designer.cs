@@ -106,11 +106,11 @@
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
             this.btnCustomers.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomers.Image")));
             this.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomers.Location = new System.Drawing.Point(47, 323);
+            this.btnCustomers.Location = new System.Drawing.Point(47, 316);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(134, 55);
             this.btnCustomers.TabIndex = 6;
-            this.btnCustomers.Text = "Clientes";
+            this.btnCustomers.Text = " Clientes";
             this.btnCustomers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCustomers.UseVisualStyleBackColor = false;
             this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
@@ -177,7 +177,7 @@
             this.btnSaleReports.ForeColor = System.Drawing.Color.White;
             this.btnSaleReports.Image = ((System.Drawing.Image)(resources.GetObject("btnSaleReports.Image")));
             this.btnSaleReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaleReports.Location = new System.Drawing.Point(47, 469);
+            this.btnSaleReports.Location = new System.Drawing.Point(47, 474);
             this.btnSaleReports.Name = "btnSaleReports";
             this.btnSaleReports.Size = new System.Drawing.Size(134, 55);
             this.btnSaleReports.TabIndex = 8;

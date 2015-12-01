@@ -121,5 +121,10 @@ namespace projeto_integrado_2_sem
             var source = new BindingSource(repo.List(), null);
             usersGridView.DataSource = source;
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

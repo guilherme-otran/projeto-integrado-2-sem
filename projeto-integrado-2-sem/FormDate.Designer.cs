@@ -57,6 +57,7 @@
             this.lblOutput = new System.Windows.Forms.Label();
             this.rdbDateCulture = new System.Windows.Forms.RadioButton();
             this.btnBack = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.gboInput.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             // 
             this.rdbAge.AutoSize = true;
             this.rdbAge.Checked = true;
-            this.rdbAge.Location = new System.Drawing.Point(18, 88);
+            this.rdbAge.Location = new System.Drawing.Point(18, 93);
             this.rdbAge.Name = "rdbAge";
             this.rdbAge.Size = new System.Drawing.Size(52, 17);
             this.rdbAge.TabIndex = 4;
@@ -76,7 +77,7 @@
             // rdbInterval
             // 
             this.rdbInterval.AutoSize = true;
-            this.rdbInterval.Location = new System.Drawing.Point(80, 88);
+            this.rdbInterval.Location = new System.Drawing.Point(80, 93);
             this.rdbInterval.Name = "rdbInterval";
             this.rdbInterval.Size = new System.Drawing.Size(110, 17);
             this.rdbInterval.TabIndex = 5;
@@ -87,7 +88,7 @@
             // rdbAD
             // 
             this.rdbAD.AutoSize = true;
-            this.rdbAD.Location = new System.Drawing.Point(201, 88);
+            this.rdbAD.Location = new System.Drawing.Point(201, 93);
             this.rdbAD.Name = "rdbAD";
             this.rdbAD.Size = new System.Drawing.Size(174, 17);
             this.rdbAD.TabIndex = 6;
@@ -98,7 +99,7 @@
             // rdbAnalyze
             // 
             this.rdbAnalyze.AutoSize = true;
-            this.rdbAnalyze.Location = new System.Drawing.Point(385, 88);
+            this.rdbAnalyze.Location = new System.Drawing.Point(385, 93);
             this.rdbAnalyze.Name = "rdbAnalyze";
             this.rdbAnalyze.Size = new System.Drawing.Size(100, 17);
             this.rdbAnalyze.TabIndex = 7;
@@ -109,10 +110,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(149, 39);
+            this.label1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(168, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(327, 20);
+            this.label1.Size = new System.Drawing.Size(292, 21);
             this.label1.TabIndex = 4;
             this.label1.Text = "Escolha uma opção de cálculo de datas";
             // 
@@ -398,7 +399,7 @@
             // rdbDateCulture
             // 
             this.rdbDateCulture.AutoSize = true;
-            this.rdbDateCulture.Location = new System.Drawing.Point(497, 88);
+            this.rdbDateCulture.Location = new System.Drawing.Point(497, 93);
             this.rdbDateCulture.Name = "rdbDateCulture";
             this.rdbDateCulture.Size = new System.Drawing.Size(116, 17);
             this.rdbDateCulture.TabIndex = 9;
@@ -411,12 +412,22 @@
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(8, 10);
+            this.btnBack.Location = new System.Drawing.Point(2, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(52, 43);
             this.btnBack.TabIndex = 10;
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(217, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(194, 25);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Calculadora de Datas";
             // 
             // FormDate
             // 
@@ -425,6 +436,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(629, 446);
             this.ControlBox = false;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.rdbDateCulture);
             this.Controls.Add(this.lblOutput);
@@ -477,5 +489,6 @@
         private System.Windows.Forms.ComboBox cmbDates;
         private System.Windows.Forms.ListBox ltbDatesEq;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label2;
     }
 }
