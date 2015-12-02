@@ -71,7 +71,7 @@
             this.btnChangePass,
             this.btnChangeDate});
             this.ctMenuUserConfig.Name = "ctMenuUserConfig";
-            this.ctMenuUserConfig.Size = new System.Drawing.Size(329, 98);
+            this.ctMenuUserConfig.Size = new System.Drawing.Size(329, 76);
             // 
             // btnUserManager
             // 
@@ -106,7 +106,7 @@
             this.btnCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
             this.btnCustomers.FlatAppearance.BorderSize = 0;
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomers.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
             this.btnCustomers.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomers.Image")));
             this.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -125,7 +125,7 @@
             this.btnProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
             this.btnProducts.FlatAppearance.BorderSize = 0;
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducts.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducts.ForeColor = System.Drawing.Color.White;
             this.btnProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnProducts.Image")));
             this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -158,7 +158,7 @@
             this.btnDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
             this.btnDate.FlatAppearance.BorderSize = 0;
             this.btnDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDate.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDate.ForeColor = System.Drawing.Color.White;
             this.btnDate.Image = ((System.Drawing.Image)(resources.GetObject("btnDate.Image")));
             this.btnDate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -166,7 +166,7 @@
             this.btnDate.Name = "btnDate";
             this.btnDate.Size = new System.Drawing.Size(134, 55);
             this.btnDate.TabIndex = 3;
-            this.btnDate.Text = "  Calculadora de datas";
+            this.btnDate.Text = "Calculadora de datas";
             this.btnDate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDate.UseVisualStyleBackColor = false;
             this.btnDate.Click += new System.EventHandler(this.btnDate_Click);
@@ -177,7 +177,7 @@
             this.btnSaleReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
             this.btnSaleReports.FlatAppearance.BorderSize = 0;
             this.btnSaleReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaleReports.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaleReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaleReports.ForeColor = System.Drawing.Color.White;
             this.btnSaleReports.Image = ((System.Drawing.Image)(resources.GetObject("btnSaleReports.Image")));
             this.btnSaleReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -192,6 +192,9 @@
             // 
             // toolBar
             // 
+            this.toolBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.toolBar.AutoSize = true;
             this.toolBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
             this.toolBar.Controls.Add(this.label1);
@@ -209,10 +212,10 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(47, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 32);
+            this.label1.Size = new System.Drawing.Size(149, 29);
             this.label1.TabIndex = 10;
             this.label1.Text = "Ferramentas";
             // 
