@@ -42,13 +42,17 @@
             // btnRegister
             // 
             this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnRegister.FlatAppearance.BorderSize = 0;
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
             this.btnRegister.Location = new System.Drawing.Point(494, 439);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(170, 57);
             this.btnRegister.TabIndex = 6;
             this.btnRegister.Text = "Cadastrar Usuário";
-            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // usersGridView
@@ -74,38 +78,49 @@
             // btnBlockUnblock
             // 
             this.btnBlockUnblock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBlockUnblock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnBlockUnblock.FlatAppearance.BorderSize = 0;
+            this.btnBlockUnblock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBlockUnblock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBlockUnblock.ForeColor = System.Drawing.Color.White;
             this.btnBlockUnblock.Location = new System.Drawing.Point(361, 439);
             this.btnBlockUnblock.Name = "btnBlockUnblock";
             this.btnBlockUnblock.Size = new System.Drawing.Size(115, 57);
             this.btnBlockUnblock.TabIndex = 8;
             this.btnBlockUnblock.Text = "Selecione um usuário";
-            this.btnBlockUnblock.UseVisualStyleBackColor = true;
+            this.btnBlockUnblock.UseVisualStyleBackColor = false;
             this.btnBlockUnblock.Click += new System.EventHandler(this.btnBlockUnblock_Click);
             // 
             // btnChangeProfile
             // 
             this.btnChangeProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChangeProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnChangeProfile.Enabled = false;
-            this.btnChangeProfile.Location = new System.Drawing.Point(178, 466);
+            this.btnChangeProfile.FlatAppearance.BorderSize = 0;
+            this.btnChangeProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeProfile.ForeColor = System.Drawing.Color.White;
+            this.btnChangeProfile.Location = new System.Drawing.Point(136, 466);
             this.btnChangeProfile.Name = "btnChangeProfile";
-            this.btnChangeProfile.Size = new System.Drawing.Size(158, 30);
+            this.btnChangeProfile.Size = new System.Drawing.Size(200, 30);
             this.btnChangeProfile.TabIndex = 9;
             this.btnChangeProfile.Text = "Alterar perfil do usuário";
-            this.btnChangeProfile.UseVisualStyleBackColor = true;
+            this.btnChangeProfile.UseVisualStyleBackColor = false;
             this.btnChangeProfile.Click += new System.EventHandler(this.btnChangeProfile_Click);
             // 
             // cmbProfiles
             // 
             this.cmbProfiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbProfiles.BackColor = System.Drawing.Color.White;
             this.cmbProfiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProfiles.FormattingEnabled = true;
             this.cmbProfiles.Items.AddRange(new object[] {
             "Admin",
             "Operador",
             "Auxiliar"});
-            this.cmbProfiles.Location = new System.Drawing.Point(178, 439);
+            this.cmbProfiles.Location = new System.Drawing.Point(136, 439);
             this.cmbProfiles.Name = "cmbProfiles";
-            this.cmbProfiles.Size = new System.Drawing.Size(156, 21);
+            this.cmbProfiles.Size = new System.Drawing.Size(198, 21);
             this.cmbProfiles.TabIndex = 10;
             this.cmbProfiles.SelectedIndexChanged += new System.EventHandler(this.cmbProfiles_SelectedIndexChanged);
             // 
@@ -116,7 +131,7 @@
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.Location = new System.Drawing.Point(1, 1);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(52, 43);
+            this.btnBack.Size = new System.Drawing.Size(59, 45);
             this.btnBack.TabIndex = 11;
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -145,6 +160,7 @@
             this.Controls.Add(this.btnBlockUnblock);
             this.Controls.Add(this.usersGridView);
             this.Controls.Add(this.btnRegister);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormListUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de usuários";

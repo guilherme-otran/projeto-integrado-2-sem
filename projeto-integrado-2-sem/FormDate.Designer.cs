@@ -63,6 +63,9 @@
             // 
             // rdbAge
             // 
+            this.rdbAge.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rdbAge.AutoSize = true;
             this.rdbAge.Checked = true;
             this.rdbAge.Location = new System.Drawing.Point(18, 93);
@@ -76,6 +79,9 @@
             // 
             // rdbInterval
             // 
+            this.rdbInterval.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rdbInterval.AutoSize = true;
             this.rdbInterval.Location = new System.Drawing.Point(80, 93);
             this.rdbInterval.Name = "rdbInterval";
@@ -87,6 +93,9 @@
             // 
             // rdbAD
             // 
+            this.rdbAD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rdbAD.AutoSize = true;
             this.rdbAD.Location = new System.Drawing.Point(201, 93);
             this.rdbAD.Name = "rdbAD";
@@ -98,6 +107,9 @@
             // 
             // rdbAnalyze
             // 
+            this.rdbAnalyze.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rdbAnalyze.AutoSize = true;
             this.rdbAnalyze.Location = new System.Drawing.Point(385, 93);
             this.rdbAnalyze.Name = "rdbAnalyze";
@@ -109,9 +121,12 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(168, 60);
+            this.label1.Location = new System.Drawing.Point(168, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(292, 21);
             this.label1.TabIndex = 4;
@@ -139,7 +154,7 @@
             this.gboInput.Controls.Add(this.ltbDatesEq);
             this.gboInput.Controls.Add(this.cmbDates);
             this.gboInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gboInput.Location = new System.Drawing.Point(75, 130);
+            this.gboInput.Location = new System.Drawing.Point(80, 141);
             this.gboInput.Name = "gboInput";
             this.gboInput.Size = new System.Drawing.Size(480, 110);
             this.gboInput.TabIndex = 8;
@@ -152,7 +167,7 @@
             this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcess.ForeColor = System.Drawing.Color.White;
-            this.btnProcess.Location = new System.Drawing.Point(336, 47);
+            this.btnProcess.Location = new System.Drawing.Point(203, 75);
             this.btnProcess.Name = "btnProcess";
             this.btnProcess.Size = new System.Drawing.Size(75, 26);
             this.btnProcess.TabIndex = 3;
@@ -391,13 +406,16 @@
             // 
             this.lblOutput.AutoSize = true;
             this.lblOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutput.Location = new System.Drawing.Point(253, 267);
+            this.lblOutput.Location = new System.Drawing.Point(258, 373);
             this.lblOutput.Name = "lblOutput";
             this.lblOutput.Size = new System.Drawing.Size(0, 20);
             this.lblOutput.TabIndex = 6;
             // 
             // rdbDateCulture
             // 
+            this.rdbDateCulture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rdbDateCulture.AutoSize = true;
             this.rdbDateCulture.Location = new System.Drawing.Point(497, 93);
             this.rdbDateCulture.Name = "rdbDateCulture";
@@ -412,15 +430,18 @@
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(2, 2);
+            this.btnBack.Location = new System.Drawing.Point(0, 1);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(52, 43);
+            this.btnBack.Size = new System.Drawing.Size(55, 50);
             this.btnBack.TabIndex = 10;
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(217, 12);
@@ -448,6 +469,10 @@
             this.Controls.Add(this.gboInput);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(645, 485);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(645, 485);
             this.Name = "FormDate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Calculadora de Datas";

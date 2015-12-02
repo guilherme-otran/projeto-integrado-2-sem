@@ -23,7 +23,7 @@ namespace projeto_integrado_2_sem
         {
             cmbYear.DataSource = Enumerable.Range(1950, ((DateTime.Today.Year)-1949)).ToList();
             cmbYear2.DataSource = Enumerable.Range(1950, ((DateTime.Today.Year) - 1949)).ToList();
-        }
+       }
 
         private bool validateDate(int day, int month, int year) // Função para validar a data
         {
@@ -90,7 +90,7 @@ namespace projeto_integrado_2_sem
 
                 gboInput.Size = new Size(480, 110);
                 lblOutput.Location = new Point(210, 245);
-                btnProcess.Location = new Point(335, 57);
+                btnProcess.Location = new Point(203, 75);
                 gboInput.Text = "Calcular idade";
                 lblInput1.Text = "Digite sua data de nascimento:";
                 txtDay.Visible = true;
@@ -107,7 +107,7 @@ namespace projeto_integrado_2_sem
                 clearAndInvisible();
 
                 gboInput.Size = new Size(480, 170);
-                btnProcess.Location = new Point(336, 70);
+                btnProcess.Location = new Point(203, 133);
                 lblOutput.Location = new Point(210, 300);
                 gboInput.Text = "Calcular o intervalo entre duas datas";
                 lblInput1.Text = "Digite a primeira data: ";
@@ -133,7 +133,7 @@ namespace projeto_integrado_2_sem
                 clearAndInvisible();
 
                 gboInput.Size = new Size(480, 170);
-                btnProcess.Location = new Point(203, 135);
+                btnProcess.Location = new Point(203, 133);
                 lblOutput.Location = new Point(210, 300);
                 gboInput.Text = "Digite uma data e um periodo para acrescentar ou diminuir";
                 rdbAdd.Visible = true;
@@ -160,7 +160,7 @@ namespace projeto_integrado_2_sem
 
                 gboInput.Size = new Size(480, 110);
                 lblOutput.Location = new Point(210, 295);
-                btnProcess.Location = new Point(335, 57);
+                btnProcess.Location = new Point(203, 75);
                 gboInput.Text = "Análisar uma data";
                 lblInput1.Text = "Digite a data a ser análisada";
                 txtDay.Visible = true;

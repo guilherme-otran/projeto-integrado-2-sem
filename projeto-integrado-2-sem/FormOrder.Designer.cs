@@ -62,7 +62,7 @@
             this.groupBox1.Controls.Add(this.txtCustName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(36, 53);
+            this.groupBox1.Location = new System.Drawing.Point(47, 64);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(453, 82);
             this.groupBox1.TabIndex = 0;
@@ -110,7 +110,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.mTxtOrderDate);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(36, 141);
+            this.groupBox2.Location = new System.Drawing.Point(47, 153);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(453, 56);
             this.groupBox2.TabIndex = 1;
@@ -158,7 +158,7 @@
             // cmbProdName
             // 
             this.cmbProdName.FormattingEnabled = true;
-            this.cmbProdName.Location = new System.Drawing.Point(75, 31);
+            this.cmbProdName.Location = new System.Drawing.Point(75, 35);
             this.cmbProdName.Name = "cmbProdName";
             this.cmbProdName.Size = new System.Drawing.Size(313, 26);
             this.cmbProdName.TabIndex = 3;
@@ -175,7 +175,7 @@
             this.groupBox3.Controls.Add(this.cmbProdName);
             this.groupBox3.Controls.Add(this.numOrderQtd);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(36, 203);
+            this.groupBox3.Location = new System.Drawing.Point(47, 215);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(453, 124);
             this.groupBox3.TabIndex = 2;
@@ -244,7 +244,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(171, 335);
+            this.btnSave.Location = new System.Drawing.Point(182, 357);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(182, 38);
             this.btnSave.TabIndex = 3;
@@ -257,7 +257,7 @@
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(0, -2);
+            this.btnBack.Location = new System.Drawing.Point(1, 1);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(63, 51);
@@ -269,7 +269,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(201, 12);
+            this.label8.Location = new System.Drawing.Point(212, 14);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(122, 25);
             this.label8.TabIndex = 19;
@@ -280,7 +280,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(524, 381);
+            this.ClientSize = new System.Drawing.Size(546, 403);
             this.ControlBox = false;
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnBack);

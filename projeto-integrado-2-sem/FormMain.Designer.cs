@@ -65,34 +65,38 @@
             // 
             // ctMenuUserConfig
             // 
+            this.ctMenuUserConfig.BackColor = System.Drawing.Color.White;
             this.ctMenuUserConfig.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnUserManager,
             this.btnChangePass,
             this.btnChangeDate});
             this.ctMenuUserConfig.Name = "ctMenuUserConfig";
-            this.ctMenuUserConfig.Size = new System.Drawing.Size(276, 70);
+            this.ctMenuUserConfig.Size = new System.Drawing.Size(329, 98);
             // 
             // btnUserManager
             // 
+            this.btnUserManager.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserManager.Image = ((System.Drawing.Image)(resources.GetObject("btnUserManager.Image")));
             this.btnUserManager.Name = "btnUserManager";
-            this.btnUserManager.Size = new System.Drawing.Size(275, 22);
+            this.btnUserManager.Size = new System.Drawing.Size(328, 24);
             this.btnUserManager.Text = "Gerenciar Usuários";
             this.btnUserManager.Click += new System.EventHandler(this.btnUserManager_Click);
             // 
             // btnChangePass
             // 
+            this.btnChangePass.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePass.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePass.Image")));
             this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(275, 22);
+            this.btnChangePass.Size = new System.Drawing.Size(328, 24);
             this.btnChangePass.Text = "Mudar Senha";
             this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
             // 
             // btnChangeDate
             // 
+            this.btnChangeDate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangeDate.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeDate.Image")));
             this.btnChangeDate.Name = "btnChangeDate";
-            this.btnChangeDate.Size = new System.Drawing.Size(275, 22);
+            this.btnChangeDate.Size = new System.Drawing.Size(328, 24);
             this.btnChangeDate.Text = "Consultar/ Alterar data de nascimento";
             this.btnChangeDate.Click += new System.EventHandler(this.btnChangeDate_Click);
             // 
@@ -129,7 +133,7 @@
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(134, 55);
             this.btnProducts.TabIndex = 7;
-            this.btnProducts.Text = "Produtos";
+            this.btnProducts.Text = "  Produtos";
             this.btnProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProducts.UseVisualStyleBackColor = false;
             this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
@@ -162,7 +166,7 @@
             this.btnDate.Name = "btnDate";
             this.btnDate.Size = new System.Drawing.Size(134, 55);
             this.btnDate.TabIndex = 3;
-            this.btnDate.Text = "Calculadora de datas";
+            this.btnDate.Text = "  Calculadora de datas";
             this.btnDate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDate.UseVisualStyleBackColor = false;
             this.btnDate.Click += new System.EventHandler(this.btnDate_Click);
@@ -181,7 +185,7 @@
             this.btnSaleReports.Name = "btnSaleReports";
             this.btnSaleReports.Size = new System.Drawing.Size(134, 55);
             this.btnSaleReports.TabIndex = 8;
-            this.btnSaleReports.Text = "Relatório de Vendas";
+            this.btnSaleReports.Text = "  Relatório de Vendas";
             this.btnSaleReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSaleReports.UseVisualStyleBackColor = false;
             this.btnSaleReports.Click += new System.EventHandler(this.btnSaleReports_Click);

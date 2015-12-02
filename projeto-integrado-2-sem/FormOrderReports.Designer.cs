@@ -51,10 +51,10 @@
             this.salesReportGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.salesReportGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.salesReportGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.salesReportGridView.Location = new System.Drawing.Point(12, 106);
+            this.salesReportGridView.Location = new System.Drawing.Point(0, 107);
             this.salesReportGridView.Name = "salesReportGridView";
             this.salesReportGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.salesReportGridView.Size = new System.Drawing.Size(550, 313);
+            this.salesReportGridView.Size = new System.Drawing.Size(574, 324);
             this.salesReportGridView.TabIndex = 0;
             this.salesReportGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.salesReportGridView_DataBindingComplete);
             // 
@@ -62,9 +62,9 @@
             // 
             this.radGroupCustomer.AutoSize = true;
             this.radGroupCustomer.Checked = true;
-            this.radGroupCustomer.Location = new System.Drawing.Point(18, 22);
+            this.radGroupCustomer.Location = new System.Drawing.Point(18, 23);
             this.radGroupCustomer.Name = "radGroupCustomer";
-            this.radGroupCustomer.Size = new System.Drawing.Size(57, 17);
+            this.radGroupCustomer.Size = new System.Drawing.Size(71, 22);
             this.radGroupCustomer.TabIndex = 1;
             this.radGroupCustomer.TabStop = true;
             this.radGroupCustomer.Text = "Cliente";
@@ -78,9 +78,10 @@
             this.groupBox1.Controls.Add(this.radGroupDate);
             this.groupBox1.Controls.Add(this.radGroupProd);
             this.groupBox1.Controls.Add(this.radGroupCustomer);
-            this.groupBox1.Location = new System.Drawing.Point(175, 48);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(148, 48);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(225, 53);
+            this.groupBox1.Size = new System.Drawing.Size(275, 53);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agrupar Por";
@@ -88,9 +89,9 @@
             // radGroupDate
             // 
             this.radGroupDate.AutoSize = true;
-            this.radGroupDate.Location = new System.Drawing.Point(149, 22);
+            this.radGroupDate.Location = new System.Drawing.Point(180, 23);
             this.radGroupDate.Name = "radGroupDate";
-            this.radGroupDate.Size = new System.Drawing.Size(48, 17);
+            this.radGroupDate.Size = new System.Drawing.Size(57, 22);
             this.radGroupDate.TabIndex = 3;
             this.radGroupDate.Text = "Data";
             this.radGroupDate.UseVisualStyleBackColor = true;
@@ -99,9 +100,9 @@
             // radGroupProd
             // 
             this.radGroupProd.AutoSize = true;
-            this.radGroupProd.Location = new System.Drawing.Point(81, 22);
+            this.radGroupProd.Location = new System.Drawing.Point(95, 23);
             this.radGroupProd.Name = "radGroupProd";
-            this.radGroupProd.Size = new System.Drawing.Size(62, 17);
+            this.radGroupProd.Size = new System.Drawing.Size(79, 22);
             this.radGroupProd.TabIndex = 2;
             this.radGroupProd.Text = "Produto";
             this.radGroupProd.UseVisualStyleBackColor = true;
@@ -114,7 +115,7 @@
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.Location = new System.Drawing.Point(1, 1);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(52, 43);
+            this.btnBack.Size = new System.Drawing.Size(60, 48);
             this.btnBack.TabIndex = 11;
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);

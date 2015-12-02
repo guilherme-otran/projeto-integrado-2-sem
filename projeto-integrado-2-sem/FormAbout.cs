@@ -12,14 +12,30 @@ namespace projeto_integrado_2_sem
 {
     public partial class FormAbout : Form
     {
+        int cont;
         public FormAbout()
         {
             InitializeComponent();
         }
 
+        private void FormAbout_Load(object sender, EventArgs e)
+        {
+            cont = 0;
+        } 
+
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pictureBox1_DoubleClick(object sender, EventArgs e)
+        {
+            cont++;
+            if (cont == 3)
+            {
+                MessageBox.Show("HUE HUE BR");
+                cont = 0;
+            }
         }
     }
 }
