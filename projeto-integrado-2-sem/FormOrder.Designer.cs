@@ -138,7 +138,12 @@
             // 
             // numOrderQtd
             // 
-            this.numOrderQtd.Location = new System.Drawing.Point(75, 58);
+            this.numOrderQtd.Location = new System.Drawing.Point(75, 54);
+            this.numOrderQtd.Maximum = new decimal(new int[] {
+            -402653185,
+            -1613725636,
+            54210108,
+            0});
             this.numOrderQtd.Minimum = new decimal(new int[] {
             1,
             0,
@@ -147,6 +152,7 @@
             this.numOrderQtd.Name = "numOrderQtd";
             this.numOrderQtd.Size = new System.Drawing.Size(118, 24);
             this.numOrderQtd.TabIndex = 2;
+            this.numOrderQtd.ThousandsSeparator = true;
             this.numOrderQtd.Value = new decimal(new int[] {
             1,
             0,
@@ -158,7 +164,7 @@
             // cmbProdName
             // 
             this.cmbProdName.FormattingEnabled = true;
-            this.cmbProdName.Location = new System.Drawing.Point(75, 35);
+            this.cmbProdName.Location = new System.Drawing.Point(75, 22);
             this.cmbProdName.Name = "cmbProdName";
             this.cmbProdName.Size = new System.Drawing.Size(313, 26);
             this.cmbProdName.TabIndex = 3;
@@ -221,7 +227,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 61);
+            this.label5.Location = new System.Drawing.Point(28, 57);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 18);
             this.label5.TabIndex = 4;
@@ -230,7 +236,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 34);
+            this.label4.Location = new System.Drawing.Point(17, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 18);
             this.label4.TabIndex = 2;
